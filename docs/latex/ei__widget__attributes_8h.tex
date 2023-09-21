@@ -1,0 +1,258 @@
+\hypertarget{ei__widget__attributes_8h}{}\doxysection{ei\+\_\+widget\+\_\+attributes.\+h File Reference}
+\label{ei__widget__attributes_8h}\index{ei\_widget\_attributes.h@{ei\_widget\_attributes.h}}
+
+
+API for accessing widgets attributes.  
+
+
+{\ttfamily \#include \char`\"{}ei\+\_\+widget.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structei__widgetclass__t}{ei\+\_\+widgetclass\+\_\+t}} $\ast$ \mbox{\hyperlink{ei__widget__attributes_8h_a3c2049efa6aae31df81e58c351f74c79}{ei\+\_\+widget\+\_\+get\+\_\+class}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Get the class of a widget. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$ \mbox{\hyperlink{ei__widget__attributes_8h_a65133b48ae92b6648e0e7ba7d62dae10}{ei\+\_\+widget\+\_\+get\+\_\+pick\+\_\+color}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Get the identifier of the widget in the picking offscreen under the form of a color. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{ei__widget__attributes_8h_a5eb1b1cb7b1c19e8ec001bef42ffcd73}{ei\+\_\+widget\+\_\+get\+\_\+parent}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Get the parent of a widget. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{ei__widget__attributes_8h_a6a297b487aa945bd753be195b150d8fe}{ei\+\_\+widget\+\_\+get\+\_\+first\+\_\+child}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Get the first child of a widget. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{ei__widget__attributes_8h_a097f2142495e30aa4035b3420a6d710f}{ei\+\_\+widget\+\_\+get\+\_\+last\+\_\+child}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Get the last child of a widget. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{ei__widget__attributes_8h_a5de06c5fdecb1f81afbdfa24c3176d78}{ei\+\_\+widget\+\_\+get\+\_\+next\+\_\+sibling}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Get the next sibling of a widget. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{ei__widget__attributes_8h_a51866c9f948ce6fd703643c95f1d7340}{ei\+\_\+widget\+\_\+get\+\_\+user\+\_\+data}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Get the user data associated to a widget. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$ \mbox{\hyperlink{ei__widget__attributes_8h_ae776ad005d0087a99839c03549d1bec1}{ei\+\_\+widget\+\_\+get\+\_\+screen\+\_\+location}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Get the screen location of the widget. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$ \mbox{\hyperlink{ei__widget__attributes_8h_a47e244a3bdf0d5fa0df876cf9942363a}{ei\+\_\+widget\+\_\+get\+\_\+content\+\_\+rect}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Get the content rect of a widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__widget__attributes_8h_a3f0e879691894717a78a58b4b419d253}{ei\+\_\+widget\+\_\+set\+\_\+content\+\_\+rect}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$content\+\_\+rect)
+\begin{DoxyCompactList}\small\item\em Set the content rect of a widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+API for accessing widgets attributes. 
+
+Created by François Bérard on 12.\+04.\+2023 Copyright 2023 Ensimag. All rights reserved. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ei__widget__attributes_8h_a3c2049efa6aae31df81e58c351f74c79}\label{ei__widget__attributes_8h_a3c2049efa6aae31df81e58c351f74c79}} 
+\index{ei\_widget\_attributes.h@{ei\_widget\_attributes.h}!ei\_widget\_get\_class@{ei\_widget\_get\_class}}
+\index{ei\_widget\_get\_class@{ei\_widget\_get\_class}!ei\_widget\_attributes.h@{ei\_widget\_attributes.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_get\_class()}{ei\_widget\_get\_class()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__widgetclass__t}{ei\+\_\+widgetclass\+\_\+t}}$\ast$ ei\+\_\+widget\+\_\+get\+\_\+class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Get the class of a widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The structure that describe the class of this widget. 
+\end{DoxyReturn}
+
+
+Definition at line 226 of file ei\+\_\+widget\+\_\+configure.\+c.
+
+\mbox{\Hypertarget{ei__widget__attributes_8h_a47e244a3bdf0d5fa0df876cf9942363a}\label{ei__widget__attributes_8h_a47e244a3bdf0d5fa0df876cf9942363a}} 
+\index{ei\_widget\_attributes.h@{ei\_widget\_attributes.h}!ei\_widget\_get\_content\_rect@{ei\_widget\_get\_content\_rect}}
+\index{ei\_widget\_get\_content\_rect@{ei\_widget\_get\_content\_rect}!ei\_widget\_attributes.h@{ei\_widget\_attributes.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_get\_content\_rect()}{ei\_widget\_get\_content\_rect()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}}$\ast$ ei\+\_\+widget\+\_\+get\+\_\+content\+\_\+rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Get the content rect of a widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rectangle, expressed in screen coordinates, that defines where the children can be drawn. 
+\end{DoxyReturn}
+
+
+Definition at line 260 of file ei\+\_\+widget\+\_\+configure.\+c.
+
+\mbox{\Hypertarget{ei__widget__attributes_8h_a6a297b487aa945bd753be195b150d8fe}\label{ei__widget__attributes_8h_a6a297b487aa945bd753be195b150d8fe}} 
+\index{ei\_widget\_attributes.h@{ei\_widget\_attributes.h}!ei\_widget\_get\_first\_child@{ei\_widget\_get\_first\_child}}
+\index{ei\_widget\_get\_first\_child@{ei\_widget\_get\_first\_child}!ei\_widget\_attributes.h@{ei\_widget\_attributes.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_get\_first\_child()}{ei\_widget\_get\_first\_child()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+widget\+\_\+get\+\_\+first\+\_\+child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Get the first child of a widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The first child, or NULL if the widget has no child. 
+\end{DoxyReturn}
+
+
+Definition at line 238 of file ei\+\_\+widget\+\_\+configure.\+c.
+
+\mbox{\Hypertarget{ei__widget__attributes_8h_a097f2142495e30aa4035b3420a6d710f}\label{ei__widget__attributes_8h_a097f2142495e30aa4035b3420a6d710f}} 
+\index{ei\_widget\_attributes.h@{ei\_widget\_attributes.h}!ei\_widget\_get\_last\_child@{ei\_widget\_get\_last\_child}}
+\index{ei\_widget\_get\_last\_child@{ei\_widget\_get\_last\_child}!ei\_widget\_attributes.h@{ei\_widget\_attributes.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_get\_last\_child()}{ei\_widget\_get\_last\_child()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+widget\+\_\+get\+\_\+last\+\_\+child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Get the last child of a widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The last child, or NULL if the widget has no child. 
+\end{DoxyReturn}
+
+
+Definition at line 242 of file ei\+\_\+widget\+\_\+configure.\+c.
+
+\mbox{\Hypertarget{ei__widget__attributes_8h_a5de06c5fdecb1f81afbdfa24c3176d78}\label{ei__widget__attributes_8h_a5de06c5fdecb1f81afbdfa24c3176d78}} 
+\index{ei\_widget\_attributes.h@{ei\_widget\_attributes.h}!ei\_widget\_get\_next\_sibling@{ei\_widget\_get\_next\_sibling}}
+\index{ei\_widget\_get\_next\_sibling@{ei\_widget\_get\_next\_sibling}!ei\_widget\_attributes.h@{ei\_widget\_attributes.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_get\_next\_sibling()}{ei\_widget\_get\_next\_sibling()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+widget\+\_\+get\+\_\+next\+\_\+sibling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Get the next sibling of a widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sibling next to this widget in the widget\textquotesingle{}s parent sibling order. NULL if the widget is the last child or the root widget. 
+\end{DoxyReturn}
+
+
+Definition at line 246 of file ei\+\_\+widget\+\_\+configure.\+c.
+
+\mbox{\Hypertarget{ei__widget__attributes_8h_a5eb1b1cb7b1c19e8ec001bef42ffcd73}\label{ei__widget__attributes_8h_a5eb1b1cb7b1c19e8ec001bef42ffcd73}} 
+\index{ei\_widget\_attributes.h@{ei\_widget\_attributes.h}!ei\_widget\_get\_parent@{ei\_widget\_get\_parent}}
+\index{ei\_widget\_get\_parent@{ei\_widget\_get\_parent}!ei\_widget\_attributes.h@{ei\_widget\_attributes.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_get\_parent()}{ei\_widget\_get\_parent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+widget\+\_\+get\+\_\+parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Get the parent of a widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parent of the widget, or NULL if called on the root widget. 
+\end{DoxyReturn}
+
+
+Definition at line 234 of file ei\+\_\+widget\+\_\+configure.\+c.
+
+\mbox{\Hypertarget{ei__widget__attributes_8h_a65133b48ae92b6648e0e7ba7d62dae10}\label{ei__widget__attributes_8h_a65133b48ae92b6648e0e7ba7d62dae10}} 
+\index{ei\_widget\_attributes.h@{ei\_widget\_attributes.h}!ei\_widget\_get\_pick\_color@{ei\_widget\_get\_pick\_color}}
+\index{ei\_widget\_get\_pick\_color@{ei\_widget\_get\_pick\_color}!ei\_widget\_attributes.h@{ei\_widget\_attributes.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_get\_pick\_color()}{ei\_widget\_get\_pick\_color()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}$\ast$ ei\+\_\+widget\+\_\+get\+\_\+pick\+\_\+color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Get the identifier of the widget in the picking offscreen under the form of a color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The (false)color of the pixels that represent this widget in the picking offscreen. 
+\end{DoxyReturn}
+
+
+Definition at line 230 of file ei\+\_\+widget\+\_\+configure.\+c.
+
+\mbox{\Hypertarget{ei__widget__attributes_8h_ae776ad005d0087a99839c03549d1bec1}\label{ei__widget__attributes_8h_ae776ad005d0087a99839c03549d1bec1}} 
+\index{ei\_widget\_attributes.h@{ei\_widget\_attributes.h}!ei\_widget\_get\_screen\_location@{ei\_widget\_get\_screen\_location}}
+\index{ei\_widget\_get\_screen\_location@{ei\_widget\_get\_screen\_location}!ei\_widget\_attributes.h@{ei\_widget\_attributes.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_get\_screen\_location()}{ei\_widget\_get\_screen\_location()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}}$\ast$ ei\+\_\+widget\+\_\+get\+\_\+screen\+\_\+location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Get the screen location of the widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The location of the widget on the screen, expressed in the screen reference (origin at the top/left of the screen, ordinates increasing downward). 
+\end{DoxyReturn}
+
+
+Definition at line 254 of file ei\+\_\+widget\+\_\+configure.\+c.
+
+\mbox{\Hypertarget{ei__widget__attributes_8h_a51866c9f948ce6fd703643c95f1d7340}\label{ei__widget__attributes_8h_a51866c9f948ce6fd703643c95f1d7340}} 
+\index{ei\_widget\_attributes.h@{ei\_widget\_attributes.h}!ei\_widget\_get\_user\_data@{ei\_widget\_get\_user\_data}}
+\index{ei\_widget\_get\_user\_data@{ei\_widget\_get\_user\_data}!ei\_widget\_attributes.h@{ei\_widget\_attributes.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_get\_user\_data()}{ei\_widget\_get\_user\_data()}}
+{\footnotesize\ttfamily void$\ast$ ei\+\_\+widget\+\_\+get\+\_\+user\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Get the user data associated to a widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The user data associated with the widget. 
+\end{DoxyReturn}
+
+
+Definition at line 250 of file ei\+\_\+widget\+\_\+configure.\+c.
+
+\mbox{\Hypertarget{ei__widget__attributes_8h_a3f0e879691894717a78a58b4b419d253}\label{ei__widget__attributes_8h_a3f0e879691894717a78a58b4b419d253}} 
+\index{ei\_widget\_attributes.h@{ei\_widget\_attributes.h}!ei\_widget\_set\_content\_rect@{ei\_widget\_set\_content\_rect}}
+\index{ei\_widget\_set\_content\_rect@{ei\_widget\_set\_content\_rect}!ei\_widget\_attributes.h@{ei\_widget\_attributes.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_set\_content\_rect()}{ei\_widget\_set\_content\_rect()}}
+{\footnotesize\ttfamily void ei\+\_\+widget\+\_\+set\+\_\+content\+\_\+rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{content\+\_\+rect }\end{DoxyParamCaption})}
+
+
+
+Set the content rect of a widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget. \\
+\hline
+{\em content\+\_\+rect} & The rectangle, expressed in screen coordinates, that defines where the children can be drawn. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 264 of file ei\+\_\+widget\+\_\+configure.\+c.
+

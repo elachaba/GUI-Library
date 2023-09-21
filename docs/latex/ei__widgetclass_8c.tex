@@ -1,0 +1,74 @@
+\hypertarget{ei__widgetclass_8c}{}\doxysection{ei\+\_\+widgetclass.\+c File Reference}
+\label{ei__widgetclass_8c}\index{ei\_widgetclass.c@{ei\_widgetclass.c}}
+{\ttfamily \#include $<$ei\+\_\+utils.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+frame.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ei__widgetclass_8c_af742f16921cbf9c4a1a662ade31d91cc}{ei\+\_\+widgetclass\+\_\+register}} (\mbox{\hyperlink{structei__widgetclass__t}{ei\+\_\+widgetclass\+\_\+t}} $\ast$widgetclass)
+\begin{DoxyCompactList}\small\item\em Registers a class to the program so that widgets of this class can be created with \mbox{\hyperlink{ei__widget_8c_af05d9b442d1c9ac845dc74d64f7f7239}{ei\+\_\+widget\+\_\+create}}. This must be done only once per widget class in the application. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structei__widgetclass__t}{ei\+\_\+widgetclass\+\_\+t}} $\ast$ \mbox{\hyperlink{ei__widgetclass_8c_ace2d081c759cd60067e1290e64559770}{ei\+\_\+widgetclass\+\_\+from\+\_\+name}} (\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}} name)
+\begin{DoxyCompactList}\small\item\em Returns the structure describing a class, from its name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structei__widgetclass__t}{ei\+\_\+widgetclass\+\_\+t}} $\ast$ \mbox{\hyperlink{ei__widgetclass_8c_a81f62884b5105eaa442f9a4527cde508}{widget\+\_\+classes}} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ei__widgetclass_8c_ace2d081c759cd60067e1290e64559770}\label{ei__widgetclass_8c_ace2d081c759cd60067e1290e64559770}} 
+\index{ei\_widgetclass.c@{ei\_widgetclass.c}!ei\_widgetclass\_from\_name@{ei\_widgetclass\_from\_name}}
+\index{ei\_widgetclass\_from\_name@{ei\_widgetclass\_from\_name}!ei\_widgetclass.c@{ei\_widgetclass.c}}
+\doxysubsubsection{\texorpdfstring{ei\_widgetclass\_from\_name()}{ei\_widgetclass\_from\_name()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__widgetclass__t}{ei\+\_\+widgetclass\+\_\+t}}$\ast$ ei\+\_\+widgetclass\+\_\+from\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}}}]{name }\end{DoxyParamCaption})}
+
+
+
+Returns the structure describing a class, from its name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the class of widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The structure describing the class. 
+\end{DoxyReturn}
+
+
+Definition at line 15 of file ei\+\_\+widgetclass.\+c.
+
+\mbox{\Hypertarget{ei__widgetclass_8c_af742f16921cbf9c4a1a662ade31d91cc}\label{ei__widgetclass_8c_af742f16921cbf9c4a1a662ade31d91cc}} 
+\index{ei\_widgetclass.c@{ei\_widgetclass.c}!ei\_widgetclass\_register@{ei\_widgetclass\_register}}
+\index{ei\_widgetclass\_register@{ei\_widgetclass\_register}!ei\_widgetclass.c@{ei\_widgetclass.c}}
+\doxysubsubsection{\texorpdfstring{ei\_widgetclass\_register()}{ei\_widgetclass\_register()}}
+{\footnotesize\ttfamily void ei\+\_\+widgetclass\+\_\+register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__widgetclass__t}{ei\+\_\+widgetclass\+\_\+t}} $\ast$}]{widgetclass }\end{DoxyParamCaption})}
+
+
+
+Registers a class to the program so that widgets of this class can be created with \mbox{\hyperlink{ei__widget_8c_af05d9b442d1c9ac845dc74d64f7f7239}{ei\+\_\+widget\+\_\+create}}. This must be done only once per widget class in the application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widgetclass} & The structure describing the class. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file ei\+\_\+widgetclass.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ei__widgetclass_8c_a81f62884b5105eaa442f9a4527cde508}\label{ei__widgetclass_8c_a81f62884b5105eaa442f9a4527cde508}} 
+\index{ei\_widgetclass.c@{ei\_widgetclass.c}!widget\_classes@{widget\_classes}}
+\index{widget\_classes@{widget\_classes}!ei\_widgetclass.c@{ei\_widgetclass.c}}
+\doxysubsubsection{\texorpdfstring{widget\_classes}{widget\_classes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__widgetclass__t}{ei\+\_\+widgetclass\+\_\+t}}$\ast$ widget\+\_\+classes = NULL}
+
+
+
+Definition at line 5 of file ei\+\_\+widgetclass.\+c.
+

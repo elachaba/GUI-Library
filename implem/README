@@ -1,0 +1,4 @@
+Vous pouvez placer votre implémentation ici (i.e. vos fichiers .h et .c)... ou ailleurs.
+Le fichier ei_implementation.h contient quelques *suggestions* pour votre implémentation. Vous pouvez le renommer, le modifier, ou le supprimer si vous ne l'utilisez pas.
+
+Attention à bien penser à dé-commenter la ligne "add_library(ei ..." dans le fichier CMakeLists.txt, et y ajouter vos fichier source.

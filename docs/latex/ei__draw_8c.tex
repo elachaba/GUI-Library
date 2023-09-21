@@ -1,0 +1,173 @@
+\hypertarget{ei__draw_8c}{}\doxysection{ei\+\_\+draw.\+c File Reference}
+\label{ei__draw_8c}\index{ei\_draw.c@{ei\_draw.c}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tca\+\_\+tools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hw\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}draw\+\_\+tools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}draw\+\_\+button.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ei__draw_8c_a8df4b1a25d4b7c46851a4e7a12a45b2e}{ei\+\_\+fill}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, const \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$color, const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em Fills the surface with the specified color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__draw_8c_abcaed9d664195b5e93ea4180eef8dbde}{ei\+\_\+draw\+\_\+polyline}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$point\+\_\+array, size\+\_\+t point\+\_\+array\+\_\+size, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} color, const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em Draws a line that can be made of many line segments. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__draw_8c_ae5d351c6f3e5f67e6b685711bea960ee}{free\+\_\+hashtable}} (struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$tableau)
+\item 
+void \mbox{\hyperlink{ei__draw_8c_ad693f4ca72de72b5fdeed5b552ac1453}{ei\+\_\+draw\+\_\+polygon}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$point\+\_\+array, size\+\_\+t point\+\_\+array\+\_\+size, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} color, const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em Draws a filled polygon. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ei__draw_8c_ae92bf0bdd285617d694f5fe8162c20e2}{ei\+\_\+copy\+\_\+surface}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} destination, const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$dst\+\_\+rect, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} source, const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$src\+\_\+rect, bool alpha)
+\begin{DoxyCompactList}\small\item\em Copies pixels from a source surface to a destination surface. The source and destination areas of the copy (either the entire surfaces, or subparts) must have the same size before considering clipping. Both surfaces must be {\itshape locked} by \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__draw_8c_ae4494d7aa94347b711444bb0f6c64f1b}{ei\+\_\+draw\+\_\+text}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, const \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$where, \mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}} \mbox{\hyperlink{structtext}{text}}, \mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}} font, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} color, const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em Draws text by calling \mbox{\hyperlink{hw__interface_8h_a6371770302e78d3651c792ed87468e8a}{hw\+\_\+text\+\_\+create\+\_\+surface}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ei__draw_8c_ae92bf0bdd285617d694f5fe8162c20e2}\label{ei__draw_8c_ae92bf0bdd285617d694f5fe8162c20e2}} 
+\index{ei\_draw.c@{ei\_draw.c}!ei\_copy\_surface@{ei\_copy\_surface}}
+\index{ei\_copy\_surface@{ei\_copy\_surface}!ei\_draw.c@{ei\_draw.c}}
+\doxysubsubsection{\texorpdfstring{ei\_copy\_surface()}{ei\_copy\_surface()}}
+{\footnotesize\ttfamily int ei\+\_\+copy\+\_\+surface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{destination,  }\item[{const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{dst\+\_\+rect,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{source,  }\item[{const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{src\+\_\+rect,  }\item[{bool}]{alpha }\end{DoxyParamCaption})}
+
+
+
+Copies pixels from a source surface to a destination surface. The source and destination areas of the copy (either the entire surfaces, or subparts) must have the same size before considering clipping. Both surfaces must be {\itshape locked} by \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & The surface on which to copy pixels. \\
+\hline
+{\em dst\+\_\+rect} & If NULL, the entire destination surface is used. If not NULL, defines the rectangle on the destination surface where to copy the pixels. \\
+\hline
+{\em source} & The surface from which to copy pixels. \\
+\hline
+{\em src\+\_\+rect} & If NULL, the entire source surface is used. If not NULL, defines the rectangle on the source surface from which to copy the pixels. \\
+\hline
+{\em alpha} & If true, the final pixels are a combination of source and destination pixels weighted by the source alpha channel and the transparency of the final pixels is set to opaque. If false, the final pixels are an exact copy of the source pixels, including the alpha channel.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, 1 on failure (different sizes between source and destination). 
+\end{DoxyReturn}
+
+
+Definition at line 155 of file ei\+\_\+draw.\+c.
+
+\mbox{\Hypertarget{ei__draw_8c_ad693f4ca72de72b5fdeed5b552ac1453}\label{ei__draw_8c_ad693f4ca72de72b5fdeed5b552ac1453}} 
+\index{ei\_draw.c@{ei\_draw.c}!ei\_draw\_polygon@{ei\_draw\_polygon}}
+\index{ei\_draw\_polygon@{ei\_draw\_polygon}!ei\_draw.c@{ei\_draw.c}}
+\doxysubsubsection{\texorpdfstring{ei\_draw\_polygon()}{ei\_draw\_polygon()}}
+{\footnotesize\ttfamily void ei\+\_\+draw\+\_\+polygon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$}]{point\+\_\+array,  }\item[{size\+\_\+t}]{point\+\_\+array\+\_\+size,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}}]{color,  }\item[{const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Draws a filled polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & Where to draw the polygon. The surface must be {\itshape locked} by \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}}. \\
+\hline
+{\em point\+\_\+array} & The array of points defining the polygon. Its size is provided in the next parameter (point\+\_\+array\+\_\+size). The array can be empty (i.\+e. nothing is drawn) or else it must have more than 2 points. \\
+\hline
+{\em point\+\_\+array\+\_\+size} & The number of points in the point\+\_\+array. Must be 0 or more than 2. \\
+\hline
+{\em color} & The color used to draw the polygon. The alpha channel is managed. \\
+\hline
+{\em clipper} & If not NULL, the drawing is restricted within this rectangle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file ei\+\_\+draw.\+c.
+
+\mbox{\Hypertarget{ei__draw_8c_abcaed9d664195b5e93ea4180eef8dbde}\label{ei__draw_8c_abcaed9d664195b5e93ea4180eef8dbde}} 
+\index{ei\_draw.c@{ei\_draw.c}!ei\_draw\_polyline@{ei\_draw\_polyline}}
+\index{ei\_draw\_polyline@{ei\_draw\_polyline}!ei\_draw.c@{ei\_draw.c}}
+\doxysubsubsection{\texorpdfstring{ei\_draw\_polyline()}{ei\_draw\_polyline()}}
+{\footnotesize\ttfamily void ei\+\_\+draw\+\_\+polyline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$}]{point\+\_\+array,  }\item[{size\+\_\+t}]{point\+\_\+array\+\_\+size,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}}]{color,  }\item[{const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Draws a line that can be made of many line segments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & Where to draw the line. The surface must be {\itshape locked} by \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}}. \\
+\hline
+{\em point\+\_\+array} & The array of points defining the polyline. Its size is provided in the next parameter (point\+\_\+array\+\_\+size). The array can be empty (i.\+e. nothing is drawn) or it can have a single point, or more. If the last point is the same as the first point, then this pixel is drawn only once. \\
+\hline
+{\em point\+\_\+array\+\_\+size} & The number of points in the point\+\_\+array. Can be 0. \\
+\hline
+{\em color} & The color used to draw the line. The alpha channel is managed. \\
+\hline
+{\em clipper} & If not NULL, the drawing is restricted within this rectangle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 53 of file ei\+\_\+draw.\+c.
+
+\mbox{\Hypertarget{ei__draw_8c_ae4494d7aa94347b711444bb0f6c64f1b}\label{ei__draw_8c_ae4494d7aa94347b711444bb0f6c64f1b}} 
+\index{ei\_draw.c@{ei\_draw.c}!ei\_draw\_text@{ei\_draw\_text}}
+\index{ei\_draw\_text@{ei\_draw\_text}!ei\_draw.c@{ei\_draw.c}}
+\doxysubsubsection{\texorpdfstring{ei\_draw\_text()}{ei\_draw\_text()}}
+{\footnotesize\ttfamily void ei\+\_\+draw\+\_\+text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{const \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$}]{where,  }\item[{\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}}}]{text,  }\item[{\mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}}}]{font,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}}]{color,  }\item[{const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Draws text by calling \mbox{\hyperlink{hw__interface_8h_a6371770302e78d3651c792ed87468e8a}{hw\+\_\+text\+\_\+create\+\_\+surface}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & Where to draw the text. The surface must be {\itshape locked} by \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}}. \\
+\hline
+{\em where} & Coordinates, in the surface, where to anchor the top-\/left corner of the rendered text. \\
+\hline
+{\em text} & The string of the text. Can\textquotesingle{}t be NULL. \\
+\hline
+{\em font} & The font used to render the text. If NULL, the \mbox{\hyperlink{ei__types_8h_a722bfa1a8a9a4202fb2d4abce2f06a8c}{ei\+\_\+default\+\_\+font}} is used. \\
+\hline
+{\em color} & The text color. Can\textquotesingle{}t be NULL. The alpha parameter is not used. \\
+\hline
+{\em clipper} & If not NULL, the drawing is restricted within this rectangle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 222 of file ei\+\_\+draw.\+c.
+
+\mbox{\Hypertarget{ei__draw_8c_a8df4b1a25d4b7c46851a4e7a12a45b2e}\label{ei__draw_8c_a8df4b1a25d4b7c46851a4e7a12a45b2e}} 
+\index{ei\_draw.c@{ei\_draw.c}!ei\_fill@{ei\_fill}}
+\index{ei\_fill@{ei\_fill}!ei\_draw.c@{ei\_draw.c}}
+\doxysubsubsection{\texorpdfstring{ei\_fill()}{ei\_fill()}}
+{\footnotesize\ttfamily void ei\+\_\+fill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{const \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$}]{color,  }\item[{const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Fills the surface with the specified color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface to be filled. The surface must be {\itshape locked} by \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}}. \\
+\hline
+{\em color} & The color used to fill the surface. If NULL, it means that the caller want it painted black (opaque). \\
+\hline
+{\em clipper} & If not NULL, the drawing is restricted within this rectangle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 10 of file ei\+\_\+draw.\+c.
+
+\mbox{\Hypertarget{ei__draw_8c_ae5d351c6f3e5f67e6b685711bea960ee}\label{ei__draw_8c_ae5d351c6f3e5f67e6b685711bea960ee}} 
+\index{ei\_draw.c@{ei\_draw.c}!free\_hashtable@{free\_hashtable}}
+\index{free\_hashtable@{free\_hashtable}!ei\_draw.c@{ei\_draw.c}}
+\doxysubsubsection{\texorpdfstring{free\_hashtable()}{free\_hashtable()}}
+{\footnotesize\ttfamily void free\+\_\+hashtable (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$}]{tableau }\end{DoxyParamCaption})}
+
+
+
+Definition at line 117 of file ei\+\_\+draw.\+c.
+

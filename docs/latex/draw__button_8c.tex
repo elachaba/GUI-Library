@@ -1,0 +1,141 @@
+\hypertarget{draw__button_8c}{}\doxysection{draw\+\_\+button.\+c File Reference}
+\label{draw__button_8c}\index{draw\_button.c@{draw\_button.c}}
+{\ttfamily \#include \char`\"{}ei\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structures.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}draw\+\_\+tools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+draw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+utils.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} \mbox{\hyperlink{draw__button_8c_adfc9f0e4f63bde697c8c7860a28d164c}{arc\+\_\+point}} (float angle, \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} center, float radius)
+\item 
+double $\ast$ \mbox{\hyperlink{draw__button_8c_a83dec8fcbb1906284a6c0a8c60e38039}{nbre\+\_\+of\+\_\+points\+\_\+angle\+\_\+step}} (\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} center, float radius, float start\+\_\+angle, float end\+\_\+angle)
+\item 
+\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$ \mbox{\hyperlink{draw__button_8c_a22ae92aa0609bbc5e88dc81ebd657c53}{draw\+\_\+arc}} (\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} center, float radius, float start\+\_\+angle, float end\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Giving a point as a center, a radius, and starting and ending angles gives the points that belong to the arc between the two angles. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtable__size}{table\+\_\+size}} \mbox{\hyperlink{draw__button_8c_ab29710ddcd7b8b561872cdf685281194}{rounded\+\_\+frame}} (const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} rectangle, const float radius, bool only\+\_\+top, bool only\+\_\+bottom)
+\item 
+void \mbox{\hyperlink{draw__button_8c_a12ef84959d4e02ceedcf04e7a0190570}{draw\+\_\+button}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} rectangle, \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} color\+\_\+frame, int border\+\_\+width, float radius, \mbox{\hyperlink{ei__types_8h_aa79a32b1d8ece0e44cfa394e870b270b}{ei\+\_\+relief\+\_\+t}} relief)
+\begin{DoxyCompactList}\small\item\em Draws a button on the surface using \mbox{\hyperlink{ei__draw_8c_ad693f4ca72de72b5fdeed5b552ac1453}{ei\+\_\+draw\+\_\+polygon}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw__button_8c_a60ca236777e1e89bd9d40abb7749a74b}{top\+\_\+level}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} rectangle, \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} color\+\_\+frame, float radius)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{draw__button_8c_adfc9f0e4f63bde697c8c7860a28d164c}\label{draw__button_8c_adfc9f0e4f63bde697c8c7860a28d164c}} 
+\index{draw\_button.c@{draw\_button.c}!arc\_point@{arc\_point}}
+\index{arc\_point@{arc\_point}!draw\_button.c@{draw\_button.c}}
+\doxysubsubsection{\texorpdfstring{arc\_point()}{arc\_point()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} arc\+\_\+point (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}}}]{center,  }\item[{float}]{radius }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file draw\+\_\+button.\+c.
+
+\mbox{\Hypertarget{draw__button_8c_a22ae92aa0609bbc5e88dc81ebd657c53}\label{draw__button_8c_a22ae92aa0609bbc5e88dc81ebd657c53}} 
+\index{draw\_button.c@{draw\_button.c}!draw\_arc@{draw\_arc}}
+\index{draw\_arc@{draw\_arc}!draw\_button.c@{draw\_button.c}}
+\doxysubsubsection{\texorpdfstring{draw\_arc()}{draw\_arc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}}$\ast$ draw\+\_\+arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}}}]{center,  }\item[{float}]{radius,  }\item[{float}]{start\+\_\+angle,  }\item[{float}]{end\+\_\+angle }\end{DoxyParamCaption})}
+
+
+
+Giving a point as a center, a radius, and starting and ending angles gives the points that belong to the arc between the two angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & The center of the arc \\
+\hline
+{\em radius} & The radius, the distance between the points of the arc and the center \\
+\hline
+{\em start\+\_\+angle} & Determines the starting point \\
+\hline
+{\em end\+\_\+angle} & Determines the ending point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The list of points to draw the arc 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file draw\+\_\+button.\+c.
+
+\mbox{\Hypertarget{draw__button_8c_a12ef84959d4e02ceedcf04e7a0190570}\label{draw__button_8c_a12ef84959d4e02ceedcf04e7a0190570}} 
+\index{draw\_button.c@{draw\_button.c}!draw\_button@{draw\_button}}
+\index{draw\_button@{draw\_button}!draw\_button.c@{draw\_button.c}}
+\doxysubsubsection{\texorpdfstring{draw\_button()}{draw\_button()}}
+{\footnotesize\ttfamily void draw\+\_\+button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}}}]{rectangle,  }\item[{\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}}]{color\+\_\+frame,  }\item[{int}]{border\+\_\+width,  }\item[{float}]{radius,  }\item[{\mbox{\hyperlink{ei__types_8h_aa79a32b1d8ece0e44cfa394e870b270b}{ei\+\_\+relief\+\_\+t}}}]{relief }\end{DoxyParamCaption})}
+
+
+
+Draws a button on the surface using \mbox{\hyperlink{ei__draw_8c_ad693f4ca72de72b5fdeed5b552ac1453}{ei\+\_\+draw\+\_\+polygon}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface on which the drawing is done \\
+\hline
+{\em rectangle} & The rectangle of the button \\
+\hline
+{\em clipper} & If not NULL, only the part of the rectangle that is within the clipper is drawn \\
+\hline
+{\em color\+\_\+frame} & If NULL, the frame is colored in black. \\
+\hline
+{\em border\+\_\+width} & \\
+\hline
+{\em radius} & \\
+\hline
+{\em push} & \\
+\hline
+{\em relief} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file draw\+\_\+button.\+c.
+
+\mbox{\Hypertarget{draw__button_8c_a83dec8fcbb1906284a6c0a8c60e38039}\label{draw__button_8c_a83dec8fcbb1906284a6c0a8c60e38039}} 
+\index{draw\_button.c@{draw\_button.c}!nbre\_of\_points\_angle\_step@{nbre\_of\_points\_angle\_step}}
+\index{nbre\_of\_points\_angle\_step@{nbre\_of\_points\_angle\_step}!draw\_button.c@{draw\_button.c}}
+\doxysubsubsection{\texorpdfstring{nbre\_of\_points\_angle\_step()}{nbre\_of\_points\_angle\_step()}}
+{\footnotesize\ttfamily double$\ast$ nbre\+\_\+of\+\_\+points\+\_\+angle\+\_\+step (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}}}]{center,  }\item[{float}]{radius,  }\item[{float}]{start\+\_\+angle,  }\item[{float}]{end\+\_\+angle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file draw\+\_\+button.\+c.
+
+\mbox{\Hypertarget{draw__button_8c_ab29710ddcd7b8b561872cdf685281194}\label{draw__button_8c_ab29710ddcd7b8b561872cdf685281194}} 
+\index{draw\_button.c@{draw\_button.c}!rounded\_frame@{rounded\_frame}}
+\index{rounded\_frame@{rounded\_frame}!draw\_button.c@{draw\_button.c}}
+\doxysubsubsection{\texorpdfstring{rounded\_frame()}{rounded\_frame()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtable__size}{table\+\_\+size}} rounded\+\_\+frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}}}]{rectangle,  }\item[{const float}]{radius,  }\item[{bool}]{only\+\_\+top,  }\item[{bool}]{only\+\_\+bottom }\end{DoxyParamCaption})}
+
+Returns the points to draw a rounded frame, a rectangle with curved edges. 
+\begin{DoxyParams}{Parameters}
+{\em rectangle} & The rectangle of the frame \\
+\hline
+{\em radius} & The radius of the curves \\
+\hline
+{\em only\+\_\+top} & If True, only the upper part of the rectangle is drawn \\
+\hline
+{\em only\+\_\+bottom} & If True, only the bottom part of rectangle is drawn \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The list of points to draw, and the size of it 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file draw\+\_\+button.\+c.
+
+\mbox{\Hypertarget{draw__button_8c_a60ca236777e1e89bd9d40abb7749a74b}\label{draw__button_8c_a60ca236777e1e89bd9d40abb7749a74b}} 
+\index{draw\_button.c@{draw\_button.c}!top\_level@{top\_level}}
+\index{top\_level@{top\_level}!draw\_button.c@{draw\_button.c}}
+\doxysubsubsection{\texorpdfstring{top\_level()}{top\_level()}}
+{\footnotesize\ttfamily void top\+\_\+level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}}}]{rectangle,  }\item[{\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}}]{color\+\_\+frame,  }\item[{float}]{radius }\end{DoxyParamCaption})}
+
+
+
+Definition at line 220 of file draw\+\_\+button.\+c.
+

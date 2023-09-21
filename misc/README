@@ -1,0 +1,3 @@
+Ce dossier contient la fonte par défaut pour l'affichage du texte, et les images utilisées par les programmes de test.
+Les programmes de tests doivent être lancés depuis la racine du projet parce qu'ils cherchent le fichier "misc/font.ttf".
+Le fichier "valgrind_suppressions.supp" est utilisé avec valgrind ("--suppressions=misc/valgrind_suppressions.supp") pour filtrer les erreurs de fuite mémoire qui ne proviennent pas de votre bibliothèque.

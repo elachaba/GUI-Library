@@ -1,0 +1,468 @@
+\hypertarget{hw__interface_8h}{}\doxysection{hw\+\_\+interface.\+h File Reference}
+\label{hw__interface_8h}\index{hw\_interface.h@{hw\_interface.h}}
+
+
+Low level interface with the graphic hardware. This interface is based on the SDL library.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+types.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void $\ast$ \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Surface hidden type. A surface represents a 2 dimensional array of pixels where drawing can be done. What is visible on screen is represented by the surface created by \mbox{\hyperlink{hw__interface_8h_aa012ef4374709eeb3fe5af60324e8dd7}{hw\+\_\+create\+\_\+window}}. Other \char`\"{}offscreen\char`\"{} surfaces can be created by \mbox{\hyperlink{hw__interface_8h_a20b18780e7aac3439a983a8fa0464c03}{hw\+\_\+surface\+\_\+create}}. Surfaces containing text and images are created by \mbox{\hyperlink{hw__interface_8h_a6371770302e78d3651c792ed87468e8a}{hw\+\_\+text\+\_\+create\+\_\+surface}} and \mbox{\hyperlink{hw__interface_8h_aeed5af6ddb524c645fb276649a83f462}{hw\+\_\+image\+\_\+load}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{hw__interface_8h_ae58df14f30461cb37e8607aca5522846}{hw\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialises access to the low-\/level operating system services. {\itshape Must} be called (only once) before any other calls to the hardware interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__interface_8h_abe4354544a70c108fe5d8f17c69a2874}{hw\+\_\+quit}} (void)
+\begin{DoxyCompactList}\small\item\em Closes the access to the low-\/level operating system services and releases resources. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} \mbox{\hyperlink{hw__interface_8h_aa012ef4374709eeb3fe5af60324e8dd7}{hw\+\_\+create\+\_\+window}} (\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} size, bool full\+Screen)
+\begin{DoxyCompactList}\small\item\em Opens the main graphical window of the application. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} \mbox{\hyperlink{hw__interface_8h_a20b18780e7aac3439a983a8fa0464c03}{hw\+\_\+surface\+\_\+create}} (const \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} root, \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} size, bool force\+\_\+alpha)
+\begin{DoxyCompactList}\small\item\em Allocates an off-\/screen drawing surface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__interface_8h_a97d0cca63330b33140dd40288ae1022b}{hw\+\_\+surface\+\_\+free}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface)
+\begin{DoxyCompactList}\small\item\em Frees a surface allocated by \mbox{\hyperlink{hw__interface_8h_a20b18780e7aac3439a983a8fa0464c03}{hw\+\_\+surface\+\_\+create}}. This must be called on an unlocked surface (see \mbox{\hyperlink{hw__interface_8h_abf4681e5ead295ccf5b3df3ec8adab66}{hw\+\_\+surface\+\_\+unlock}}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface)
+\begin{DoxyCompactList}\small\item\em Gains exclusive access to a surface. Every call to this function must be matched by a call to \mbox{\hyperlink{hw__interface_8h_abf4681e5ead295ccf5b3df3ec8adab66}{hw\+\_\+surface\+\_\+unlock}}. The address of the pixel buffer may change while the surface is unlocked. Thus, \mbox{\hyperlink{hw__interface_8h_a8942e332c58a06edd0e639e6743532d1}{hw\+\_\+surface\+\_\+get\+\_\+buffer}} must called after each call to this function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__interface_8h_abf4681e5ead295ccf5b3df3ec8adab66}{hw\+\_\+surface\+\_\+unlock}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface)
+\begin{DoxyCompactList}\small\item\em Releases the exclusive access to a surface that was locked by \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__interface_8h_a6fa41442ed6ec84a120734f7c4fca9a3}{hw\+\_\+surface\+\_\+update\+\_\+rects}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, const \mbox{\hyperlink{structei__linked__rect__t}{ei\+\_\+linked\+\_\+rect\+\_\+t}} $\ast$rects)
+\begin{DoxyCompactList}\small\item\em Requests that a list of rectangular regions of the root surface be updated on screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__interface_8h_afd8e86abad6a3f16317d74e541d5034d}{hw\+\_\+surface\+\_\+get\+\_\+channel\+\_\+indices}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, int $\ast$ir, int $\ast$ig, int $\ast$ib, int $\ast$ia)
+\begin{DoxyCompactList}\small\item\em Returns the R, G, B, and Alpha channel indices of a surface. For example, if $\ast$ir is 2, this means that the red channel is stored at the address of the (4 bytes) pixel plus two. $\ast$ia may be -\/1, this means that the surface does not handle alpha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__interface_8h_a5bfe7b0284f7d6dad28541d49714faf7}{hw\+\_\+surface\+\_\+set\+\_\+origin}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, const \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} origin)
+\begin{DoxyCompactList}\small\item\em Sets the coordinates of the first pixel of the surface\textquotesingle{}s memory. By default, the coordinates of the first pixel are (0, 0). This can be changed by a call to this function. After a call to this function, the function \mbox{\hyperlink{hw__interface_8h_a8942e332c58a06edd0e639e6743532d1}{hw\+\_\+surface\+\_\+get\+\_\+buffer}} returns a different address than before. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{hw__interface_8h_a8942e332c58a06edd0e639e6743532d1}{hw\+\_\+surface\+\_\+get\+\_\+buffer}} (const \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the address of the pixel at coordinated (0, 0) of a surface. This is usually the first pixel of the surface\textquotesingle{}s memory. But after a call to \mbox{\hyperlink{hw__interface_8h_a5bfe7b0284f7d6dad28541d49714faf7}{hw\+\_\+surface\+\_\+set\+\_\+origin}}, the (0, 0) pixel may point within the surface memory or not. Pixels are ordered by horizontal lines, from top to bottom, and from left to right within lines. The pixel buffer of a surface may be moved when the surface is unlocked (\mbox{\hyperlink{hw__interface_8h_abf4681e5ead295ccf5b3df3ec8adab66}{hw\+\_\+surface\+\_\+unlock}}), you must thus call this function after each call to \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} \mbox{\hyperlink{hw__interface_8h_a7b92235ad70d5017c843c66affccdcd2}{hw\+\_\+surface\+\_\+get\+\_\+size}} (const \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface)
+\begin{DoxyCompactList}\small\item\em Returns the size of a surface. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} \mbox{\hyperlink{hw__interface_8h_a6ca488fe7d5e254ffa9d9e332ee76996}{hw\+\_\+surface\+\_\+get\+\_\+rect}} (const \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface)
+\begin{DoxyCompactList}\small\item\em Returns the rectangle of a surface (origin and size). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{hw__interface_8h_a99322fd87f28b843dbf722b41d9ffcfc}{hw\+\_\+surface\+\_\+has\+\_\+alpha}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface)
+\begin{DoxyCompactList}\small\item\em Tells if a surface manages transparency, i.\+e. if the surface has an alpha channel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}} \mbox{\hyperlink{hw__interface_8h_a48a92497e03818dbb284c192943928ea}{hw\+\_\+text\+\_\+font\+\_\+create}} (\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}} filename, \mbox{\hyperlink{ei__types_8h_a2438d9879374e1d4805231e9e407bbae}{ei\+\_\+fontstyle\+\_\+t}} style, int size)
+\begin{DoxyCompactList}\small\item\em Creates a font that can be used to render text. The font must be freed by calling \mbox{\hyperlink{hw__interface_8h_a2ac46d37db4c40adc10e3afb137f9f02}{hw\+\_\+text\+\_\+font\+\_\+free}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__interface_8h_a2ac46d37db4c40adc10e3afb137f9f02}{hw\+\_\+text\+\_\+font\+\_\+free}} (\mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}} font)
+\begin{DoxyCompactList}\small\item\em Frees a font created by \mbox{\hyperlink{hw__interface_8h_a48a92497e03818dbb284c192943928ea}{hw\+\_\+text\+\_\+font\+\_\+create}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__interface_8h_a5ad615725db9a7ae632bb371cc2846b5}{hw\+\_\+text\+\_\+compute\+\_\+size}} (\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}} \mbox{\hyperlink{structtext}{text}}, const \mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}} font, int $\ast$width, int $\ast$height)
+\begin{DoxyCompactList}\small\item\em Computes the size of a text surface given the font and the text. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} \mbox{\hyperlink{hw__interface_8h_a6371770302e78d3651c792ed87468e8a}{hw\+\_\+text\+\_\+create\+\_\+surface}} (\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}} \mbox{\hyperlink{structtext}{text}}, const \mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}} font, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} color)
+\begin{DoxyCompactList}\small\item\em Creates a surface containing a text. The size of the created surface is just big enough to contain the text. The caller is responsible to release this surface (\mbox{\hyperlink{hw__interface_8h_a97d0cca63330b33140dd40288ae1022b}{hw\+\_\+surface\+\_\+free}}) when it is no more needed. WARNING! transparency must be handled when using the returned surface, as explained in the return parameter below. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} \mbox{\hyperlink{hw__interface_8h_aeed5af6ddb524c645fb276649a83f462}{hw\+\_\+image\+\_\+load}} (\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}} filename, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} channels)
+\begin{DoxyCompactList}\small\item\em Creates a surface and loads into it an image read from a file. The caller is responsible to release this surface (\mbox{\hyperlink{hw__interface_8h_a97d0cca63330b33140dd40288ae1022b}{hw\+\_\+surface\+\_\+free}}) when it is no more needed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__interface_8h_a512ddccf5f945ac12df4b5e226b2a974}{hw\+\_\+event\+\_\+wait\+\_\+next}} (struct \mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}} $\ast$event)
+\begin{DoxyCompactList}\small\item\em Lets this process sleep until a new event is available. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{hw__interface_8h_a02874bbb73186eb6036b15297a12aa7e}{hw\+\_\+event\+\_\+post\+\_\+app}} (\mbox{\hyperlink{ei__types_8h_a851d40b095b5bf6f3b8733f0a09c820b}{ei\+\_\+user\+\_\+param\+\_\+t}} user\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Put an application-\/generated event on the event queue. This will cause \mbox{\hyperlink{hw__interface_8h_a512ddccf5f945ac12df4b5e226b2a974}{hw\+\_\+event\+\_\+wait\+\_\+next}} to wake. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__interface_8h_ad164e1688cc1abf4f5f211853048d63d}{hw\+\_\+event\+\_\+schedule\+\_\+app}} (int ms\+\_\+delay, \mbox{\hyperlink{ei__types_8h_a851d40b095b5bf6f3b8733f0a09c820b}{ei\+\_\+user\+\_\+param\+\_\+t}} user\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Schedule an application-\/generated event to be posted after some amount of time. This will cause \mbox{\hyperlink{hw__interface_8h_a512ddccf5f945ac12df4b5e226b2a974}{hw\+\_\+event\+\_\+wait\+\_\+next}} to wake after this amount of time. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{hw__interface_8h_a043d1f7a4ca94cc0b7234fae2b0f2ace}{hw\+\_\+now}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the current time, in seconds, from some arbitrary origin. Can be used to measure elapsed time between to calls. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Low level interface with the graphic hardware. This interface is based on the SDL library. 
+
+Created by François Bérard on 30.\+12.\+11. Copyright 2011 Ensimag. All rights reserved. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}\label{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}} 
+\index{hw\_interface.h@{hw\_interface.h}!ei\_surface\_t@{ei\_surface\_t}}
+\index{ei\_surface\_t@{ei\_surface\_t}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{ei\_surface\_t}{ei\_surface\_t}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}
+
+
+
+Surface hidden type. A surface represents a 2 dimensional array of pixels where drawing can be done. What is visible on screen is represented by the surface created by \mbox{\hyperlink{hw__interface_8h_aa012ef4374709eeb3fe5af60324e8dd7}{hw\+\_\+create\+\_\+window}}. Other \char`\"{}offscreen\char`\"{} surfaces can be created by \mbox{\hyperlink{hw__interface_8h_a20b18780e7aac3439a983a8fa0464c03}{hw\+\_\+surface\+\_\+create}}. Surfaces containing text and images are created by \mbox{\hyperlink{hw__interface_8h_a6371770302e78d3651c792ed87468e8a}{hw\+\_\+text\+\_\+create\+\_\+surface}} and \mbox{\hyperlink{hw__interface_8h_aeed5af6ddb524c645fb276649a83f462}{hw\+\_\+image\+\_\+load}}. 
+
+
+
+Definition at line 28 of file hw\+\_\+interface.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hw__interface_8h_aa012ef4374709eeb3fe5af60324e8dd7}\label{hw__interface_8h_aa012ef4374709eeb3fe5af60324e8dd7}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_create\_window@{hw\_create\_window}}
+\index{hw\_create\_window@{hw\_create\_window}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_create\_window()}{hw\_create\_window()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} hw\+\_\+create\+\_\+window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}}}]{size,  }\item[{bool}]{full\+Screen }\end{DoxyParamCaption})}
+
+
+
+Opens the main graphical window of the application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Number of horizontal and vertical pixels. \\
+\hline
+{\em full\+Screen} & If true, opens the window in full screen. Otherwise opens a floating window.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The unlocked drawing surface (see \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}}). This surface should not be freed by calling hw\+\_\+surface\+\_\+free\+: it is freed when releasing access to the low-\/level services by calling \mbox{\hyperlink{hw__interface_8h_abe4354544a70c108fe5d8f17c69a2874}{hw\+\_\+quit}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hw__interface_8h_a02874bbb73186eb6036b15297a12aa7e}\label{hw__interface_8h_a02874bbb73186eb6036b15297a12aa7e}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_event\_post\_app@{hw\_event\_post\_app}}
+\index{hw\_event\_post\_app@{hw\_event\_post\_app}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_event\_post\_app()}{hw\_event\_post\_app()}}
+{\footnotesize\ttfamily int hw\+\_\+event\+\_\+post\+\_\+app (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__types_8h_a851d40b095b5bf6f3b8733f0a09c820b}{ei\+\_\+user\+\_\+param\+\_\+t}}}]{user\+\_\+param }\end{DoxyParamCaption})}
+
+
+
+Put an application-\/generated event on the event queue. This will cause \mbox{\hyperlink{hw__interface_8h_a512ddccf5f945ac12df4b5e226b2a974}{hw\+\_\+event\+\_\+wait\+\_\+next}} to wake. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+\_\+param} & The user parameter that will be retrievable in the event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hw__interface_8h_ad164e1688cc1abf4f5f211853048d63d}\label{hw__interface_8h_ad164e1688cc1abf4f5f211853048d63d}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_event\_schedule\_app@{hw\_event\_schedule\_app}}
+\index{hw\_event\_schedule\_app@{hw\_event\_schedule\_app}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_event\_schedule\_app()}{hw\_event\_schedule\_app()}}
+{\footnotesize\ttfamily void hw\+\_\+event\+\_\+schedule\+\_\+app (\begin{DoxyParamCaption}\item[{int}]{ms\+\_\+delay,  }\item[{\mbox{\hyperlink{ei__types_8h_a851d40b095b5bf6f3b8733f0a09c820b}{ei\+\_\+user\+\_\+param\+\_\+t}}}]{user\+\_\+param }\end{DoxyParamCaption})}
+
+
+
+Schedule an application-\/generated event to be posted after some amount of time. This will cause \mbox{\hyperlink{hw__interface_8h_a512ddccf5f945ac12df4b5e226b2a974}{hw\+\_\+event\+\_\+wait\+\_\+next}} to wake after this amount of time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms\+\_\+delay} & The amount of time, in milliseconds, to wait before the event is posted in the event queue. \\
+\hline
+{\em user\+\_\+param} & The user parameter that will be retrievable in the event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hw__interface_8h_a512ddccf5f945ac12df4b5e226b2a974}\label{hw__interface_8h_a512ddccf5f945ac12df4b5e226b2a974}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_event\_wait\_next@{hw\_event\_wait\_next}}
+\index{hw\_event\_wait\_next@{hw\_event\_wait\_next}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_event\_wait\_next()}{hw\_event\_wait\_next()}}
+{\footnotesize\ttfamily void hw\+\_\+event\+\_\+wait\+\_\+next (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}} $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Lets this process sleep until a new event is available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Where to store the new event. The structure must be allocated by the caller. On return, the structure is filled with information about the new event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hw__interface_8h_aeed5af6ddb524c645fb276649a83f462}\label{hw__interface_8h_aeed5af6ddb524c645fb276649a83f462}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_image\_load@{hw\_image\_load}}
+\index{hw\_image\_load@{hw\_image\_load}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_image\_load()}{hw\_image\_load()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} hw\+\_\+image\+\_\+load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}}}]{filename,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{channels }\end{DoxyParamCaption})}
+
+
+
+Creates a surface and loads into it an image read from a file. The caller is responsible to release this surface (\mbox{\hyperlink{hw__interface_8h_a97d0cca63330b33140dd40288ae1022b}{hw\+\_\+surface\+\_\+free}}) when it is no more needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file containing the image. The file can be .png, .tiff, .jpg, etc. \\
+\hline
+{\em channels} & A surface to define channel ordering\+: the newly created surface that is returned by this function will have the same channel order as this surface.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new unlocked surface containing the image. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hw__interface_8h_ae58df14f30461cb37e8607aca5522846}\label{hw__interface_8h_ae58df14f30461cb37e8607aca5522846}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_init@{hw\_init}}
+\index{hw\_init@{hw\_init}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_init()}{hw\_init()}}
+{\footnotesize\ttfamily void hw\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialises access to the low-\/level operating system services. {\itshape Must} be called (only once) before any other calls to the hardware interface. 
+
+\mbox{\Hypertarget{hw__interface_8h_a043d1f7a4ca94cc0b7234fae2b0f2ace}\label{hw__interface_8h_a043d1f7a4ca94cc0b7234fae2b0f2ace}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_now@{hw\_now}}
+\index{hw\_now@{hw\_now}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_now()}{hw\_now()}}
+{\footnotesize\ttfamily double hw\+\_\+now (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current time, in seconds, from some arbitrary origin. Can be used to measure elapsed time between to calls. 
+
+\begin{DoxyReturn}{Returns}
+The current time, in seconds. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hw__interface_8h_abe4354544a70c108fe5d8f17c69a2874}\label{hw__interface_8h_abe4354544a70c108fe5d8f17c69a2874}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_quit@{hw\_quit}}
+\index{hw\_quit@{hw\_quit}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_quit()}{hw\_quit()}}
+{\footnotesize\ttfamily void hw\+\_\+quit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Closes the access to the low-\/level operating system services and releases resources. 
+
+\mbox{\Hypertarget{hw__interface_8h_a20b18780e7aac3439a983a8fa0464c03}\label{hw__interface_8h_a20b18780e7aac3439a983a8fa0464c03}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_surface\_create@{hw\_surface\_create}}
+\index{hw\_surface\_create@{hw\_surface\_create}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_surface\_create()}{hw\_surface\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} hw\+\_\+surface\+\_\+create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{root,  }\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}}}]{size,  }\item[{bool}]{force\+\_\+alpha }\end{DoxyParamCaption})}
+
+
+
+Allocates an off-\/screen drawing surface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & The root window which channel indices will be used. This insures that the offscreen uses the same channel indices (Red, Green, Blue, Alpha) as the root surface. \\
+\hline
+{\em size} & Number of horizontal and vertical pixels. \\
+\hline
+{\em force\+\_\+alpha} & If true, then the returned surface will use an alpha channel regardless of root having an alpha channel or not.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The unlocked drawing surface (see \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}}). The surface should be freed by calling \mbox{\hyperlink{hw__interface_8h_a97d0cca63330b33140dd40288ae1022b}{hw\+\_\+surface\+\_\+free}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hw__interface_8h_a97d0cca63330b33140dd40288ae1022b}\label{hw__interface_8h_a97d0cca63330b33140dd40288ae1022b}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_surface\_free@{hw\_surface\_free}}
+\index{hw\_surface\_free@{hw\_surface\_free}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_surface\_free()}{hw\_surface\_free()}}
+{\footnotesize\ttfamily void hw\+\_\+surface\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface }\end{DoxyParamCaption})}
+
+
+
+Frees a surface allocated by \mbox{\hyperlink{hw__interface_8h_a20b18780e7aac3439a983a8fa0464c03}{hw\+\_\+surface\+\_\+create}}. This must be called on an unlocked surface (see \mbox{\hyperlink{hw__interface_8h_abf4681e5ead295ccf5b3df3ec8adab66}{hw\+\_\+surface\+\_\+unlock}}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface to be freed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hw__interface_8h_a8942e332c58a06edd0e639e6743532d1}\label{hw__interface_8h_a8942e332c58a06edd0e639e6743532d1}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_surface\_get\_buffer@{hw\_surface\_get\_buffer}}
+\index{hw\_surface\_get\_buffer@{hw\_surface\_get\_buffer}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_surface\_get\_buffer()}{hw\_surface\_get\_buffer()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ hw\+\_\+surface\+\_\+get\+\_\+buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the address of the pixel at coordinated (0, 0) of a surface. This is usually the first pixel of the surface\textquotesingle{}s memory. But after a call to \mbox{\hyperlink{hw__interface_8h_a5bfe7b0284f7d6dad28541d49714faf7}{hw\+\_\+surface\+\_\+set\+\_\+origin}}, the (0, 0) pixel may point within the surface memory or not. Pixels are ordered by horizontal lines, from top to bottom, and from left to right within lines. The pixel buffer of a surface may be moved when the surface is unlocked (\mbox{\hyperlink{hw__interface_8h_abf4681e5ead295ccf5b3df3ec8adab66}{hw\+\_\+surface\+\_\+unlock}}), you must thus call this function after each call to \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface from which the pixel address is returned. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hw__interface_8h_afd8e86abad6a3f16317d74e541d5034d}\label{hw__interface_8h_afd8e86abad6a3f16317d74e541d5034d}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_surface\_get\_channel\_indices@{hw\_surface\_get\_channel\_indices}}
+\index{hw\_surface\_get\_channel\_indices@{hw\_surface\_get\_channel\_indices}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_surface\_get\_channel\_indices()}{hw\_surface\_get\_channel\_indices()}}
+{\footnotesize\ttfamily void hw\+\_\+surface\+\_\+get\+\_\+channel\+\_\+indices (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{int $\ast$}]{ir,  }\item[{int $\ast$}]{ig,  }\item[{int $\ast$}]{ib,  }\item[{int $\ast$}]{ia }\end{DoxyParamCaption})}
+
+
+
+Returns the R, G, B, and Alpha channel indices of a surface. For example, if $\ast$ir is 2, this means that the red channel is stored at the address of the (4 bytes) pixel plus two. $\ast$ia may be -\/1, this means that the surface does not handle alpha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface. \\
+\hline
+{\em ir,ig,ib,ia} & Where to store the resulting indices. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hw__interface_8h_a6ca488fe7d5e254ffa9d9e332ee76996}\label{hw__interface_8h_a6ca488fe7d5e254ffa9d9e332ee76996}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_surface\_get\_rect@{hw\_surface\_get\_rect}}
+\index{hw\_surface\_get\_rect@{hw\_surface\_get\_rect}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_surface\_get\_rect()}{hw\_surface\_get\_rect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} hw\+\_\+surface\+\_\+get\+\_\+rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface }\end{DoxyParamCaption})}
+
+
+
+Returns the rectangle of a surface (origin and size). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface which rectangle is requested.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rectangle of the surface. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hw__interface_8h_a7b92235ad70d5017c843c66affccdcd2}\label{hw__interface_8h_a7b92235ad70d5017c843c66affccdcd2}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_surface\_get\_size@{hw\_surface\_get\_size}}
+\index{hw\_surface\_get\_size@{hw\_surface\_get\_size}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_surface\_get\_size()}{hw\_surface\_get\_size()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} hw\+\_\+surface\+\_\+get\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface }\end{DoxyParamCaption})}
+
+
+
+Returns the size of a surface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface which size is requested.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of the surface. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hw__interface_8h_a99322fd87f28b843dbf722b41d9ffcfc}\label{hw__interface_8h_a99322fd87f28b843dbf722b41d9ffcfc}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_surface\_has\_alpha@{hw\_surface\_has\_alpha}}
+\index{hw\_surface\_has\_alpha@{hw\_surface\_has\_alpha}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_surface\_has\_alpha()}{hw\_surface\_has\_alpha()}}
+{\footnotesize\ttfamily bool hw\+\_\+surface\+\_\+has\+\_\+alpha (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface }\end{DoxyParamCaption})}
+
+
+
+Tells if a surface manages transparency, i.\+e. if the surface has an alpha channel. 
+
+\begin{DoxyReturn}{Returns}
+A boolean\+: true means that the surface has an alpha (transparency) channel, false means it does not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}\label{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_surface\_lock@{hw\_surface\_lock}}
+\index{hw\_surface\_lock@{hw\_surface\_lock}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_surface\_lock()}{hw\_surface\_lock()}}
+{\footnotesize\ttfamily void hw\+\_\+surface\+\_\+lock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface }\end{DoxyParamCaption})}
+
+
+
+Gains exclusive access to a surface. Every call to this function must be matched by a call to \mbox{\hyperlink{hw__interface_8h_abf4681e5ead295ccf5b3df3ec8adab66}{hw\+\_\+surface\+\_\+unlock}}. The address of the pixel buffer may change while the surface is unlocked. Thus, \mbox{\hyperlink{hw__interface_8h_a8942e332c58a06edd0e639e6743532d1}{hw\+\_\+surface\+\_\+get\+\_\+buffer}} must called after each call to this function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface to lock. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hw__interface_8h_a5bfe7b0284f7d6dad28541d49714faf7}\label{hw__interface_8h_a5bfe7b0284f7d6dad28541d49714faf7}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_surface\_set\_origin@{hw\_surface\_set\_origin}}
+\index{hw\_surface\_set\_origin@{hw\_surface\_set\_origin}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_surface\_set\_origin()}{hw\_surface\_set\_origin()}}
+{\footnotesize\ttfamily void hw\+\_\+surface\+\_\+set\+\_\+origin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{const \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}}}]{origin }\end{DoxyParamCaption})}
+
+
+
+Sets the coordinates of the first pixel of the surface\textquotesingle{}s memory. By default, the coordinates of the first pixel are (0, 0). This can be changed by a call to this function. After a call to this function, the function \mbox{\hyperlink{hw__interface_8h_a8942e332c58a06edd0e639e6743532d1}{hw\+\_\+surface\+\_\+get\+\_\+buffer}} returns a different address than before. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface which origin must be changed. \\
+\hline
+{\em origin} & The new coordinates of the first pixel of the surface. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hw__interface_8h_abf4681e5ead295ccf5b3df3ec8adab66}\label{hw__interface_8h_abf4681e5ead295ccf5b3df3ec8adab66}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_surface\_unlock@{hw\_surface\_unlock}}
+\index{hw\_surface\_unlock@{hw\_surface\_unlock}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_surface\_unlock()}{hw\_surface\_unlock()}}
+{\footnotesize\ttfamily void hw\+\_\+surface\+\_\+unlock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface }\end{DoxyParamCaption})}
+
+
+
+Releases the exclusive access to a surface that was locked by \mbox{\hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface to unlock. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hw__interface_8h_a6fa41442ed6ec84a120734f7c4fca9a3}\label{hw__interface_8h_a6fa41442ed6ec84a120734f7c4fca9a3}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_surface\_update\_rects@{hw\_surface\_update\_rects}}
+\index{hw\_surface\_update\_rects@{hw\_surface\_update\_rects}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_surface\_update\_rects()}{hw\_surface\_update\_rects()}}
+{\footnotesize\ttfamily void hw\+\_\+surface\+\_\+update\+\_\+rects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{const \mbox{\hyperlink{structei__linked__rect__t}{ei\+\_\+linked\+\_\+rect\+\_\+t}} $\ast$}]{rects }\end{DoxyParamCaption})}
+
+
+
+Requests that a list of rectangular regions of the root surface be updated on screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface returned by \mbox{\hyperlink{hw__interface_8h_aa012ef4374709eeb3fe5af60324e8dd7}{hw\+\_\+create\+\_\+window}}. This function can only be called on {\itshape unlocked surfaces} (\mbox{\hyperlink{hw__interface_8h_abf4681e5ead295ccf5b3df3ec8adab66}{hw\+\_\+surface\+\_\+unlock}}). \\
+\hline
+{\em rects} & The list of rectangle to be updated on screen. If NULL, them the entire surface is updated. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hw__interface_8h_a5ad615725db9a7ae632bb371cc2846b5}\label{hw__interface_8h_a5ad615725db9a7ae632bb371cc2846b5}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_text\_compute\_size@{hw\_text\_compute\_size}}
+\index{hw\_text\_compute\_size@{hw\_text\_compute\_size}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_text\_compute\_size()}{hw\_text\_compute\_size()}}
+{\footnotesize\ttfamily void hw\+\_\+text\+\_\+compute\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}}}]{text,  }\item[{const \mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}}}]{font,  }\item[{int $\ast$}]{width,  }\item[{int $\ast$}]{height }\end{DoxyParamCaption})}
+
+
+
+Computes the size of a text surface given the font and the text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The string of the message. \\
+\hline
+{\em font} & The font used to render the text. \\
+\hline
+{\em width,height} & Addresses where to store the computed width and height of the text surface. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hw__interface_8h_a6371770302e78d3651c792ed87468e8a}\label{hw__interface_8h_a6371770302e78d3651c792ed87468e8a}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_text\_create\_surface@{hw\_text\_create\_surface}}
+\index{hw\_text\_create\_surface@{hw\_text\_create\_surface}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_text\_create\_surface()}{hw\_text\_create\_surface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} hw\+\_\+text\+\_\+create\+\_\+surface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}}}]{text,  }\item[{const \mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}}}]{font,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}}]{color }\end{DoxyParamCaption})}
+
+
+
+Creates a surface containing a text. The size of the created surface is just big enough to contain the text. The caller is responsible to release this surface (\mbox{\hyperlink{hw__interface_8h_a97d0cca63330b33140dd40288ae1022b}{hw\+\_\+surface\+\_\+free}}) when it is no more needed. WARNING! transparency must be handled when using the returned surface, as explained in the return parameter below. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The string of the message. \\
+\hline
+{\em font} & The font used to render the text. \\
+\hline
+{\em color} & The text color. The alpha parameter is not used. However, the text is rendered with alpha blending to smooth the curves of the letters (anti-\/aliasing).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A newly created unlocked surface containing an anti-\/aliased rendering of the text. The anti-\/aliasing is implemented with the alpha channel of the surface\+: all pixels have the same color. Background pixels are transparent, interior pixels are opaque, pixels at letters\textquotesingle{} boundary have some transparency. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hw__interface_8h_a48a92497e03818dbb284c192943928ea}\label{hw__interface_8h_a48a92497e03818dbb284c192943928ea}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_text\_font\_create@{hw\_text\_font\_create}}
+\index{hw\_text\_font\_create@{hw\_text\_font\_create}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_text\_font\_create()}{hw\_text\_font\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}} hw\+\_\+text\+\_\+font\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}}}]{filename,  }\item[{\mbox{\hyperlink{ei__types_8h_a2438d9879374e1d4805231e9e407bbae}{ei\+\_\+fontstyle\+\_\+t}}}]{style,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Creates a font that can be used to render text. The font must be freed by calling \mbox{\hyperlink{hw__interface_8h_a2ac46d37db4c40adc10e3afb137f9f02}{hw\+\_\+text\+\_\+font\+\_\+free}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the file containing the ttf font definition. Can be relative. \\
+\hline
+{\em style} & The style of the font (normal, bold, ...). \\
+\hline
+{\em size} & The size of the characters in pixels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The font. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hw__interface_8h_a2ac46d37db4c40adc10e3afb137f9f02}\label{hw__interface_8h_a2ac46d37db4c40adc10e3afb137f9f02}} 
+\index{hw\_interface.h@{hw\_interface.h}!hw\_text\_font\_free@{hw\_text\_font\_free}}
+\index{hw\_text\_font\_free@{hw\_text\_font\_free}!hw\_interface.h@{hw\_interface.h}}
+\doxysubsubsection{\texorpdfstring{hw\_text\_font\_free()}{hw\_text\_font\_free()}}
+{\footnotesize\ttfamily void hw\+\_\+text\+\_\+font\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}}}]{font }\end{DoxyParamCaption})}
+
+
+
+Frees a font created by \mbox{\hyperlink{hw__interface_8h_a48a92497e03818dbb284c192943928ea}{hw\+\_\+text\+\_\+font\+\_\+create}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & The font to be freed. \\
+\hline
+\end{DoxyParams}

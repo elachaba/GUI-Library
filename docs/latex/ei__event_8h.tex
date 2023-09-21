@@ -1,0 +1,360 @@
+\hypertarget{ei__event_8h}{}\doxysection{ei\+\_\+event.\+h File Reference}
+\label{ei__event_8h}\index{ei\_event.h@{ei\_event.h}}
+
+
+Allows the binding and unbinding of callbacks to events.  
+
+
+{\ttfamily \#include \char`\"{}ei\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+widget.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structei__key__event__t}{ei\+\_\+key\+\_\+event\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em The event parameter for keyboard-\/related event types. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structei__mouse__event__t}{ei\+\_\+mouse\+\_\+event\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em The event parameter for mouse-\/related event types. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structei__app__event__t}{ei\+\_\+app\+\_\+event\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em The event parameter for application defined event types. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Describes an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{ei__event_8h_abcdd2ef0f39179463f17a06be9bdf949}{ei\+\_\+modifier\+\_\+mask\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em A bitfield indicating which of the modifier keys are currently pressed. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}} \mbox{\hyperlink{ei__event_8h_ad165555c07f85c77568f77d78d472067}{ei\+\_\+event\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Describes an event. \end{DoxyCompactList}\item 
+typedef bool($\ast$ \mbox{\hyperlink{ei__event_8h_a60fc3d9fa221c2b515e5a7044b2c7452}{ei\+\_\+default\+\_\+handle\+\_\+func\+\_\+t}}) (\mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}} $\ast$event)
+\begin{DoxyCompactList}\small\item\em A function that is called in response to an event that has not been processed by any widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{ei__event_8h_a132dde064150d861ad24e9d839cbe007}{ei\+\_\+eventtype\+\_\+t}} \{ \newline
+\mbox{\hyperlink{ei__event_8h_a132dde064150d861ad24e9d839cbe007a533f41177236ec3b01d8690765604d6c}{ei\+\_\+ev\+\_\+none}} = 0
+, \mbox{\hyperlink{ei__event_8h_a132dde064150d861ad24e9d839cbe007a429daab2361823f76417320fc66338d4}{ei\+\_\+ev\+\_\+app}}
+, \mbox{\hyperlink{ei__event_8h_a132dde064150d861ad24e9d839cbe007ab6f7c08dec609840c830aba7ef074cc6}{ei\+\_\+ev\+\_\+close}}
+, \mbox{\hyperlink{ei__event_8h_a132dde064150d861ad24e9d839cbe007ac70117ea8d4e67148cca00c51c5c78b0}{ei\+\_\+ev\+\_\+exposed}}
+, \newline
+\mbox{\hyperlink{ei__event_8h_a132dde064150d861ad24e9d839cbe007aa5fcf0b8e2fdda85acdde99bdd089cd3}{ei\+\_\+ev\+\_\+keydown}}
+, \mbox{\hyperlink{ei__event_8h_a132dde064150d861ad24e9d839cbe007af556498fd29604b3770b8fc2969cd3f1}{ei\+\_\+ev\+\_\+keyup}}
+, \mbox{\hyperlink{ei__event_8h_a132dde064150d861ad24e9d839cbe007ae75b2b6a8423d54c46a418d222e0af66}{ei\+\_\+ev\+\_\+mouse\+\_\+buttondown}}
+, \mbox{\hyperlink{ei__event_8h_a132dde064150d861ad24e9d839cbe007aabd9931e36fb3628cc044a2aafc2c7e4}{ei\+\_\+ev\+\_\+mouse\+\_\+buttonup}}
+, \newline
+\mbox{\hyperlink{ei__event_8h_a132dde064150d861ad24e9d839cbe007a5673338c91142f9c26826d1b52326b19}{ei\+\_\+ev\+\_\+mouse\+\_\+move}}
+, \mbox{\hyperlink{ei__event_8h_a132dde064150d861ad24e9d839cbe007a10fa93b6be568ea7175368c025506f6f}{ei\+\_\+ev\+\_\+last}}
+ \}
+\begin{DoxyCompactList}\small\item\em The types of events. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{ei__event_8h_a727655addb1c37c210f583964a1ac2b6}{ei\+\_\+modifier\+\_\+key\+\_\+t}} \{ \newline
+\mbox{\hyperlink{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a7ec55b1755862816568e34f25c4ae0e6}{ei\+\_\+mod\+\_\+shift\+\_\+left}} = 0
+, \mbox{\hyperlink{ei__event_8h_a727655addb1c37c210f583964a1ac2b6aaf7a4f55da3d87ff588178b179d50a48}{ei\+\_\+mod\+\_\+alt\+\_\+left}}
+, \mbox{\hyperlink{ei__event_8h_a727655addb1c37c210f583964a1ac2b6aabb5562f86439badd3cd94dc4e328640}{ei\+\_\+mod\+\_\+meta\+\_\+left}}
+, \mbox{\hyperlink{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a7a84e4a648393506eaa8016128eb23f4}{ei\+\_\+mod\+\_\+ctrl\+\_\+left}}
+, \newline
+\mbox{\hyperlink{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a4b4e882f35af78c685805f13d92e4998}{ei\+\_\+mod\+\_\+shift\+\_\+right}}
+, \mbox{\hyperlink{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a6df62e919d725e2d79168e159a861d2b}{ei\+\_\+mod\+\_\+alt\+\_\+right}}
+, \mbox{\hyperlink{ei__event_8h_a727655addb1c37c210f583964a1ac2b6aa712981edbe0bac0bfc5c7bfaf2917c6}{ei\+\_\+mod\+\_\+meta\+\_\+right}}
+, \mbox{\hyperlink{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a0df8d04fc812e40b7edcb471fdffc8e2}{ei\+\_\+mod\+\_\+ctrl\+\_\+right}}
+ \}
+\begin{DoxyCompactList}\small\item\em The modifier keys (shift, alt, etc.) \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bce}{ei\+\_\+mouse\+\_\+button\+\_\+t}} \{ \mbox{\hyperlink{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bceac619c903d78e8f1594e622880d7b0397}{ei\+\_\+mouse\+\_\+button\+\_\+left}}
+, \mbox{\hyperlink{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bcea9c5aa04c44f6822b9eb8bf1668c11974}{ei\+\_\+mouse\+\_\+button\+\_\+middle}}
+, \mbox{\hyperlink{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bcea293615d9a6e192ab27cf9b8839aac63f}{ei\+\_\+mouse\+\_\+button\+\_\+right}}
+ \}
+\begin{DoxyCompactList}\small\item\em The various mouse buttons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{ei__event_8h_ad9a7ed12bdf4c904b1ad7d5c8bf17783}{ei\+\_\+has\+\_\+modifier}} (\mbox{\hyperlink{ei__event_8h_abcdd2ef0f39179463f17a06be9bdf949}{ei\+\_\+modifier\+\_\+mask\+\_\+t}} modifier\+\_\+mask, \mbox{\hyperlink{ei__event_8h_a727655addb1c37c210f583964a1ac2b6}{ei\+\_\+modifier\+\_\+key\+\_\+t}} modifier)
+\begin{DoxyCompactList}\small\item\em Tests is a modifier key was pressed at the time of an event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__event_8h_a939d0278da85e35f45e58326d1182b00}{ei\+\_\+event\+\_\+set\+\_\+active\+\_\+widget}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{ei__event_8h_a929e765ce56f1902f9873fb5bc3eec5e}{ei\+\_\+event\+\_\+get\+\_\+active\+\_\+widget}} (void)
+\item 
+void \mbox{\hyperlink{ei__event_8h_ab6fbe051400528f4a8201550f2817403}{ei\+\_\+event\+\_\+set\+\_\+default\+\_\+handle\+\_\+func}} (\mbox{\hyperlink{ei__event_8h_a60fc3d9fa221c2b515e5a7044b2c7452}{ei\+\_\+default\+\_\+handle\+\_\+func\+\_\+t}} func)
+\item 
+\mbox{\hyperlink{ei__event_8h_a60fc3d9fa221c2b515e5a7044b2c7452}{ei\+\_\+default\+\_\+handle\+\_\+func\+\_\+t}} \mbox{\hyperlink{ei__event_8h_a6e8c3b68b3e4c4f55a1d06cd9e0dcfb5}{ei\+\_\+event\+\_\+get\+\_\+default\+\_\+handle\+\_\+func}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Allows the binding and unbinding of callbacks to events. 
+
+\begin{DoxyAuthor}{Author}
+Created by François Bérard on 30.\+12.\+11. Copyright 2011 Ensimag. All rights reserved. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ei__event_8h_a60fc3d9fa221c2b515e5a7044b2c7452}\label{ei__event_8h_a60fc3d9fa221c2b515e5a7044b2c7452}} 
+\index{ei\_event.h@{ei\_event.h}!ei\_default\_handle\_func\_t@{ei\_default\_handle\_func\_t}}
+\index{ei\_default\_handle\_func\_t@{ei\_default\_handle\_func\_t}!ei\_event.h@{ei\_event.h}}
+\doxysubsubsection{\texorpdfstring{ei\_default\_handle\_func\_t}{ei\_default\_handle\_func\_t}}
+{\footnotesize\ttfamily typedef bool($\ast$ ei\+\_\+default\+\_\+handle\+\_\+func\+\_\+t) (\mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}} $\ast$event)}
+
+
+
+A function that is called in response to an event that has not been processed by any widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The event containing all its parameters (type, etc.)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the function handled the event, false otherwise, in this case the event is dismissed. 
+\end{DoxyReturn}
+
+
+Definition at line 139 of file ei\+\_\+event.\+h.
+
+\mbox{\Hypertarget{ei__event_8h_ad165555c07f85c77568f77d78d472067}\label{ei__event_8h_ad165555c07f85c77568f77d78d472067}} 
+\index{ei\_event.h@{ei\_event.h}!ei\_event\_t@{ei\_event\_t}}
+\index{ei\_event\_t@{ei\_event\_t}!ei\_event.h@{ei\_event.h}}
+\doxysubsubsection{\texorpdfstring{ei\_event\_t}{ei\_event\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}} \mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}}}
+
+
+
+Describes an event. 
+
+\mbox{\Hypertarget{ei__event_8h_abcdd2ef0f39179463f17a06be9bdf949}\label{ei__event_8h_abcdd2ef0f39179463f17a06be9bdf949}} 
+\index{ei\_event.h@{ei\_event.h}!ei\_modifier\_mask\_t@{ei\_modifier\_mask\_t}}
+\index{ei\_modifier\_mask\_t@{ei\_modifier\_mask\_t}!ei\_event.h@{ei\_event.h}}
+\doxysubsubsection{\texorpdfstring{ei\_modifier\_mask\_t}{ei\_modifier\_mask\_t}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{ei__event_8h_abcdd2ef0f39179463f17a06be9bdf949}{ei\+\_\+modifier\+\_\+mask\+\_\+t}}}
+
+
+
+A bitfield indicating which of the modifier keys are currently pressed. 
+
+
+
+Definition at line 53 of file ei\+\_\+event.\+h.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{ei__event_8h_a132dde064150d861ad24e9d839cbe007}\label{ei__event_8h_a132dde064150d861ad24e9d839cbe007}} 
+\index{ei\_event.h@{ei\_event.h}!ei\_eventtype\_t@{ei\_eventtype\_t}}
+\index{ei\_eventtype\_t@{ei\_eventtype\_t}!ei\_event.h@{ei\_event.h}}
+\doxysubsubsection{\texorpdfstring{ei\_eventtype\_t}{ei\_eventtype\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ei__event_8h_a132dde064150d861ad24e9d839cbe007}{ei\+\_\+eventtype\+\_\+t}}}
+
+
+
+The types of events. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_ev\_none@{ei\_ev\_none}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_ev\_none@{ei\_ev\_none}}}\mbox{\Hypertarget{ei__event_8h_a132dde064150d861ad24e9d839cbe007a533f41177236ec3b01d8690765604d6c}\label{ei__event_8h_a132dde064150d861ad24e9d839cbe007a533f41177236ec3b01d8690765604d6c}} 
+ei\+\_\+ev\+\_\+none&No event, used to initialize the structure. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_ev\_app@{ei\_ev\_app}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_ev\_app@{ei\_ev\_app}}}\mbox{\Hypertarget{ei__event_8h_a132dde064150d861ad24e9d839cbe007a429daab2361823f76417320fc66338d4}\label{ei__event_8h_a132dde064150d861ad24e9d839cbe007a429daab2361823f76417320fc66338d4}} 
+ei\+\_\+ev\+\_\+app&An application event, created by \mbox{\hyperlink{hw__interface_8h_a02874bbb73186eb6036b15297a12aa7e}{hw\+\_\+event\+\_\+post\+\_\+app}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_ev\_close@{ei\_ev\_close}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_ev\_close@{ei\_ev\_close}}}\mbox{\Hypertarget{ei__event_8h_a132dde064150d861ad24e9d839cbe007ab6f7c08dec609840c830aba7ef074cc6}\label{ei__event_8h_a132dde064150d861ad24e9d839cbe007ab6f7c08dec609840c830aba7ef074cc6}} 
+ei\+\_\+ev\+\_\+close&The user requested to close the application\textquotesingle{}s window. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_ev\_exposed@{ei\_ev\_exposed}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_ev\_exposed@{ei\_ev\_exposed}}}\mbox{\Hypertarget{ei__event_8h_a132dde064150d861ad24e9d839cbe007ac70117ea8d4e67148cca00c51c5c78b0}\label{ei__event_8h_a132dde064150d861ad24e9d839cbe007ac70117ea8d4e67148cca00c51c5c78b0}} 
+ei\+\_\+ev\+\_\+exposed&The application\textquotesingle{}s window has been exposed and should be redrawn. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_ev\_keydown@{ei\_ev\_keydown}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_ev\_keydown@{ei\_ev\_keydown}}}\mbox{\Hypertarget{ei__event_8h_a132dde064150d861ad24e9d839cbe007aa5fcf0b8e2fdda85acdde99bdd089cd3}\label{ei__event_8h_a132dde064150d861ad24e9d839cbe007aa5fcf0b8e2fdda85acdde99bdd089cd3}} 
+ei\+\_\+ev\+\_\+keydown&A keyboard key has been pressed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_ev\_keyup@{ei\_ev\_keyup}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_ev\_keyup@{ei\_ev\_keyup}}}\mbox{\Hypertarget{ei__event_8h_a132dde064150d861ad24e9d839cbe007af556498fd29604b3770b8fc2969cd3f1}\label{ei__event_8h_a132dde064150d861ad24e9d839cbe007af556498fd29604b3770b8fc2969cd3f1}} 
+ei\+\_\+ev\+\_\+keyup&A keyboard key has been released. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_ev\_mouse\_buttondown@{ei\_ev\_mouse\_buttondown}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_ev\_mouse\_buttondown@{ei\_ev\_mouse\_buttondown}}}\mbox{\Hypertarget{ei__event_8h_a132dde064150d861ad24e9d839cbe007ae75b2b6a8423d54c46a418d222e0af66}\label{ei__event_8h_a132dde064150d861ad24e9d839cbe007ae75b2b6a8423d54c46a418d222e0af66}} 
+ei\+\_\+ev\+\_\+mouse\+\_\+buttondown&A mouse button has been pressed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_ev\_mouse\_buttonup@{ei\_ev\_mouse\_buttonup}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_ev\_mouse\_buttonup@{ei\_ev\_mouse\_buttonup}}}\mbox{\Hypertarget{ei__event_8h_a132dde064150d861ad24e9d839cbe007aabd9931e36fb3628cc044a2aafc2c7e4}\label{ei__event_8h_a132dde064150d861ad24e9d839cbe007aabd9931e36fb3628cc044a2aafc2c7e4}} 
+ei\+\_\+ev\+\_\+mouse\+\_\+buttonup&A mouse button has been released. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_ev\_mouse\_move@{ei\_ev\_mouse\_move}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_ev\_mouse\_move@{ei\_ev\_mouse\_move}}}\mbox{\Hypertarget{ei__event_8h_a132dde064150d861ad24e9d839cbe007a5673338c91142f9c26826d1b52326b19}\label{ei__event_8h_a132dde064150d861ad24e9d839cbe007a5673338c91142f9c26826d1b52326b19}} 
+ei\+\_\+ev\+\_\+mouse\+\_\+move&The mouse has moved. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_ev\_last@{ei\_ev\_last}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_ev\_last@{ei\_ev\_last}}}\mbox{\Hypertarget{ei__event_8h_a132dde064150d861ad24e9d839cbe007a10fa93b6be568ea7175368c025506f6f}\label{ei__event_8h_a132dde064150d861ad24e9d839cbe007a10fa93b6be568ea7175368c025506f6f}} 
+ei\+\_\+ev\+\_\+last&Last event type, its value is the number of event types. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 19 of file ei\+\_\+event.\+h.
+
+\mbox{\Hypertarget{ei__event_8h_a727655addb1c37c210f583964a1ac2b6}\label{ei__event_8h_a727655addb1c37c210f583964a1ac2b6}} 
+\index{ei\_event.h@{ei\_event.h}!ei\_modifier\_key\_t@{ei\_modifier\_key\_t}}
+\index{ei\_modifier\_key\_t@{ei\_modifier\_key\_t}!ei\_event.h@{ei\_event.h}}
+\doxysubsubsection{\texorpdfstring{ei\_modifier\_key\_t}{ei\_modifier\_key\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ei__event_8h_a727655addb1c37c210f583964a1ac2b6}{ei\+\_\+modifier\+\_\+key\+\_\+t}}}
+
+
+
+The modifier keys (shift, alt, etc.) 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_mod\_shift\_left@{ei\_mod\_shift\_left}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_mod\_shift\_left@{ei\_mod\_shift\_left}}}\mbox{\Hypertarget{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a7ec55b1755862816568e34f25c4ae0e6}\label{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a7ec55b1755862816568e34f25c4ae0e6}} 
+ei\+\_\+mod\+\_\+shift\+\_\+left&The \char`\"{}shift\char`\"{} key at the left of the space bar. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_mod\_alt\_left@{ei\_mod\_alt\_left}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_mod\_alt\_left@{ei\_mod\_alt\_left}}}\mbox{\Hypertarget{ei__event_8h_a727655addb1c37c210f583964a1ac2b6aaf7a4f55da3d87ff588178b179d50a48}\label{ei__event_8h_a727655addb1c37c210f583964a1ac2b6aaf7a4f55da3d87ff588178b179d50a48}} 
+ei\+\_\+mod\+\_\+alt\+\_\+left&The \char`\"{}alternate\char`\"{} key at the left of the space bar. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_mod\_meta\_left@{ei\_mod\_meta\_left}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_mod\_meta\_left@{ei\_mod\_meta\_left}}}\mbox{\Hypertarget{ei__event_8h_a727655addb1c37c210f583964a1ac2b6aabb5562f86439badd3cd94dc4e328640}\label{ei__event_8h_a727655addb1c37c210f583964a1ac2b6aabb5562f86439badd3cd94dc4e328640}} 
+ei\+\_\+mod\+\_\+meta\+\_\+left&The \char`\"{}meta\char`\"{} (command) key at the left of the space bar. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_mod\_ctrl\_left@{ei\_mod\_ctrl\_left}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_mod\_ctrl\_left@{ei\_mod\_ctrl\_left}}}\mbox{\Hypertarget{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a7a84e4a648393506eaa8016128eb23f4}\label{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a7a84e4a648393506eaa8016128eb23f4}} 
+ei\+\_\+mod\+\_\+ctrl\+\_\+left&The \char`\"{}control\char`\"{} key at the left of the space bar. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_mod\_shift\_right@{ei\_mod\_shift\_right}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_mod\_shift\_right@{ei\_mod\_shift\_right}}}\mbox{\Hypertarget{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a4b4e882f35af78c685805f13d92e4998}\label{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a4b4e882f35af78c685805f13d92e4998}} 
+ei\+\_\+mod\+\_\+shift\+\_\+right&The \char`\"{}shift\char`\"{} key at the right of the space bar. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_mod\_alt\_right@{ei\_mod\_alt\_right}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_mod\_alt\_right@{ei\_mod\_alt\_right}}}\mbox{\Hypertarget{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a6df62e919d725e2d79168e159a861d2b}\label{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a6df62e919d725e2d79168e159a861d2b}} 
+ei\+\_\+mod\+\_\+alt\+\_\+right&The \char`\"{}alternate\char`\"{} key at the right of the space bar. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_mod\_meta\_right@{ei\_mod\_meta\_right}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_mod\_meta\_right@{ei\_mod\_meta\_right}}}\mbox{\Hypertarget{ei__event_8h_a727655addb1c37c210f583964a1ac2b6aa712981edbe0bac0bfc5c7bfaf2917c6}\label{ei__event_8h_a727655addb1c37c210f583964a1ac2b6aa712981edbe0bac0bfc5c7bfaf2917c6}} 
+ei\+\_\+mod\+\_\+meta\+\_\+right&The \char`\"{}meta\char`\"{} (command) key at the right of the space bar. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_mod\_ctrl\_right@{ei\_mod\_ctrl\_right}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_mod\_ctrl\_right@{ei\_mod\_ctrl\_right}}}\mbox{\Hypertarget{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a0df8d04fc812e40b7edcb471fdffc8e2}\label{ei__event_8h_a727655addb1c37c210f583964a1ac2b6a0df8d04fc812e40b7edcb471fdffc8e2}} 
+ei\+\_\+mod\+\_\+ctrl\+\_\+right&The \char`\"{}control\char`\"{} key at the right of the space bar. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 38 of file ei\+\_\+event.\+h.
+
+\mbox{\Hypertarget{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bce}\label{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bce}} 
+\index{ei\_event.h@{ei\_event.h}!ei\_mouse\_button\_t@{ei\_mouse\_button\_t}}
+\index{ei\_mouse\_button\_t@{ei\_mouse\_button\_t}!ei\_event.h@{ei\_event.h}}
+\doxysubsubsection{\texorpdfstring{ei\_mouse\_button\_t}{ei\_mouse\_button\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bce}{ei\+\_\+mouse\+\_\+button\+\_\+t}}}
+
+
+
+The various mouse buttons. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_mouse\_button\_left@{ei\_mouse\_button\_left}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_mouse\_button\_left@{ei\_mouse\_button\_left}}}\mbox{\Hypertarget{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bceac619c903d78e8f1594e622880d7b0397}\label{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bceac619c903d78e8f1594e622880d7b0397}} 
+ei\+\_\+mouse\+\_\+button\+\_\+left&The left mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_mouse\_button\_middle@{ei\_mouse\_button\_middle}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_mouse\_button\_middle@{ei\_mouse\_button\_middle}}}\mbox{\Hypertarget{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bcea9c5aa04c44f6822b9eb8bf1668c11974}\label{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bcea9c5aa04c44f6822b9eb8bf1668c11974}} 
+ei\+\_\+mouse\+\_\+button\+\_\+middle&The middle mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ei\_mouse\_button\_right@{ei\_mouse\_button\_right}!ei\_event.h@{ei\_event.h}}\index{ei\_event.h@{ei\_event.h}!ei\_mouse\_button\_right@{ei\_mouse\_button\_right}}}\mbox{\Hypertarget{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bcea293615d9a6e192ab27cf9b8839aac63f}\label{ei__event_8h_ab1e5ff50988ae5dd3b9c5c315af68bcea293615d9a6e192ab27cf9b8839aac63f}} 
+ei\+\_\+mouse\+\_\+button\+\_\+right&The right mouse button. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 58 of file ei\+\_\+event.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ei__event_8h_a929e765ce56f1902f9873fb5bc3eec5e}\label{ei__event_8h_a929e765ce56f1902f9873fb5bc3eec5e}} 
+\index{ei\_event.h@{ei\_event.h}!ei\_event\_get\_active\_widget@{ei\_event\_get\_active\_widget}}
+\index{ei\_event\_get\_active\_widget@{ei\_event\_get\_active\_widget}!ei\_event.h@{ei\_event.h}}
+\doxysubsubsection{\texorpdfstring{ei\_event\_get\_active\_widget()}{ei\_event\_get\_active\_widget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+event\+\_\+get\+\_\+active\+\_\+widget (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns the widget currently being manipulated by the user.
+
+\begin{DoxyReturn}{Returns}
+The widget currently being manipulated, or NULL. 
+\end{DoxyReturn}
+
+
+Definition at line 258 of file ei\+\_\+application.\+c.
+
+\mbox{\Hypertarget{ei__event_8h_a6e8c3b68b3e4c4f55a1d06cd9e0dcfb5}\label{ei__event_8h_a6e8c3b68b3e4c4f55a1d06cd9e0dcfb5}} 
+\index{ei\_event.h@{ei\_event.h}!ei\_event\_get\_default\_handle\_func@{ei\_event\_get\_default\_handle\_func}}
+\index{ei\_event\_get\_default\_handle\_func@{ei\_event\_get\_default\_handle\_func}!ei\_event.h@{ei\_event.h}}
+\doxysubsubsection{\texorpdfstring{ei\_event\_get\_default\_handle\_func()}{ei\_event\_get\_default\_handle\_func()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__event_8h_a60fc3d9fa221c2b515e5a7044b2c7452}{ei\+\_\+default\+\_\+handle\+\_\+func\+\_\+t}} ei\+\_\+event\+\_\+get\+\_\+default\+\_\+handle\+\_\+func (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns the function that must be called when an event has been received but no processed by any widget.
+
+\begin{DoxyReturn}{Returns}
+The address of the event handling function. 
+\end{DoxyReturn}
+
+
+Definition at line 250 of file ei\+\_\+application.\+c.
+
+\mbox{\Hypertarget{ei__event_8h_a939d0278da85e35f45e58326d1182b00}\label{ei__event_8h_a939d0278da85e35f45e58326d1182b00}} 
+\index{ei\_event.h@{ei\_event.h}!ei\_event\_set\_active\_widget@{ei\_event\_set\_active\_widget}}
+\index{ei\_event\_set\_active\_widget@{ei\_event\_set\_active\_widget}!ei\_event.h@{ei\_event.h}}
+\doxysubsubsection{\texorpdfstring{ei\_event\_set\_active\_widget()}{ei\_event\_set\_active\_widget()}}
+{\footnotesize\ttfamily void ei\+\_\+event\+\_\+set\+\_\+active\+\_\+widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+Sets the widget which is currently being manipulated by the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget to declare as active, or NULL to declare that a widget is no more being manipulated. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 254 of file ei\+\_\+application.\+c.
+
+\mbox{\Hypertarget{ei__event_8h_ab6fbe051400528f4a8201550f2817403}\label{ei__event_8h_ab6fbe051400528f4a8201550f2817403}} 
+\index{ei\_event.h@{ei\_event.h}!ei\_event\_set\_default\_handle\_func@{ei\_event\_set\_default\_handle\_func}}
+\index{ei\_event\_set\_default\_handle\_func@{ei\_event\_set\_default\_handle\_func}!ei\_event.h@{ei\_event.h}}
+\doxysubsubsection{\texorpdfstring{ei\_event\_set\_default\_handle\_func()}{ei\_event\_set\_default\_handle\_func()}}
+{\footnotesize\ttfamily void ei\+\_\+event\+\_\+set\+\_\+default\+\_\+handle\+\_\+func (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__event_8h_a60fc3d9fa221c2b515e5a7044b2c7452}{ei\+\_\+default\+\_\+handle\+\_\+func\+\_\+t}}}]{func }\end{DoxyParamCaption})}
+
+Sets the function that must be called when an event has been received but no processed by any widget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The event handling function. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 246 of file ei\+\_\+application.\+c.
+
+\mbox{\Hypertarget{ei__event_8h_ad9a7ed12bdf4c904b1ad7d5c8bf17783}\label{ei__event_8h_ad9a7ed12bdf4c904b1ad7d5c8bf17783}} 
+\index{ei\_event.h@{ei\_event.h}!ei\_has\_modifier@{ei\_has\_modifier}}
+\index{ei\_has\_modifier@{ei\_has\_modifier}!ei\_event.h@{ei\_event.h}}
+\doxysubsubsection{\texorpdfstring{ei\_has\_modifier()}{ei\_has\_modifier()}}
+{\footnotesize\ttfamily static bool ei\+\_\+has\+\_\+modifier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__event_8h_abcdd2ef0f39179463f17a06be9bdf949}{ei\+\_\+modifier\+\_\+mask\+\_\+t}}}]{modifier\+\_\+mask,  }\item[{\mbox{\hyperlink{ei__event_8h_a727655addb1c37c210f583964a1ac2b6}{ei\+\_\+modifier\+\_\+key\+\_\+t}}}]{modifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Tests is a modifier key was pressed at the time of an event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em modifier\+\_\+mask} & The modifier\+\_\+mask field of a \mbox{\hyperlink{structei__key__event__t}{ei\+\_\+key\+\_\+event\+\_\+t}} or a \mbox{\hyperlink{structei__mouse__event__t}{ei\+\_\+mouse\+\_\+event\+\_\+t}}. \\
+\hline
+{\em modifier} & The modifier key.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this modifier key was pressed, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file ei\+\_\+event.\+h.
+

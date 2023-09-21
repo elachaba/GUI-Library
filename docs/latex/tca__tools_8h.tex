@@ -1,0 +1,308 @@
+\hypertarget{tca__tools_8h}{}\doxysection{tca\+\_\+tools.\+h File Reference}
+\label{tca__tools_8h}\index{tca\_tools.h@{tca\_tools.h}}
+{\ttfamily \#include \char`\"{}ei\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hw\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structures.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$ \mbox{\hyperlink{tca__tools_8h_a7a8a2e2cc7929c74c6202aee320a4a38}{initialise\+\_\+hashtable}} (int size)
+\begin{DoxyCompactList}\small\item\em Creates a hashtable. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{tca__tools_8h_a39e22aeaf14622be0835dc08efb19aa7}{hash\+\_\+function}} (int y, int size)
+\begin{DoxyCompactList}\small\item\em A function that relates the ordinates of the points to an index of the hash table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tca__tools_8h_a13c19df2a970f52732f51b99c5b4c903}{add\+\_\+edge}} (struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$TC, struct \mbox{\hyperlink{structedge}{edge}} $\ast$cell)
+\begin{DoxyCompactList}\small\item\em Adds an edge to the TC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tca__tools_8h_a8cc262e1f0d86efe3d6b4f1a56677d3a}{TC\+\_\+construction}} (struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$TC, \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$point\+\_\+array, size\+\_\+t point\+\_\+array\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Constructs a TC that corresponds to the array of points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tca__tools_8h_a4c4d5fe9b874a200d3a2760e57a667f3}{add\+\_\+to\+\_\+\+TCA}} (struct \mbox{\hyperlink{structedge}{edge}} $\ast$$\ast$TCA, struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$TC, int y)
+\begin{DoxyCompactList}\small\item\em Adds an edge from TC to TCA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tca__tools_8h_a0098f6aa565dccec29f255c062d20acb}{remove\+\_\+from\+\_\+\+TCA}} (struct \mbox{\hyperlink{structedge}{edge}} $\ast$$\ast$TCA, int y)
+\begin{DoxyCompactList}\small\item\em Removes an edge from TCA. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{tca__tools_8h_aa03c1c63fd890eec3fd82cbe1d889faa}{compare\+Function}} (const void $\ast$a, const void $\ast$b)
+\begin{DoxyCompactList}\small\item\em A compare function that the determines the direction of the sort. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tca__tools_8h_a1483b00b814e488b9e38ed1354b71c11}{sort\+\_\+\+TCA}} (struct \mbox{\hyperlink{structedge}{edge}} $\ast$$\ast$TCA)
+\item 
+void \mbox{\hyperlink{tca__tools_8h_a44235d77b46df249c846850c4383e75c}{update\+\_\+xymin}} (struct \mbox{\hyperlink{structedge}{edge}} $\ast$TCA)
+\begin{DoxyCompactList}\small\item\em Increments the value of xymin the TCA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tca__tools_8h_a56133e44a52315e04232c151a06ca9c3}{scanline}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, struct \mbox{\hyperlink{structedge}{edge}} $\ast$TCA, int y, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} color, const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em Colors a line inside a polygon using the scanline method. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{tca__tools_8h_a28750e1d2d261f8526f80132edaa9b67}{get\+\_\+first\+\_\+scanline}} (struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$TC)
+\begin{DoxyCompactList}\small\item\em Determines the first line to be colored. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{tca__tools_8h_a01c8767af89a3143f8764159da07dd91}{is\+\_\+\+TC\+\_\+empty}} (struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$TC)
+\begin{DoxyCompactList}\small\item\em Checks of a hashtable is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tca__tools_8h_a13c19df2a970f52732f51b99c5b4c903}\label{tca__tools_8h_a13c19df2a970f52732f51b99c5b4c903}} 
+\index{tca\_tools.h@{tca\_tools.h}!add\_edge@{add\_edge}}
+\index{add\_edge@{add\_edge}!tca\_tools.h@{tca\_tools.h}}
+\doxysubsubsection{\texorpdfstring{add\_edge()}{add\_edge()}}
+{\footnotesize\ttfamily void add\+\_\+edge (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$}]{TC,  }\item[{struct \mbox{\hyperlink{structedge}{edge}} $\ast$}]{cell }\end{DoxyParamCaption})}
+
+
+
+Adds an edge to the TC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TC} & The TC to be modified \\
+\hline
+{\em cell} & The edge to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file tca\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{tca__tools_8h_a4c4d5fe9b874a200d3a2760e57a667f3}\label{tca__tools_8h_a4c4d5fe9b874a200d3a2760e57a667f3}} 
+\index{tca\_tools.h@{tca\_tools.h}!add\_to\_TCA@{add\_to\_TCA}}
+\index{add\_to\_TCA@{add\_to\_TCA}!tca\_tools.h@{tca\_tools.h}}
+\doxysubsubsection{\texorpdfstring{add\_to\_TCA()}{add\_to\_TCA()}}
+{\footnotesize\ttfamily void add\+\_\+to\+\_\+\+TCA (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structedge}{edge}} $\ast$$\ast$}]{TCA,  }\item[{struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$}]{TC,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Adds an edge from TC to TCA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TCA} & The TCA to be modified \\
+\hline
+{\em TC} & The initial TC \\
+\hline
+{\em y} & The ordinate of the point corresponding to the edge to add \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 84 of file tca\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{tca__tools_8h_aa03c1c63fd890eec3fd82cbe1d889faa}\label{tca__tools_8h_aa03c1c63fd890eec3fd82cbe1d889faa}} 
+\index{tca\_tools.h@{tca\_tools.h}!compareFunction@{compareFunction}}
+\index{compareFunction@{compareFunction}!tca\_tools.h@{tca\_tools.h}}
+\doxysubsubsection{\texorpdfstring{compareFunction()}{compareFunction()}}
+{\footnotesize\ttfamily int compare\+Function (\begin{DoxyParamCaption}\item[{const void $\ast$}]{a,  }\item[{const void $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+A compare function that the determines the direction of the sort. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+... 
+\end{DoxyReturn}
+
+
+Definition at line 136 of file tca\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{tca__tools_8h_a28750e1d2d261f8526f80132edaa9b67}\label{tca__tools_8h_a28750e1d2d261f8526f80132edaa9b67}} 
+\index{tca\_tools.h@{tca\_tools.h}!get\_first\_scanline@{get\_first\_scanline}}
+\index{get\_first\_scanline@{get\_first\_scanline}!tca\_tools.h@{tca\_tools.h}}
+\doxysubsubsection{\texorpdfstring{get\_first\_scanline()}{get\_first\_scanline()}}
+{\footnotesize\ttfamily int get\+\_\+first\+\_\+scanline (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$}]{TC }\end{DoxyParamCaption})}
+
+
+
+Determines the first line to be colored. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TC} & The table of edges \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the y = ymax of the first line to be drawn 
+\end{DoxyReturn}
+
+
+Definition at line 208 of file tca\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{tca__tools_8h_a39e22aeaf14622be0835dc08efb19aa7}\label{tca__tools_8h_a39e22aeaf14622be0835dc08efb19aa7}} 
+\index{tca\_tools.h@{tca\_tools.h}!hash\_function@{hash\_function}}
+\index{hash\_function@{hash\_function}!tca\_tools.h@{tca\_tools.h}}
+\doxysubsubsection{\texorpdfstring{hash\_function()}{hash\_function()}}
+{\footnotesize\ttfamily int hash\+\_\+function (\begin{DoxyParamCaption}\item[{int}]{y,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+A function that relates the ordinates of the points to an index of the hash table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The ordinate \\
+\hline
+{\em size} & The size of the hashtable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index in the hashtable of the ordinate
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em y} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 18 of file tca\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{tca__tools_8h_a7a8a2e2cc7929c74c6202aee320a4a38}\label{tca__tools_8h_a7a8a2e2cc7929c74c6202aee320a4a38}} 
+\index{tca\_tools.h@{tca\_tools.h}!initialise\_hashtable@{initialise\_hashtable}}
+\index{initialise\_hashtable@{initialise\_hashtable}!tca\_tools.h@{tca\_tools.h}}
+\doxysubsubsection{\texorpdfstring{initialise\_hashtable()}{initialise\_hashtable()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structhashtable}{hashtable}}$\ast$ initialise\+\_\+hashtable (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Creates a hashtable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of hashtable to create \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An empty hashtable of size
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em size} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 9 of file tca\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{tca__tools_8h_a01c8767af89a3143f8764159da07dd91}\label{tca__tools_8h_a01c8767af89a3143f8764159da07dd91}} 
+\index{tca\_tools.h@{tca\_tools.h}!is\_TC\_empty@{is\_TC\_empty}}
+\index{is\_TC\_empty@{is\_TC\_empty}!tca\_tools.h@{tca\_tools.h}}
+\doxysubsubsection{\texorpdfstring{is\_TC\_empty()}{is\_TC\_empty()}}
+{\footnotesize\ttfamily int is\+\_\+\+TC\+\_\+empty (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$}]{TC }\end{DoxyParamCaption})}
+
+
+
+Checks of a hashtable is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TC} & The hashtable of edges to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if TC is empty, else 0 
+\end{DoxyReturn}
+
+
+Definition at line 212 of file tca\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{tca__tools_8h_a0098f6aa565dccec29f255c062d20acb}\label{tca__tools_8h_a0098f6aa565dccec29f255c062d20acb}} 
+\index{tca\_tools.h@{tca\_tools.h}!remove\_from\_TCA@{remove\_from\_TCA}}
+\index{remove\_from\_TCA@{remove\_from\_TCA}!tca\_tools.h@{tca\_tools.h}}
+\doxysubsubsection{\texorpdfstring{remove\_from\_TCA()}{remove\_from\_TCA()}}
+{\footnotesize\ttfamily void remove\+\_\+from\+\_\+\+TCA (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structedge}{edge}} $\ast$$\ast$}]{TCA,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Removes an edge from TCA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TCA} & The TCA to be modified \\
+\hline
+{\em y} & The ordinate of the edge to be removed from the TCA \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 108 of file tca\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{tca__tools_8h_a56133e44a52315e04232c151a06ca9c3}\label{tca__tools_8h_a56133e44a52315e04232c151a06ca9c3}} 
+\index{tca\_tools.h@{tca\_tools.h}!scanline@{scanline}}
+\index{scanline@{scanline}!tca\_tools.h@{tca\_tools.h}}
+\doxysubsubsection{\texorpdfstring{scanline()}{scanline()}}
+{\footnotesize\ttfamily void scanline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{struct \mbox{\hyperlink{structedge}{edge}} $\ast$}]{TCA,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}}]{color,  }\item[{const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Colors a line inside a polygon using the scanline method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface on which to color the polygon \\
+\hline
+{\em TCA} & The active edges of the polygon to be drawn \\
+\hline
+{\em y} & The ordinate of the line to be drawn \\
+\hline
+{\em color} & if NULL, it colors in black. \\
+\hline
+{\em clipper} & if not NULL, colors only the part of the polygon inside the clipper. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 185 of file tca\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{tca__tools_8h_a1483b00b814e488b9e38ed1354b71c11}\label{tca__tools_8h_a1483b00b814e488b9e38ed1354b71c11}} 
+\index{tca\_tools.h@{tca\_tools.h}!sort\_TCA@{sort\_TCA}}
+\index{sort\_TCA@{sort\_TCA}!tca\_tools.h@{tca\_tools.h}}
+\doxysubsubsection{\texorpdfstring{sort\_TCA()}{sort\_TCA()}}
+{\footnotesize\ttfamily void sort\+\_\+\+TCA (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structedge}{edge}} $\ast$$\ast$}]{TCA }\end{DoxyParamCaption})}
+
+Sorts the TCA passed in parameters 
+\begin{DoxyParams}{Parameters}
+{\em TCA} & The TCA to be sorted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 142 of file tca\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{tca__tools_8h_a8cc262e1f0d86efe3d6b4f1a56677d3a}\label{tca__tools_8h_a8cc262e1f0d86efe3d6b4f1a56677d3a}} 
+\index{tca\_tools.h@{tca\_tools.h}!TC\_construction@{TC\_construction}}
+\index{TC\_construction@{TC\_construction}!tca\_tools.h@{tca\_tools.h}}
+\doxysubsubsection{\texorpdfstring{TC\_construction()}{TC\_construction()}}
+{\footnotesize\ttfamily void TC\+\_\+construction (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structhashtable}{hashtable}} $\ast$}]{TC,  }\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$}]{point\+\_\+array,  }\item[{size\+\_\+t}]{point\+\_\+array\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Constructs a TC that corresponds to the array of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TC} & The empty hashtable to be filled \\
+\hline
+{\em point\+\_\+array} & The array of vertices. \\
+\hline
+{\em point\+\_\+array\+\_\+size} & The size of the array of vertices. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file tca\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{tca__tools_8h_a44235d77b46df249c846850c4383e75c}\label{tca__tools_8h_a44235d77b46df249c846850c4383e75c}} 
+\index{tca\_tools.h@{tca\_tools.h}!update\_xymin@{update\_xymin}}
+\index{update\_xymin@{update\_xymin}!tca\_tools.h@{tca\_tools.h}}
+\doxysubsubsection{\texorpdfstring{update\_xymin()}{update\_xymin()}}
+{\footnotesize\ttfamily void update\+\_\+xymin (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structedge}{edge}} $\ast$}]{TCA }\end{DoxyParamCaption})}
+
+
+
+Increments the value of xymin the TCA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TCA} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 176 of file tca\+\_\+tools.\+c.
+

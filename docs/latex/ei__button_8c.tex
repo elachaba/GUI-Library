@@ -1,0 +1,122 @@
+\hypertarget{ei__button_8c}{}\doxysection{ei\+\_\+button.\+c File Reference}
+\label{ei__button_8c}\index{ei\_button.c@{ei\_button.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+implementation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hw\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+frame.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}draw\+\_\+button.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}draw\+\_\+tools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+event.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+application.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structures.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+widget\+\_\+configure.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ei__button_8c_a6ae297f8ded91673548c10104dea7d6f}{text\+\_\+sunken\+\_\+offset}}~3
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{ei__button_8c_a9e3ca58537c286bea68cb78b5d98680c}{button\+\_\+allocfunc}} ()
+\item 
+void \mbox{\hyperlink{ei__button_8c_abf0296da79c7d8d40e88e6abba4b2d56}{button\+\_\+releasefunc}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\item 
+static void \mbox{\hyperlink{ei__button_8c_a7a6131f14a607a6933b76f5e152ac035}{ei\+\_\+draw\+\_\+image}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper)
+\item 
+void \mbox{\hyperlink{ei__button_8c_a9ba50d4fd7410bc63b8f3c4237c54848}{button\+\_\+drawfunc}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} pick\+\_\+surface, \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper)
+\item 
+void \mbox{\hyperlink{ei__button_8c_a8c3eb2f769516cb6692cc2826904f394}{button\+\_\+setdefaultsfunc}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\item 
+bool \mbox{\hyperlink{ei__button_8c_ac24780367269ddb287d5a2907a104395}{button\+\_\+handlefunc}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, \mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}} $\ast$event)
+\item 
+void \mbox{\hyperlink{ei__button_8c_a4de222f7b0bf7c376d601f00bb076d59}{ei\+\_\+buttonclass\+\_\+register}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ei__button_8c_a6ae297f8ded91673548c10104dea7d6f}\label{ei__button_8c_a6ae297f8ded91673548c10104dea7d6f}} 
+\index{ei\_button.c@{ei\_button.c}!text\_sunken\_offset@{text\_sunken\_offset}}
+\index{text\_sunken\_offset@{text\_sunken\_offset}!ei\_button.c@{ei\_button.c}}
+\doxysubsubsection{\texorpdfstring{text\_sunken\_offset}{text\_sunken\_offset}}
+{\footnotesize\ttfamily \#define text\+\_\+sunken\+\_\+offset~3}
+
+
+
+Definition at line 14 of file ei\+\_\+button.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ei__button_8c_a9e3ca58537c286bea68cb78b5d98680c}\label{ei__button_8c_a9e3ca58537c286bea68cb78b5d98680c}} 
+\index{ei\_button.c@{ei\_button.c}!button\_allocfunc@{button\_allocfunc}}
+\index{button\_allocfunc@{button\_allocfunc}!ei\_button.c@{ei\_button.c}}
+\doxysubsubsection{\texorpdfstring{button\_allocfunc()}{button\_allocfunc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} button\+\_\+allocfunc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file ei\+\_\+button.\+c.
+
+\mbox{\Hypertarget{ei__button_8c_a9ba50d4fd7410bc63b8f3c4237c54848}\label{ei__button_8c_a9ba50d4fd7410bc63b8f3c4237c54848}} 
+\index{ei\_button.c@{ei\_button.c}!button\_drawfunc@{button\_drawfunc}}
+\index{button\_drawfunc@{button\_drawfunc}!ei\_button.c@{ei\_button.c}}
+\doxysubsubsection{\texorpdfstring{button\_drawfunc()}{button\_drawfunc()}}
+{\footnotesize\ttfamily void button\+\_\+drawfunc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{pick\+\_\+surface,  }\item[{\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Definition at line 77 of file ei\+\_\+button.\+c.
+
+\mbox{\Hypertarget{ei__button_8c_ac24780367269ddb287d5a2907a104395}\label{ei__button_8c_ac24780367269ddb287d5a2907a104395}} 
+\index{ei\_button.c@{ei\_button.c}!button\_handlefunc@{button\_handlefunc}}
+\index{button\_handlefunc@{button\_handlefunc}!ei\_button.c@{ei\_button.c}}
+\doxysubsubsection{\texorpdfstring{button\_handlefunc()}{button\_handlefunc()}}
+{\footnotesize\ttfamily bool button\+\_\+handlefunc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{\mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}} $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Definition at line 145 of file ei\+\_\+button.\+c.
+
+\mbox{\Hypertarget{ei__button_8c_abf0296da79c7d8d40e88e6abba4b2d56}\label{ei__button_8c_abf0296da79c7d8d40e88e6abba4b2d56}} 
+\index{ei\_button.c@{ei\_button.c}!button\_releasefunc@{button\_releasefunc}}
+\index{button\_releasefunc@{button\_releasefunc}!ei\_button.c@{ei\_button.c}}
+\doxysubsubsection{\texorpdfstring{button\_releasefunc()}{button\_releasefunc()}}
+{\footnotesize\ttfamily void button\+\_\+releasefunc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file ei\+\_\+button.\+c.
+
+\mbox{\Hypertarget{ei__button_8c_a8c3eb2f769516cb6692cc2826904f394}\label{ei__button_8c_a8c3eb2f769516cb6692cc2826904f394}} 
+\index{ei\_button.c@{ei\_button.c}!button\_setdefaultsfunc@{button\_setdefaultsfunc}}
+\index{button\_setdefaultsfunc@{button\_setdefaultsfunc}!ei\_button.c@{ei\_button.c}}
+\doxysubsubsection{\texorpdfstring{button\_setdefaultsfunc()}{button\_setdefaultsfunc()}}
+{\footnotesize\ttfamily void button\+\_\+setdefaultsfunc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Definition at line 127 of file ei\+\_\+button.\+c.
+
+\mbox{\Hypertarget{ei__button_8c_a4de222f7b0bf7c376d601f00bb076d59}\label{ei__button_8c_a4de222f7b0bf7c376d601f00bb076d59}} 
+\index{ei\_button.c@{ei\_button.c}!ei\_buttonclass\_register@{ei\_buttonclass\_register}}
+\index{ei\_buttonclass\_register@{ei\_buttonclass\_register}!ei\_button.c@{ei\_button.c}}
+\doxysubsubsection{\texorpdfstring{ei\_buttonclass\_register()}{ei\_buttonclass\_register()}}
+{\footnotesize\ttfamily void ei\+\_\+buttonclass\+\_\+register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 187 of file ei\+\_\+button.\+c.
+
+\mbox{\Hypertarget{ei__button_8c_a7a6131f14a607a6933b76f5e152ac035}\label{ei__button_8c_a7a6131f14a607a6933b76f5e152ac035}} 
+\index{ei\_button.c@{ei\_button.c}!ei\_draw\_image@{ei\_draw\_image}}
+\index{ei\_draw\_image@{ei\_draw\_image}!ei\_button.c@{ei\_button.c}}
+\doxysubsubsection{\texorpdfstring{ei\_draw\_image()}{ei\_draw\_image()}}
+{\footnotesize\ttfamily static void ei\+\_\+draw\+\_\+image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 33 of file ei\+\_\+button.\+c.
+

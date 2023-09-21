@@ -1,0 +1,147 @@
+\hypertarget{ei__frame_8c}{}\doxysection{ei\+\_\+frame.\+c File Reference}
+\label{ei__frame_8c}\index{ei\_frame.c@{ei\_frame.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+implementation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hw\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+frame.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+draw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}draw\+\_\+button.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}draw\+\_\+tools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+event.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+application.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ei__frame_8c_a6ae297f8ded91673548c10104dea7d6f}{text\+\_\+sunken\+\_\+offset}}~3
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{ei__frame_8c_a3516b3f7e044e43001d2c95e538184e7}{frame\+\_\+allocfunc}} ()
+\item 
+void \mbox{\hyperlink{ei__frame_8c_aaea7e0496b64e34bbaf9c412801fb1c4}{frame\+\_\+releasefunc}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\item 
+void \mbox{\hyperlink{ei__frame_8c_a4e0ff532bd452a47be4dc1ce4d655fec}{anchor\+\_\+placement}} (\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} drawing\+\_\+rect, \mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}} anchor, \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$where, int height, int width, int corner\+\_\+offset)
+\item 
+static void \mbox{\hyperlink{ei__frame_8c_a7a6131f14a607a6933b76f5e152ac035}{ei\+\_\+draw\+\_\+image}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper)
+\item 
+static void \mbox{\hyperlink{ei__frame_8c_a5bdce8a647b49dc79510a8cbc4eee6f2}{frame\+\_\+drawfunc}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} pick\+\_\+surface, \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper)
+\item 
+static void \mbox{\hyperlink{ei__frame_8c_a2ab08305b1a8b9667ad7ac5eff1b4d2a}{frame\+\_\+setdefaultsfunc}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\item 
+bool \mbox{\hyperlink{ei__frame_8c_af9c5cb7efc484a41bb8be8af2e04f9ff}{frame\+\_\+handlefunc}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, \mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}} $\ast$event)
+\item 
+void \mbox{\hyperlink{ei__frame_8c_a94f9d6f4edf386905dfa2f197c5ec0ff}{ei\+\_\+frameclass\+\_\+register}} ()
+\item 
+void \mbox{\hyperlink{ei__frame_8c_a21f9d914229c2360ab92868dcd915a20}{ei\+\_\+rootclass\+\_\+register}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ei__frame_8c_a6ae297f8ded91673548c10104dea7d6f}\label{ei__frame_8c_a6ae297f8ded91673548c10104dea7d6f}} 
+\index{ei\_frame.c@{ei\_frame.c}!text\_sunken\_offset@{text\_sunken\_offset}}
+\index{text\_sunken\_offset@{text\_sunken\_offset}!ei\_frame.c@{ei\_frame.c}}
+\doxysubsubsection{\texorpdfstring{text\_sunken\_offset}{text\_sunken\_offset}}
+{\footnotesize\ttfamily \#define text\+\_\+sunken\+\_\+offset~3}
+
+
+
+Definition at line 15 of file ei\+\_\+frame.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ei__frame_8c_a4e0ff532bd452a47be4dc1ce4d655fec}\label{ei__frame_8c_a4e0ff532bd452a47be4dc1ce4d655fec}} 
+\index{ei\_frame.c@{ei\_frame.c}!anchor\_placement@{anchor\_placement}}
+\index{anchor\_placement@{anchor\_placement}!ei\_frame.c@{ei\_frame.c}}
+\doxysubsubsection{\texorpdfstring{anchor\_placement()}{anchor\_placement()}}
+{\footnotesize\ttfamily void anchor\+\_\+placement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}}}]{drawing\+\_\+rect,  }\item[{\mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}}}]{anchor,  }\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$}]{where,  }\item[{int}]{height,  }\item[{int}]{width,  }\item[{int}]{corner\+\_\+offset }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file ei\+\_\+frame.\+c.
+
+\mbox{\Hypertarget{ei__frame_8c_a7a6131f14a607a6933b76f5e152ac035}\label{ei__frame_8c_a7a6131f14a607a6933b76f5e152ac035}} 
+\index{ei\_frame.c@{ei\_frame.c}!ei\_draw\_image@{ei\_draw\_image}}
+\index{ei\_draw\_image@{ei\_draw\_image}!ei\_frame.c@{ei\_frame.c}}
+\doxysubsubsection{\texorpdfstring{ei\_draw\_image()}{ei\_draw\_image()}}
+{\footnotesize\ttfamily static void ei\+\_\+draw\+\_\+image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 77 of file ei\+\_\+frame.\+c.
+
+\mbox{\Hypertarget{ei__frame_8c_a94f9d6f4edf386905dfa2f197c5ec0ff}\label{ei__frame_8c_a94f9d6f4edf386905dfa2f197c5ec0ff}} 
+\index{ei\_frame.c@{ei\_frame.c}!ei\_frameclass\_register@{ei\_frameclass\_register}}
+\index{ei\_frameclass\_register@{ei\_frameclass\_register}!ei\_frame.c@{ei\_frame.c}}
+\doxysubsubsection{\texorpdfstring{ei\_frameclass\_register()}{ei\_frameclass\_register()}}
+{\footnotesize\ttfamily void ei\+\_\+frameclass\+\_\+register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 194 of file ei\+\_\+frame.\+c.
+
+\mbox{\Hypertarget{ei__frame_8c_a21f9d914229c2360ab92868dcd915a20}\label{ei__frame_8c_a21f9d914229c2360ab92868dcd915a20}} 
+\index{ei\_frame.c@{ei\_frame.c}!ei\_rootclass\_register@{ei\_rootclass\_register}}
+\index{ei\_rootclass\_register@{ei\_rootclass\_register}!ei\_frame.c@{ei\_frame.c}}
+\doxysubsubsection{\texorpdfstring{ei\_rootclass\_register()}{ei\_rootclass\_register()}}
+{\footnotesize\ttfamily void ei\+\_\+rootclass\+\_\+register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 210 of file ei\+\_\+frame.\+c.
+
+\mbox{\Hypertarget{ei__frame_8c_a3516b3f7e044e43001d2c95e538184e7}\label{ei__frame_8c_a3516b3f7e044e43001d2c95e538184e7}} 
+\index{ei\_frame.c@{ei\_frame.c}!frame\_allocfunc@{frame\_allocfunc}}
+\index{frame\_allocfunc@{frame\_allocfunc}!ei\_frame.c@{ei\_frame.c}}
+\doxysubsubsection{\texorpdfstring{frame\_allocfunc()}{frame\_allocfunc()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} frame\+\_\+allocfunc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 17 of file ei\+\_\+frame.\+c.
+
+\mbox{\Hypertarget{ei__frame_8c_a5bdce8a647b49dc79510a8cbc4eee6f2}\label{ei__frame_8c_a5bdce8a647b49dc79510a8cbc4eee6f2}} 
+\index{ei\_frame.c@{ei\_frame.c}!frame\_drawfunc@{frame\_drawfunc}}
+\index{frame\_drawfunc@{frame\_drawfunc}!ei\_frame.c@{ei\_frame.c}}
+\doxysubsubsection{\texorpdfstring{frame\_drawfunc()}{frame\_drawfunc()}}
+{\footnotesize\ttfamily static void frame\+\_\+drawfunc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{pick\+\_\+surface,  }\item[{\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 119 of file ei\+\_\+frame.\+c.
+
+\mbox{\Hypertarget{ei__frame_8c_af9c5cb7efc484a41bb8be8af2e04f9ff}\label{ei__frame_8c_af9c5cb7efc484a41bb8be8af2e04f9ff}} 
+\index{ei\_frame.c@{ei\_frame.c}!frame\_handlefunc@{frame\_handlefunc}}
+\index{frame\_handlefunc@{frame\_handlefunc}!ei\_frame.c@{ei\_frame.c}}
+\doxysubsubsection{\texorpdfstring{frame\_handlefunc()}{frame\_handlefunc()}}
+{\footnotesize\ttfamily bool frame\+\_\+handlefunc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{\mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}} $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Definition at line 190 of file ei\+\_\+frame.\+c.
+
+\mbox{\Hypertarget{ei__frame_8c_aaea7e0496b64e34bbaf9c412801fb1c4}\label{ei__frame_8c_aaea7e0496b64e34bbaf9c412801fb1c4}} 
+\index{ei\_frame.c@{ei\_frame.c}!frame\_releasefunc@{frame\_releasefunc}}
+\index{frame\_releasefunc@{frame\_releasefunc}!ei\_frame.c@{ei\_frame.c}}
+\doxysubsubsection{\texorpdfstring{frame\_releasefunc()}{frame\_releasefunc()}}
+{\footnotesize\ttfamily void frame\+\_\+releasefunc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file ei\+\_\+frame.\+c.
+
+\mbox{\Hypertarget{ei__frame_8c_a2ab08305b1a8b9667ad7ac5eff1b4d2a}\label{ei__frame_8c_a2ab08305b1a8b9667ad7ac5eff1b4d2a}} 
+\index{ei\_frame.c@{ei\_frame.c}!frame\_setdefaultsfunc@{frame\_setdefaultsfunc}}
+\index{frame\_setdefaultsfunc@{frame\_setdefaultsfunc}!ei\_frame.c@{ei\_frame.c}}
+\doxysubsubsection{\texorpdfstring{frame\_setdefaultsfunc()}{frame\_setdefaultsfunc()}}
+{\footnotesize\ttfamily static void frame\+\_\+setdefaultsfunc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 173 of file ei\+\_\+frame.\+c.
+

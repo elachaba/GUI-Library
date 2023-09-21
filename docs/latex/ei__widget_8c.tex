@@ -1,0 +1,161 @@
+\hypertarget{ei__widget_8c}{}\doxysection{ei\+\_\+widget.\+c File Reference}
+\label{ei__widget_8c}\index{ei\_widget.c@{ei\_widget.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+widgetclass.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+widget.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+implementation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}draw\+\_\+tools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+application.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+frame.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$ \mbox{\hyperlink{ei__widget_8c_a124ece03db564e068ff7f3a04410755f}{from\+\_\+id\+\_\+to\+\_\+color}} (uint32\+\_\+t pick\+\_\+id)
+\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{ei__widget_8c_af05d9b442d1c9ac845dc74d64f7f7239}{ei\+\_\+widget\+\_\+create}} (\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}} class\+\_\+name, \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} parent, \mbox{\hyperlink{ei__types_8h_a851d40b095b5bf6f3b8733f0a09c820b}{ei\+\_\+user\+\_\+param\+\_\+t}} user\+\_\+data, \mbox{\hyperlink{ei__widget_8h_ab58bdc73d94efb5e0cf0a1893eec910b}{ei\+\_\+widget\+\_\+destructor\+\_\+t}} destructor)
+\begin{DoxyCompactList}\small\item\em Creates a new instance of a widget of some particular class, as a descendant of an existing widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__widget_8c_a857f4be2cbfb1be5aed407cc001ccccb}{ei\+\_\+impl\+\_\+widget\+\_\+draw\+\_\+children}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} pick\+\_\+surface, \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em Draws the children of a widget. The children are draw withing the limits of the clipper and the widget\textquotesingle{}s content\+\_\+rect. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__widget_8c_a305740a1c9deb88e46ba1b1e83b0b69c}{ei\+\_\+widget\+\_\+remove\+\_\+child}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} parent, \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} child)
+\item 
+void \mbox{\hyperlink{ei__widget_8c_aedbe2a89b8e68342362710a55ee1858b}{ei\+\_\+widget\+\_\+destroy}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Destroys a widget. Removes the widget from the screen if it is currently displayed. Destroys all its descendants. Calls its destructor if it was provided. Frees the memory used by the widget (e.\+g. the widget param). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{ei__widget_8c_a31480a0431b69357916ef4ed16ec9d2f}{ei\+\_\+widget\+\_\+is\+\_\+displayed}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Returns if the widget is currently displayed (i.\+e. managed by a geometry manager). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{ei__widget_8c_a2bbfc1b482c793f44b041f03a4d14829}{pick\+\_\+random}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ei__widget_8c_a857f4be2cbfb1be5aed407cc001ccccb}\label{ei__widget_8c_a857f4be2cbfb1be5aed407cc001ccccb}} 
+\index{ei\_widget.c@{ei\_widget.c}!ei\_impl\_widget\_draw\_children@{ei\_impl\_widget\_draw\_children}}
+\index{ei\_impl\_widget\_draw\_children@{ei\_impl\_widget\_draw\_children}!ei\_widget.c@{ei\_widget.c}}
+\doxysubsubsection{\texorpdfstring{ei\_impl\_widget\_draw\_children()}{ei\_impl\_widget\_draw\_children()}}
+{\footnotesize\ttfamily void ei\+\_\+impl\+\_\+widget\+\_\+draw\+\_\+children (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{pick\+\_\+surface,  }\item[{\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Draws the children of a widget. The children are draw withing the limits of the clipper and the widget\textquotesingle{}s content\+\_\+rect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget which children are drawn. \\
+\hline
+{\em surface} & A locked surface where to draw the widget\textquotesingle{}s children. \\
+\hline
+{\em pick\+\_\+surface} & The picking offscreen. \\
+\hline
+{\em clipper} & If not NULL, the drawing is restricted within this rectangle (expressed in the surface reference frame). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file ei\+\_\+widget.\+c.
+
+\mbox{\Hypertarget{ei__widget_8c_af05d9b442d1c9ac845dc74d64f7f7239}\label{ei__widget_8c_af05d9b442d1c9ac845dc74d64f7f7239}} 
+\index{ei\_widget.c@{ei\_widget.c}!ei\_widget\_create@{ei\_widget\_create}}
+\index{ei\_widget\_create@{ei\_widget\_create}!ei\_widget.c@{ei\_widget.c}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_create()}{ei\_widget\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+widget\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}}}]{class\+\_\+name,  }\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{parent,  }\item[{\mbox{\hyperlink{ei__types_8h_a851d40b095b5bf6f3b8733f0a09c820b}{ei\+\_\+user\+\_\+param\+\_\+t}}}]{user\+\_\+data,  }\item[{\mbox{\hyperlink{ei__widget_8h_ab58bdc73d94efb5e0cf0a1893eec910b}{ei\+\_\+widget\+\_\+destructor\+\_\+t}}}]{destructor }\end{DoxyParamCaption})}
+
+
+
+Creates a new instance of a widget of some particular class, as a descendant of an existing widget. 
+
+The widget is not displayed on screen until it is managed by a geometry manager. When no more needed, the widget must be released by calling \mbox{\hyperlink{ei__widget_8c_aedbe2a89b8e68342362710a55ee1858b}{ei\+\_\+widget\+\_\+destroy}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+\_\+name} & The name of the class of the widget that is to be created. \\
+\hline
+{\em parent} & A pointer to the parent widget. Can not be NULL. \\
+\hline
+{\em user\+\_\+data} & A pointer provided by the programmer for private use. May be NULL. \\
+\hline
+{\em destructor} & A pointer to a function to call before destroying a widget structure. May be NULL.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created widget, or NULL if there was an error. 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file ei\+\_\+widget.\+c.
+
+\mbox{\Hypertarget{ei__widget_8c_aedbe2a89b8e68342362710a55ee1858b}\label{ei__widget_8c_aedbe2a89b8e68342362710a55ee1858b}} 
+\index{ei\_widget.c@{ei\_widget.c}!ei\_widget\_destroy@{ei\_widget\_destroy}}
+\index{ei\_widget\_destroy@{ei\_widget\_destroy}!ei\_widget.c@{ei\_widget.c}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_destroy()}{ei\_widget\_destroy()}}
+{\footnotesize\ttfamily void ei\+\_\+widget\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Destroys a widget. Removes the widget from the screen if it is currently displayed. Destroys all its descendants. Calls its destructor if it was provided. Frees the memory used by the widget (e.\+g. the widget param). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget that is to be destroyed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file ei\+\_\+widget.\+c.
+
+\mbox{\Hypertarget{ei__widget_8c_a31480a0431b69357916ef4ed16ec9d2f}\label{ei__widget_8c_a31480a0431b69357916ef4ed16ec9d2f}} 
+\index{ei\_widget.c@{ei\_widget.c}!ei\_widget\_is\_displayed@{ei\_widget\_is\_displayed}}
+\index{ei\_widget\_is\_displayed@{ei\_widget\_is\_displayed}!ei\_widget.c@{ei\_widget.c}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_is\_displayed()}{ei\_widget\_is\_displayed()}}
+{\footnotesize\ttfamily bool ei\+\_\+widget\+\_\+is\+\_\+displayed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Returns if the widget is currently displayed (i.\+e. managed by a geometry manager). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the widget is displayed, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file ei\+\_\+widget.\+c.
+
+\mbox{\Hypertarget{ei__widget_8c_a305740a1c9deb88e46ba1b1e83b0b69c}\label{ei__widget_8c_a305740a1c9deb88e46ba1b1e83b0b69c}} 
+\index{ei\_widget.c@{ei\_widget.c}!ei\_widget\_remove\_child@{ei\_widget\_remove\_child}}
+\index{ei\_widget\_remove\_child@{ei\_widget\_remove\_child}!ei\_widget.c@{ei\_widget.c}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_remove\_child()}{ei\_widget\_remove\_child()}}
+{\footnotesize\ttfamily void ei\+\_\+widget\+\_\+remove\+\_\+child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{parent,  }\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{child }\end{DoxyParamCaption})}
+
+
+
+Definition at line 78 of file ei\+\_\+widget.\+c.
+
+\mbox{\Hypertarget{ei__widget_8c_a124ece03db564e068ff7f3a04410755f}\label{ei__widget_8c_a124ece03db564e068ff7f3a04410755f}} 
+\index{ei\_widget.c@{ei\_widget.c}!from\_id\_to\_color@{from\_id\_to\_color}}
+\index{from\_id\_to\_color@{from\_id\_to\_color}!ei\_widget.c@{ei\_widget.c}}
+\doxysubsubsection{\texorpdfstring{from\_id\_to\_color()}{from\_id\_to\_color()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}$\ast$ from\+\_\+id\+\_\+to\+\_\+color (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{pick\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file ei\+\_\+widget.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ei__widget_8c_a2bbfc1b482c793f44b041f03a4d14829}\label{ei__widget_8c_a2bbfc1b482c793f44b041f03a4d14829}} 
+\index{ei\_widget.c@{ei\_widget.c}!pick\_random@{pick\_random}}
+\index{pick\_random@{pick\_random}!ei\_widget.c@{ei\_widget.c}}
+\doxysubsubsection{\texorpdfstring{pick\_random}{pick\_random}}
+{\footnotesize\ttfamily uint32\+\_\+t pick\+\_\+random = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 9 of file ei\+\_\+widget.\+c.
+

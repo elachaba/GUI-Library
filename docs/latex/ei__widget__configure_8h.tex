@@ -1,0 +1,262 @@
+\hypertarget{ei__widget__configure_8h}{}\doxysection{ei\+\_\+widget\+\_\+configure.\+h File Reference}
+\label{ei__widget__configure_8h}\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+
+
+API for widgets configuration.  
+
+
+{\ttfamily \#include \char`\"{}ei\+\_\+widget.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ei__widget__configure_8h_ad2bb76b1a21db783819cff87db0b688a}{ei\+\_\+frame\+\_\+configure}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} $\ast$requested\+\_\+size, const \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$color, int $\ast$border\+\_\+width, \mbox{\hyperlink{ei__types_8h_aa79a32b1d8ece0e44cfa394e870b270b}{ei\+\_\+relief\+\_\+t}} $\ast$relief, \mbox{\hyperlink{ei__types_8h_ae933567aa1853d61b39fefb777088417}{ei\+\_\+string\+\_\+t}} $\ast$\mbox{\hyperlink{structtext}{text}}, \mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}} $\ast$text\+\_\+font, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$text\+\_\+color, \mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}} $\ast$text\+\_\+anchor, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} $\ast$img, \mbox{\hyperlink{ei__types_8h_abc4de40f6fdb6cdca6bfe2bdb318e150}{ei\+\_\+rect\+\_\+ptr\+\_\+t}} $\ast$img\+\_\+rect, \mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}} $\ast$img\+\_\+anchor)
+\begin{DoxyCompactList}\small\item\em Configures the attributes of widgets of the class \char`\"{}frame\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__widget__configure_8h_ab07d1eaccd7b97fd429eaff61a3cda9c}{ei\+\_\+button\+\_\+configure}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} $\ast$requested\+\_\+size, const \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$color, int $\ast$border\+\_\+width, int $\ast$\mbox{\hyperlink{ei__toplevel_8c_adc45ae7ffa2286ae71bec7b95470568f}{corner\+\_\+radius}}, \mbox{\hyperlink{ei__types_8h_aa79a32b1d8ece0e44cfa394e870b270b}{ei\+\_\+relief\+\_\+t}} $\ast$relief, \mbox{\hyperlink{ei__types_8h_ae933567aa1853d61b39fefb777088417}{ei\+\_\+string\+\_\+t}} $\ast$\mbox{\hyperlink{structtext}{text}}, \mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}} $\ast$text\+\_\+font, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$text\+\_\+color, \mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}} $\ast$text\+\_\+anchor, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} $\ast$img, \mbox{\hyperlink{ei__types_8h_abc4de40f6fdb6cdca6bfe2bdb318e150}{ei\+\_\+rect\+\_\+ptr\+\_\+t}} $\ast$img\+\_\+rect, \mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}} $\ast$img\+\_\+anchor, \mbox{\hyperlink{ei__widget_8h_aa66a260ca0769c3d7eb19d3b8dab2f76}{ei\+\_\+callback\+\_\+t}} $\ast$callback, \mbox{\hyperlink{ei__types_8h_a851d40b095b5bf6f3b8733f0a09c820b}{ei\+\_\+user\+\_\+param\+\_\+t}} $\ast$user\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Configures the attributes of widgets of the class \char`\"{}button\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__widget__configure_8h_a34712e27bfb732c53a9f4a922362be92}{ei\+\_\+toplevel\+\_\+configure}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} $\ast$requested\+\_\+size, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$color, int $\ast$border\+\_\+width, \mbox{\hyperlink{ei__types_8h_ae933567aa1853d61b39fefb777088417}{ei\+\_\+string\+\_\+t}} $\ast$title, bool $\ast$closable, \mbox{\hyperlink{ei__types_8h_ab5d9ff46ba9b2c9fa6d6fbd2594c6439}{ei\+\_\+axis\+\_\+set\+\_\+t}} $\ast$resizable, \mbox{\hyperlink{ei__types_8h_ab595db6e8eeaab63ebeecaa98815e9b1}{ei\+\_\+size\+\_\+ptr\+\_\+t}} $\ast$min\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Configures the attributes of widgets of the class \char`\"{}toplevel\char`\"{}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{ei__widget__configure_8h_a4bf79c486ce6d8149f13e7de467463a9}{ei\+\_\+frame\+\_\+set\+\_\+requested\+\_\+size}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} frame, \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} size)
+\item 
+static void \mbox{\hyperlink{ei__widget__configure_8h_ac790ecd792b87f9fdc18d5db99bec2ed}{ei\+\_\+frame\+\_\+set\+\_\+bg\+\_\+color}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} frame, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} bg\+\_\+color)
+\item 
+static void \mbox{\hyperlink{ei__widget__configure_8h_a24ae39c768cb716121b9606ad6b20a05}{ei\+\_\+frame\+\_\+set\+\_\+text}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} frame, \mbox{\hyperlink{ei__types_8h_ae933567aa1853d61b39fefb777088417}{ei\+\_\+string\+\_\+t}} \mbox{\hyperlink{structtext}{text}})
+\item 
+static void \mbox{\hyperlink{ei__widget__configure_8h_af1addf1bb98f026575cf0fed1d437ce1}{ei\+\_\+frame\+\_\+set\+\_\+image}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} frame, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} \mbox{\hyperlink{structimage}{image}})
+\item 
+static void \mbox{\hyperlink{ei__widget__configure_8h_a995f53212890c04fd2e1e39bfecaefa3}{ei\+\_\+button\+\_\+set\+\_\+requested\+\_\+size}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} button, \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} size)
+\item 
+static void \mbox{\hyperlink{ei__widget__configure_8h_aaa376c223fe00020e394f185abeb8998}{ei\+\_\+button\+\_\+set\+\_\+bg\+\_\+color}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} button, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} bg\+\_\+color)
+\item 
+static void \mbox{\hyperlink{ei__widget__configure_8h_ab4fbe4f885a5fa150840c269da7e49b9}{ei\+\_\+button\+\_\+set\+\_\+text}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} button, \mbox{\hyperlink{ei__types_8h_ae933567aa1853d61b39fefb777088417}{ei\+\_\+string\+\_\+t}} \mbox{\hyperlink{structtext}{text}})
+\item 
+static void \mbox{\hyperlink{ei__widget__configure_8h_a09a1b7bafb8188f2d18eb2d4eb488f72}{ei\+\_\+button\+\_\+set\+\_\+image}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} button, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} \mbox{\hyperlink{structimage}{image}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{ei__widget__configure_8h_a9d4970e13991bc2e49f47892c7e9429f}{k\+\_\+default\+\_\+button\+\_\+border\+\_\+width}} = 4
+\begin{DoxyCompactList}\small\item\em The default border width of button widgets. \end{DoxyCompactList}\item 
+static const int \mbox{\hyperlink{ei__widget__configure_8h_aa204a20fcee599bf19f02f7813dac04d}{k\+\_\+default\+\_\+button\+\_\+corner\+\_\+radius}} = 10
+\begin{DoxyCompactList}\small\item\em The default corner radius of button widgets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+API for widgets configuration. 
+
+Created by François Bérard on 10.\+04.\+2023 Copyright 2023 Ensimag. All rights reserved. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ei__widget__configure_8h_ab07d1eaccd7b97fd429eaff61a3cda9c}\label{ei__widget__configure_8h_ab07d1eaccd7b97fd429eaff61a3cda9c}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!ei\_button\_configure@{ei\_button\_configure}}
+\index{ei\_button\_configure@{ei\_button\_configure}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{ei\_button\_configure()}{ei\_button\_configure()}}
+{\footnotesize\ttfamily void ei\+\_\+button\+\_\+configure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} $\ast$}]{requested\+\_\+size,  }\item[{const \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$}]{color,  }\item[{int $\ast$}]{border\+\_\+width,  }\item[{int $\ast$}]{corner\+\_\+radius,  }\item[{\mbox{\hyperlink{ei__types_8h_aa79a32b1d8ece0e44cfa394e870b270b}{ei\+\_\+relief\+\_\+t}} $\ast$}]{relief,  }\item[{\mbox{\hyperlink{ei__types_8h_ae933567aa1853d61b39fefb777088417}{ei\+\_\+string\+\_\+t}} $\ast$}]{text,  }\item[{\mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}} $\ast$}]{text\+\_\+font,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$}]{text\+\_\+color,  }\item[{\mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}} $\ast$}]{text\+\_\+anchor,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} $\ast$}]{img,  }\item[{\mbox{\hyperlink{ei__types_8h_abc4de40f6fdb6cdca6bfe2bdb318e150}{ei\+\_\+rect\+\_\+ptr\+\_\+t}} $\ast$}]{img\+\_\+rect,  }\item[{\mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}} $\ast$}]{img\+\_\+anchor,  }\item[{\mbox{\hyperlink{ei__widget_8h_aa66a260ca0769c3d7eb19d3b8dab2f76}{ei\+\_\+callback\+\_\+t}} $\ast$}]{callback,  }\item[{\mbox{\hyperlink{ei__types_8h_a851d40b095b5bf6f3b8733f0a09c820b}{ei\+\_\+user\+\_\+param\+\_\+t}} $\ast$}]{user\+\_\+param }\end{DoxyParamCaption})}
+
+
+
+Configures the attributes of widgets of the class \char`\"{}button\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget,requested\+\_\+size,color,border\+\_\+width,relief,text,text\+\_\+font,text\+\_\+color,text\+\_\+anchor,img,img\+\_\+rect,img\+\_\+anchor} & See the parameter definition of \mbox{\hyperlink{ei__widget__configure_8c_ad2bb76b1a21db783819cff87db0b688a}{ei\+\_\+frame\+\_\+configure}}. The only difference is that relief defaults to \mbox{\hyperlink{ei__types_8h_aa79a32b1d8ece0e44cfa394e870b270bac1e7867185743599ffcceb42784bd4e3}{ei\+\_\+relief\+\_\+raised}} and border\+\_\+width defaults to \mbox{\hyperlink{ei__widget__configure_8h_a9d4970e13991bc2e49f47892c7e9429f}{k\+\_\+default\+\_\+button\+\_\+border\+\_\+width}}. \\
+\hline
+{\em corner\+\_\+radius} & The radius (in pixels) of the rounded corners of the button. 0 means straight corners. Defaults to \mbox{\hyperlink{ei__widget__configure_8h_aa204a20fcee599bf19f02f7813dac04d}{k\+\_\+default\+\_\+button\+\_\+corner\+\_\+radius}}. \\
+\hline
+{\em callback} & The callback function to call when the user clicks on the button. Defaults to NULL (no callback). \\
+\hline
+{\em user\+\_\+param} & A programmer supplied parameter that will be passed to the callback when called. Defaults to NULL. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 89 of file ei\+\_\+widget\+\_\+configure.\+c.
+
+\mbox{\Hypertarget{ei__widget__configure_8h_aaa376c223fe00020e394f185abeb8998}\label{ei__widget__configure_8h_aaa376c223fe00020e394f185abeb8998}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!ei\_button\_set\_bg\_color@{ei\_button\_set\_bg\_color}}
+\index{ei\_button\_set\_bg\_color@{ei\_button\_set\_bg\_color}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{ei\_button\_set\_bg\_color()}{ei\_button\_set\_bg\_color()}}
+{\footnotesize\ttfamily static void ei\+\_\+button\+\_\+set\+\_\+bg\+\_\+color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{button,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}}]{bg\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 141 of file ei\+\_\+widget\+\_\+configure.\+h.
+
+\mbox{\Hypertarget{ei__widget__configure_8h_a09a1b7bafb8188f2d18eb2d4eb488f72}\label{ei__widget__configure_8h_a09a1b7bafb8188f2d18eb2d4eb488f72}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!ei\_button\_set\_image@{ei\_button\_set\_image}}
+\index{ei\_button\_set\_image@{ei\_button\_set\_image}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{ei\_button\_set\_image()}{ei\_button\_set\_image()}}
+{\footnotesize\ttfamily static void ei\+\_\+button\+\_\+set\+\_\+image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{button,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 143 of file ei\+\_\+widget\+\_\+configure.\+h.
+
+\mbox{\Hypertarget{ei__widget__configure_8h_a995f53212890c04fd2e1e39bfecaefa3}\label{ei__widget__configure_8h_a995f53212890c04fd2e1e39bfecaefa3}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!ei\_button\_set\_requested\_size@{ei\_button\_set\_requested\_size}}
+\index{ei\_button\_set\_requested\_size@{ei\_button\_set\_requested\_size}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{ei\_button\_set\_requested\_size()}{ei\_button\_set\_requested\_size()}}
+{\footnotesize\ttfamily static void ei\+\_\+button\+\_\+set\+\_\+requested\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{button,  }\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 140 of file ei\+\_\+widget\+\_\+configure.\+h.
+
+\mbox{\Hypertarget{ei__widget__configure_8h_ab4fbe4f885a5fa150840c269da7e49b9}\label{ei__widget__configure_8h_ab4fbe4f885a5fa150840c269da7e49b9}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!ei\_button\_set\_text@{ei\_button\_set\_text}}
+\index{ei\_button\_set\_text@{ei\_button\_set\_text}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{ei\_button\_set\_text()}{ei\_button\_set\_text()}}
+{\footnotesize\ttfamily static void ei\+\_\+button\+\_\+set\+\_\+text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{button,  }\item[{\mbox{\hyperlink{ei__types_8h_ae933567aa1853d61b39fefb777088417}{ei\+\_\+string\+\_\+t}}}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 142 of file ei\+\_\+widget\+\_\+configure.\+h.
+
+\mbox{\Hypertarget{ei__widget__configure_8h_ad2bb76b1a21db783819cff87db0b688a}\label{ei__widget__configure_8h_ad2bb76b1a21db783819cff87db0b688a}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!ei\_frame\_configure@{ei\_frame\_configure}}
+\index{ei\_frame\_configure@{ei\_frame\_configure}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{ei\_frame\_configure()}{ei\_frame\_configure()}}
+{\footnotesize\ttfamily void ei\+\_\+frame\+\_\+configure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} $\ast$}]{requested\+\_\+size,  }\item[{const \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$}]{color,  }\item[{int $\ast$}]{border\+\_\+width,  }\item[{\mbox{\hyperlink{ei__types_8h_aa79a32b1d8ece0e44cfa394e870b270b}{ei\+\_\+relief\+\_\+t}} $\ast$}]{relief,  }\item[{\mbox{\hyperlink{ei__types_8h_ae933567aa1853d61b39fefb777088417}{ei\+\_\+string\+\_\+t}} $\ast$}]{text,  }\item[{\mbox{\hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}} $\ast$}]{text\+\_\+font,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$}]{text\+\_\+color,  }\item[{\mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}} $\ast$}]{text\+\_\+anchor,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} $\ast$}]{img,  }\item[{\mbox{\hyperlink{ei__types_8h_abc4de40f6fdb6cdca6bfe2bdb318e150}{ei\+\_\+rect\+\_\+ptr\+\_\+t}} $\ast$}]{img\+\_\+rect,  }\item[{\mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}} $\ast$}]{img\+\_\+anchor }\end{DoxyParamCaption})}
+
+
+
+Configures the attributes of widgets of the class \char`\"{}frame\char`\"{}. 
+
+\begin{DoxyVerb}    Parameters obey the "optional parameters" protocol: if a parameter is "NULL", the state
+    of the configured frame for that parameter does not change.
+    When a frame is created, its parameters are set with the default values specified here.
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget to configure. \\
+\hline
+{\em requested\+\_\+size} & The size requested for this widget, including the widget\textquotesingle{}s borders. The geometry manager may override this size due to other constraints. Defaults to the \char`\"{}natural size\char`\"{} of the widget, ie. big enough to display the border and the text or the image. This may be (0, 0) if the widget has border\+\_\+width=0, and no text and no image. \\
+\hline
+{\em color} & The color of the background of the widget. Defaults to \mbox{\hyperlink{ei__types_8h_a00dfca48550b7224f2d8011497b9fd8c}{ei\+\_\+default\+\_\+background\+\_\+color}}. \\
+\hline
+{\em border\+\_\+width} & The width in pixel of the border decoration of the widget. The final appearance depends on the \char`\"{}relief\char`\"{} parameter. Defaults to 0. \\
+\hline
+{\em relief} & Appearance of the border of the widget. Defaults to \mbox{\hyperlink{ei__types_8h_aa79a32b1d8ece0e44cfa394e870b270ba105222bc995071e84bce027c90a59b62}{ei\+\_\+relief\+\_\+none}}. \\
+\hline
+{\em text} & The text to display in the widget, or NULL. Only one of the parameter \char`\"{}text\char`\"{} and \char`\"{}img\char`\"{} should be used (i.\+e. non-\/\+NULL). Defaults to NULL. \\
+\hline
+{\em text\+\_\+font} & The font used to display the text. Defaults to \mbox{\hyperlink{ei__types_8h_a722bfa1a8a9a4202fb2d4abce2f06a8c}{ei\+\_\+default\+\_\+font}}. \\
+\hline
+{\em text\+\_\+color} & The color used to display the text. Defaults to \mbox{\hyperlink{ei__types_8h_adc5dd1241a145ff097f2c01dd6ab13af}{ei\+\_\+font\+\_\+default\+\_\+color}}. \\
+\hline
+{\em text\+\_\+anchor} & The anchor of the text, i.\+e. where it is placed within the widget. Defines both the anchoring point on the parent and on the widget. Defaults to \mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450a5704b2469014b3e93fbdb0b297ed92b0}{ei\+\_\+anc\+\_\+center}}. \\
+\hline
+{\em img} & The image to display in the widget, or NULL. Any surface can be used, but usually a surface returned by \mbox{\hyperlink{hw__interface_8h_aeed5af6ddb524c645fb276649a83f462}{hw\+\_\+image\+\_\+load}}. Only one of the parameter \char`\"{}text\char`\"{} and \char`\"{}img\char`\"{} should be used (i.\+e. non-\/\+NULL). Defaults to NULL. \\
+\hline
+{\em img\+\_\+rect} & If not NULL, the rectangle defines a subpart of \char`\"{}img\char`\"{} to use as the image displayed in the widget. Defaults to NULL. \\
+\hline
+{\em img\+\_\+anchor} & The anchor of the image, i.\+e. where it is placed within the widget when the size of the widget is bigger than the size of the image. Defaults to \mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450a5704b2469014b3e93fbdb0b297ed92b0}{ei\+\_\+anc\+\_\+center}}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file ei\+\_\+widget\+\_\+configure.\+c.
+
+\mbox{\Hypertarget{ei__widget__configure_8h_ac790ecd792b87f9fdc18d5db99bec2ed}\label{ei__widget__configure_8h_ac790ecd792b87f9fdc18d5db99bec2ed}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!ei\_frame\_set\_bg\_color@{ei\_frame\_set\_bg\_color}}
+\index{ei\_frame\_set\_bg\_color@{ei\_frame\_set\_bg\_color}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{ei\_frame\_set\_bg\_color()}{ei\_frame\_set\_bg\_color()}}
+{\footnotesize\ttfamily static void ei\+\_\+frame\+\_\+set\+\_\+bg\+\_\+color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{frame,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}}]{bg\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 136 of file ei\+\_\+widget\+\_\+configure.\+h.
+
+\mbox{\Hypertarget{ei__widget__configure_8h_af1addf1bb98f026575cf0fed1d437ce1}\label{ei__widget__configure_8h_af1addf1bb98f026575cf0fed1d437ce1}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!ei\_frame\_set\_image@{ei\_frame\_set\_image}}
+\index{ei\_frame\_set\_image@{ei\_frame\_set\_image}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{ei\_frame\_set\_image()}{ei\_frame\_set\_image()}}
+{\footnotesize\ttfamily static void ei\+\_\+frame\+\_\+set\+\_\+image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{frame,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 138 of file ei\+\_\+widget\+\_\+configure.\+h.
+
+\mbox{\Hypertarget{ei__widget__configure_8h_a4bf79c486ce6d8149f13e7de467463a9}\label{ei__widget__configure_8h_a4bf79c486ce6d8149f13e7de467463a9}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!ei\_frame\_set\_requested\_size@{ei\_frame\_set\_requested\_size}}
+\index{ei\_frame\_set\_requested\_size@{ei\_frame\_set\_requested\_size}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{ei\_frame\_set\_requested\_size()}{ei\_frame\_set\_requested\_size()}}
+{\footnotesize\ttfamily static void ei\+\_\+frame\+\_\+set\+\_\+requested\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{frame,  }\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 135 of file ei\+\_\+widget\+\_\+configure.\+h.
+
+\mbox{\Hypertarget{ei__widget__configure_8h_a24ae39c768cb716121b9606ad6b20a05}\label{ei__widget__configure_8h_a24ae39c768cb716121b9606ad6b20a05}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!ei\_frame\_set\_text@{ei\_frame\_set\_text}}
+\index{ei\_frame\_set\_text@{ei\_frame\_set\_text}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{ei\_frame\_set\_text()}{ei\_frame\_set\_text()}}
+{\footnotesize\ttfamily static void ei\+\_\+frame\+\_\+set\+\_\+text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{frame,  }\item[{\mbox{\hyperlink{ei__types_8h_ae933567aa1853d61b39fefb777088417}{ei\+\_\+string\+\_\+t}}}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 137 of file ei\+\_\+widget\+\_\+configure.\+h.
+
+\mbox{\Hypertarget{ei__widget__configure_8h_a34712e27bfb732c53a9f4a922362be92}\label{ei__widget__configure_8h_a34712e27bfb732c53a9f4a922362be92}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!ei\_toplevel\_configure@{ei\_toplevel\_configure}}
+\index{ei\_toplevel\_configure@{ei\_toplevel\_configure}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{ei\_toplevel\_configure()}{ei\_toplevel\_configure()}}
+{\footnotesize\ttfamily void ei\+\_\+toplevel\+\_\+configure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} $\ast$}]{requested\+\_\+size,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$}]{color,  }\item[{int $\ast$}]{border\+\_\+width,  }\item[{\mbox{\hyperlink{ei__types_8h_ae933567aa1853d61b39fefb777088417}{ei\+\_\+string\+\_\+t}} $\ast$}]{title,  }\item[{bool $\ast$}]{closable,  }\item[{\mbox{\hyperlink{ei__types_8h_ab5d9ff46ba9b2c9fa6d6fbd2594c6439}{ei\+\_\+axis\+\_\+set\+\_\+t}} $\ast$}]{resizable,  }\item[{\mbox{\hyperlink{ei__types_8h_ab595db6e8eeaab63ebeecaa98815e9b1}{ei\+\_\+size\+\_\+ptr\+\_\+t}} $\ast$}]{min\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Configures the attributes of widgets of the class \char`\"{}toplevel\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget to configure. \\
+\hline
+{\em requested\+\_\+size} & The content size requested for this widget, this does not include the decorations (border, title bar). The geometry manager may override this size due to other constraints. Defaults to (320x240). \\
+\hline
+{\em color} & The color of the background of the content of the widget. Defaults to \mbox{\hyperlink{ei__types_8h_a00dfca48550b7224f2d8011497b9fd8c}{ei\+\_\+default\+\_\+background\+\_\+color}}. \\
+\hline
+{\em border\+\_\+width} & The width in pixel of the border of the widget. Defaults to 4. \\
+\hline
+{\em title} & The string title displayed in the title bar. Defaults to \char`\"{}\+Toplevel\char`\"{}. Uses the font \mbox{\hyperlink{ei__types_8h_a722bfa1a8a9a4202fb2d4abce2f06a8c}{ei\+\_\+default\+\_\+font}}. \\
+\hline
+{\em closable} & If true, the toplevel is closable by the user, the toplevel must show a close button in its title bar. Defaults to true. \\
+\hline
+{\em resizable} & Defines if the widget can be resized horizontally and/or vertically by the user. Defaults to \mbox{\hyperlink{ei__types_8h_ab5d9ff46ba9b2c9fa6d6fbd2594c6439a6e6ffa2a8d854858429d6f54d94919a9}{ei\+\_\+axis\+\_\+both}}. \\
+\hline
+{\em min\+\_\+size} & For resizable widgets, defines the minimum size of its content. The default minimum size of a toplevel is (160, 120). If $\ast$min\+\_\+size is NULL, this requires the min\+\_\+size to be configured to the default size. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 182 of file ei\+\_\+widget\+\_\+configure.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ei__widget__configure_8h_a9d4970e13991bc2e49f47892c7e9429f}\label{ei__widget__configure_8h_a9d4970e13991bc2e49f47892c7e9429f}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!k\_default\_button\_border\_width@{k\_default\_button\_border\_width}}
+\index{k\_default\_button\_border\_width@{k\_default\_button\_border\_width}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{k\_default\_button\_border\_width}{k\_default\_button\_border\_width}}
+{\footnotesize\ttfamily const int k\+\_\+default\+\_\+button\+\_\+border\+\_\+width = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The default border width of button widgets. 
+
+
+
+Definition at line 68 of file ei\+\_\+widget\+\_\+configure.\+h.
+
+\mbox{\Hypertarget{ei__widget__configure_8h_aa204a20fcee599bf19f02f7813dac04d}\label{ei__widget__configure_8h_aa204a20fcee599bf19f02f7813dac04d}} 
+\index{ei\_widget\_configure.h@{ei\_widget\_configure.h}!k\_default\_button\_corner\_radius@{k\_default\_button\_corner\_radius}}
+\index{k\_default\_button\_corner\_radius@{k\_default\_button\_corner\_radius}!ei\_widget\_configure.h@{ei\_widget\_configure.h}}
+\doxysubsubsection{\texorpdfstring{k\_default\_button\_corner\_radius}{k\_default\_button\_corner\_radius}}
+{\footnotesize\ttfamily const int k\+\_\+default\+\_\+button\+\_\+corner\+\_\+radius = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The default corner radius of button widgets. 
+
+
+
+Definition at line 69 of file ei\+\_\+widget\+\_\+configure.\+h.
+

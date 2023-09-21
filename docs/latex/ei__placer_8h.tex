@@ -1,0 +1,117 @@
+\hypertarget{ei__placer_8h}{}\doxysection{ei\+\_\+placer.\+h File Reference}
+\label{ei__placer_8h}\index{ei\_placer.h@{ei\_placer.h}}
+
+
+Manages the positioning and sizing of widgets on the screen.  
+
+
+{\ttfamily \#include \char`\"{}ei\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+widget.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ei__placer_8h_ab634353bc9e3d34a70d48c28bce08b52}{ei\+\_\+place}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, \mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}} $\ast$anchor, int $\ast$x, int $\ast$y, int $\ast$width, int $\ast$height, float $\ast$rel\+\_\+x, float $\ast$rel\+\_\+y, float $\ast$rel\+\_\+width, float $\ast$rel\+\_\+height)
+\begin{DoxyCompactList}\small\item\em Configures the geometry of a widget using the \char`\"{}placer\char`\"{} geometry manager. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__placer_8h_ae52cd3699ee9c80ff8bf6ab4dbb9d67b}{ei\+\_\+placer\+\_\+forget}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Tells the placer to remove a widget from the screen and forget about it. Note\+: the widget is not destroyed and still exists in memory. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{ei__placer_8h_a26df0cef0ccb936b460b801a01ed5f4c}{ei\+\_\+place\+\_\+xy}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, int x, int y)
+\item 
+static void \mbox{\hyperlink{ei__placer_8h_acbf29256fb4ef1429aecc1fb8c40a16f}{ei\+\_\+place\+\_\+anchored\+\_\+xy}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, \mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}} anchor, int x, int y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the positioning and sizing of widgets on the screen. 
+
+\begin{DoxyAuthor}{Author}
+Created by François Bérard on 18.\+12.\+11. Copyright 2011 Ensimag. All rights reserved. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ei__placer_8h_ab634353bc9e3d34a70d48c28bce08b52}\label{ei__placer_8h_ab634353bc9e3d34a70d48c28bce08b52}} 
+\index{ei\_placer.h@{ei\_placer.h}!ei\_place@{ei\_place}}
+\index{ei\_place@{ei\_place}!ei\_placer.h@{ei\_placer.h}}
+\doxysubsubsection{\texorpdfstring{ei\_place()}{ei\_place()}}
+{\footnotesize\ttfamily void ei\+\_\+place (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{\mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}} $\ast$}]{anchor,  }\item[{int $\ast$}]{x,  }\item[{int $\ast$}]{y,  }\item[{int $\ast$}]{width,  }\item[{int $\ast$}]{height,  }\item[{float $\ast$}]{rel\+\_\+x,  }\item[{float $\ast$}]{rel\+\_\+y,  }\item[{float $\ast$}]{rel\+\_\+width,  }\item[{float $\ast$}]{rel\+\_\+height }\end{DoxyParamCaption})}
+
+
+
+Configures the geometry of a widget using the \char`\"{}placer\char`\"{} geometry manager. 
+
+\begin{DoxyVerb}    The placer computes a widget's geometry relative to its parent *content_rect*.
+
+            If the widget was already managed by the "placer", then this calls simply updates
+    the placer parameters: arguments that are not NULL replace previous values.
+
+            When the arguments are passed as NULL, the placer uses default values (detailed in
+    the argument descriptions below). If no size is provided (either absolute or
+    relative), then either the requested size of the widget is used if one was provided,
+    or the default size is used.
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget to place. \\
+\hline
+{\em anchor} & How to anchor the widget to the position defined by the placer (defaults to ei\+\_\+anc\+\_\+northwest). \\
+\hline
+{\em x} & The absolute x position of the widget (defaults to 0). \\
+\hline
+{\em y} & The absolute y position of the widget (defaults to 0). \\
+\hline
+{\em width} & The absolute width for the widget (defaults to the requested width or the default width of the widget if rel\+\_\+width is NULL, or 0 otherwise). \\
+\hline
+{\em height} & The absolute height for the widget (defaults to the requested height or the default height of the widget if rel\+\_\+height is NULL, or 0 otherwise). \\
+\hline
+{\em rel\+\_\+x} & The relative x position of the widget\+: 0.\+0 corresponds to the left side of the master, 1.\+0 to the right side (defaults to 0.\+0). \\
+\hline
+{\em rel\+\_\+y} & The relative y position of the widget\+: 0.\+0 corresponds to the top side of the master, 1.\+0 to the bottom side (defaults to 0.\+0). \\
+\hline
+{\em rel\+\_\+width} & The relative width of the widget\+: 0.\+0 corresponds to a width of 0, 1.\+0 to the width of the master (defaults to 0.\+0). \\
+\hline
+{\em rel\+\_\+height} & The relative height of the widget\+: 0.\+0 corresponds to a height of 0, 1.\+0 to the height of the master (defaults to 0.\+0). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 10 of file ei\+\_\+placer.\+c.
+
+\mbox{\Hypertarget{ei__placer_8h_acbf29256fb4ef1429aecc1fb8c40a16f}\label{ei__placer_8h_acbf29256fb4ef1429aecc1fb8c40a16f}} 
+\index{ei\_placer.h@{ei\_placer.h}!ei\_place\_anchored\_xy@{ei\_place\_anchored\_xy}}
+\index{ei\_place\_anchored\_xy@{ei\_place\_anchored\_xy}!ei\_placer.h@{ei\_placer.h}}
+\doxysubsubsection{\texorpdfstring{ei\_place\_anchored\_xy()}{ei\_place\_anchored\_xy()}}
+{\footnotesize\ttfamily static void ei\+\_\+place\+\_\+anchored\+\_\+xy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{\mbox{\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\+\_\+anchor\+\_\+t}}}]{anchor,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 73 of file ei\+\_\+placer.\+h.
+
+\mbox{\Hypertarget{ei__placer_8h_a26df0cef0ccb936b460b801a01ed5f4c}\label{ei__placer_8h_a26df0cef0ccb936b460b801a01ed5f4c}} 
+\index{ei\_placer.h@{ei\_placer.h}!ei\_place\_xy@{ei\_place\_xy}}
+\index{ei\_place\_xy@{ei\_place\_xy}!ei\_placer.h@{ei\_placer.h}}
+\doxysubsubsection{\texorpdfstring{ei\_place\_xy()}{ei\_place\_xy()}}
+{\footnotesize\ttfamily static void ei\+\_\+place\+\_\+xy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 72 of file ei\+\_\+placer.\+h.
+
+\mbox{\Hypertarget{ei__placer_8h_ae52cd3699ee9c80ff8bf6ab4dbb9d67b}\label{ei__placer_8h_ae52cd3699ee9c80ff8bf6ab4dbb9d67b}} 
+\index{ei\_placer.h@{ei\_placer.h}!ei\_placer\_forget@{ei\_placer\_forget}}
+\index{ei\_placer\_forget@{ei\_placer\_forget}!ei\_placer.h@{ei\_placer.h}}
+\doxysubsubsection{\texorpdfstring{ei\_placer\_forget()}{ei\_placer\_forget()}}
+{\footnotesize\ttfamily void ei\+\_\+placer\+\_\+forget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Tells the placer to remove a widget from the screen and forget about it. Note\+: the widget is not destroyed and still exists in memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget to remove from screen. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file ei\+\_\+placer.\+c.
+

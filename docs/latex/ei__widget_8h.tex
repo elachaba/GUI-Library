@@ -1,0 +1,174 @@
+\hypertarget{ei__widget_8h}{}\doxysection{ei\+\_\+widget.\+h File Reference}
+\label{ei__widget_8h}\index{ei\_widget.h@{ei\_widget.h}}
+
+
+API for widgets management\+: creation, destruction.  
+
+
+{\ttfamily \#include \char`\"{}ei\+\_\+widgetclass.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+draw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+placer.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{ei__widget_8h_ab58bdc73d94efb5e0cf0a1893eec910b}{ei\+\_\+widget\+\_\+destructor\+\_\+t}}) (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em The type of functions that are called just before a widget is being destroyed (the \char`\"{}widget\char`\"{} parameter and its fields are still valid). Functions of this type are passed as a parameter to \mbox{\hyperlink{ei__widget_8c_af05d9b442d1c9ac845dc74d64f7f7239}{ei\+\_\+widget\+\_\+create}}. \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{ei__widget_8h_aa66a260ca0769c3d7eb19d3b8dab2f76}{ei\+\_\+callback\+\_\+t}}) (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, struct \mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}} $\ast$event, \mbox{\hyperlink{ei__types_8h_a851d40b095b5bf6f3b8733f0a09c820b}{ei\+\_\+user\+\_\+param\+\_\+t}} user\+\_\+param)
+\begin{DoxyCompactList}\small\item\em A function that is called in response to a user event. For example, the function that a programmer wants to be called when the user has pressed on a graphical button. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{ei__widget_8h_af05d9b442d1c9ac845dc74d64f7f7239}{ei\+\_\+widget\+\_\+create}} (\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}} class\+\_\+name, \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} parent, \mbox{\hyperlink{ei__types_8h_a851d40b095b5bf6f3b8733f0a09c820b}{ei\+\_\+user\+\_\+param\+\_\+t}} user\+\_\+data, \mbox{\hyperlink{ei__widget_8h_ab58bdc73d94efb5e0cf0a1893eec910b}{ei\+\_\+widget\+\_\+destructor\+\_\+t}} destructor)
+\begin{DoxyCompactList}\small\item\em Creates a new instance of a widget of some particular class, as a descendant of an existing widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__widget_8h_aedbe2a89b8e68342362710a55ee1858b}{ei\+\_\+widget\+\_\+destroy}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Destroys a widget. Removes the widget from the screen if it is currently displayed. Destroys all its descendants. Calls its destructor if it was provided. Frees the memory used by the widget (e.\+g. the widget param). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{ei__widget_8h_a31480a0431b69357916ef4ed16ec9d2f}{ei\+\_\+widget\+\_\+is\+\_\+displayed}} (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)
+\begin{DoxyCompactList}\small\item\em Returns if the widget is currently displayed (i.\+e. managed by a geometry manager). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{ei__widget_8h_acb8c17b67534dd9a42e9e64149a98482}{ei\+\_\+widget\+\_\+pick}} (\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$where)
+\begin{DoxyCompactList}\small\item\em Returns the widget that is at a given location on screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+API for widgets management\+: creation, destruction. 
+
+Created by François Bérard on 30.\+12.\+11. Copyright 2011 Ensimag. All rights reserved. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ei__widget_8h_aa66a260ca0769c3d7eb19d3b8dab2f76}\label{ei__widget_8h_aa66a260ca0769c3d7eb19d3b8dab2f76}} 
+\index{ei\_widget.h@{ei\_widget.h}!ei\_callback\_t@{ei\_callback\_t}}
+\index{ei\_callback\_t@{ei\_callback\_t}!ei\_widget.h@{ei\_widget.h}}
+\doxysubsubsection{\texorpdfstring{ei\_callback\_t}{ei\_callback\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ ei\+\_\+callback\+\_\+t) (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget, struct \mbox{\hyperlink{structei__event__t}{ei\+\_\+event\+\_\+t}} $\ast$event, \mbox{\hyperlink{ei__types_8h_a851d40b095b5bf6f3b8733f0a09c820b}{ei\+\_\+user\+\_\+param\+\_\+t}} user\+\_\+param)}
+
+
+
+A function that is called in response to a user event. For example, the function that a programmer wants to be called when the user has pressed on a graphical button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget for which the event was generated. \\
+\hline
+{\em event} & The event containing all its parameters (type, etc.) \\
+\hline
+{\em user\+\_\+param} & The user parameters that was provided by the caller when registering this callback. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file ei\+\_\+widget.\+h.
+
+\mbox{\Hypertarget{ei__widget_8h_ab58bdc73d94efb5e0cf0a1893eec910b}\label{ei__widget_8h_ab58bdc73d94efb5e0cf0a1893eec910b}} 
+\index{ei\_widget.h@{ei\_widget.h}!ei\_widget\_destructor\_t@{ei\_widget\_destructor\_t}}
+\index{ei\_widget\_destructor\_t@{ei\_widget\_destructor\_t}!ei\_widget.h@{ei\_widget.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_destructor\_t}{ei\_widget\_destructor\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ ei\+\_\+widget\+\_\+destructor\+\_\+t) (\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} widget)}
+
+
+
+The type of functions that are called just before a widget is being destroyed (the \char`\"{}widget\char`\"{} parameter and its fields are still valid). Functions of this type are passed as a parameter to \mbox{\hyperlink{ei__widget_8c_af05d9b442d1c9ac845dc74d64f7f7239}{ei\+\_\+widget\+\_\+create}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget that is going to be destroyed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file ei\+\_\+widget.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ei__widget_8h_af05d9b442d1c9ac845dc74d64f7f7239}\label{ei__widget_8h_af05d9b442d1c9ac845dc74d64f7f7239}} 
+\index{ei\_widget.h@{ei\_widget.h}!ei\_widget\_create@{ei\_widget\_create}}
+\index{ei\_widget\_create@{ei\_widget\_create}!ei\_widget.h@{ei\_widget.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_create()}{ei\_widget\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+widget\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__types_8h_a54e9efab809a177e0b5df09529a6d32c}{ei\+\_\+const\+\_\+string\+\_\+t}}}]{class\+\_\+name,  }\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{parent,  }\item[{\mbox{\hyperlink{ei__types_8h_a851d40b095b5bf6f3b8733f0a09c820b}{ei\+\_\+user\+\_\+param\+\_\+t}}}]{user\+\_\+data,  }\item[{\mbox{\hyperlink{ei__widget_8h_ab58bdc73d94efb5e0cf0a1893eec910b}{ei\+\_\+widget\+\_\+destructor\+\_\+t}}}]{destructor }\end{DoxyParamCaption})}
+
+
+
+Creates a new instance of a widget of some particular class, as a descendant of an existing widget. 
+
+The widget is not displayed on screen until it is managed by a geometry manager. When no more needed, the widget must be released by calling \mbox{\hyperlink{ei__widget_8c_aedbe2a89b8e68342362710a55ee1858b}{ei\+\_\+widget\+\_\+destroy}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+\_\+name} & The name of the class of the widget that is to be created. \\
+\hline
+{\em parent} & A pointer to the parent widget. Can not be NULL. \\
+\hline
+{\em user\+\_\+data} & A pointer provided by the programmer for private use. May be NULL. \\
+\hline
+{\em destructor} & A pointer to a function to call before destroying a widget structure. May be NULL.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created widget, or NULL if there was an error. 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file ei\+\_\+widget.\+c.
+
+\mbox{\Hypertarget{ei__widget_8h_aedbe2a89b8e68342362710a55ee1858b}\label{ei__widget_8h_aedbe2a89b8e68342362710a55ee1858b}} 
+\index{ei\_widget.h@{ei\_widget.h}!ei\_widget\_destroy@{ei\_widget\_destroy}}
+\index{ei\_widget\_destroy@{ei\_widget\_destroy}!ei\_widget.h@{ei\_widget.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_destroy()}{ei\_widget\_destroy()}}
+{\footnotesize\ttfamily void ei\+\_\+widget\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Destroys a widget. Removes the widget from the screen if it is currently displayed. Destroys all its descendants. Calls its destructor if it was provided. Frees the memory used by the widget (e.\+g. the widget param). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget that is to be destroyed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file ei\+\_\+widget.\+c.
+
+\mbox{\Hypertarget{ei__widget_8h_a31480a0431b69357916ef4ed16ec9d2f}\label{ei__widget_8h_a31480a0431b69357916ef4ed16ec9d2f}} 
+\index{ei\_widget.h@{ei\_widget.h}!ei\_widget\_is\_displayed@{ei\_widget\_is\_displayed}}
+\index{ei\_widget\_is\_displayed@{ei\_widget\_is\_displayed}!ei\_widget.h@{ei\_widget.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_is\_displayed()}{ei\_widget\_is\_displayed()}}
+{\footnotesize\ttfamily bool ei\+\_\+widget\+\_\+is\+\_\+displayed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}}}]{widget }\end{DoxyParamCaption})}
+
+
+
+Returns if the widget is currently displayed (i.\+e. managed by a geometry manager). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the widget is displayed, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file ei\+\_\+widget.\+c.
+
+\mbox{\Hypertarget{ei__widget_8h_acb8c17b67534dd9a42e9e64149a98482}\label{ei__widget_8h_acb8c17b67534dd9a42e9e64149a98482}} 
+\index{ei\_widget.h@{ei\_widget.h}!ei\_widget\_pick@{ei\_widget\_pick}}
+\index{ei\_widget\_pick@{ei\_widget\_pick}!ei\_widget.h@{ei\_widget.h}}
+\doxysubsubsection{\texorpdfstring{ei\_widget\_pick()}{ei\_widget\_pick()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+widget\+\_\+pick (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$}]{where }\end{DoxyParamCaption})}
+
+
+
+Returns the widget that is at a given location on screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em where} & The location on screen, expressed in the root window coordinates.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The top-\/most widget at this location, or NULL if there is no widget at this location (except for the root widget). 
+\end{DoxyReturn}
+
+
+Definition at line 230 of file ei\+\_\+application.\+c.
+

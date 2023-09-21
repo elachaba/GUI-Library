@@ -1,0 +1,258 @@
+\hypertarget{draw__tools_8c}{}\doxysection{draw\+\_\+tools.\+c File Reference}
+\label{draw__tools_8c}\index{draw\_tools.c@{draw\_tools.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hw\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+types.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{draw__tools_8c_a7403db3e2f8bddfe3250ff0ab5a09abc}{max\+\_\+function}} (int val\+\_\+1, int val\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Compares two integers and returns the maximum value between them. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{draw__tools_8c_a7d33ef0235a25a431d7b6bc60137abf0}{min\+\_\+function}} (int val\+\_\+1, int val\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Compares two integers and returns the minimum value between them. \end{DoxyCompactList}\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{draw__tools_8c_a7cfff1ec513e1b5602772121fab48f47}{point\+\_\+to\+\_\+pixel}} (\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$point, \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface)
+\begin{DoxyCompactList}\small\item\em Converts a point of coordinates (x,y) into a memory address. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{draw__tools_8c_adefd9cd87cda5c66c5ab5de8b799af18}{get\+\_\+pixel\+\_\+color\+\_\+unif}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, const \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$color)
+\begin{DoxyCompactList}\small\item\em Returns the value to affect to a pixel in order to color a surface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw__tools_8c_a2fd051e959f98c198ed0daa9f04e2bf7}{get\+\_\+pixel\+\_\+color\+\_\+var}} (uint32\+\_\+t $\ast$pixel, const \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$color, int id\+\_\+r, int id\+\_\+g, int id\+\_\+b, int id\+\_\+a)
+\begin{DoxyCompactList}\small\item\em Change the value of the pixel in order to color it with the color passed in parameters taking in consideration the transperancy factor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{draw__tools_8c_a7936c9c8f2c27fb24e4af6006ce499ee}{point\+\_\+in\+\_\+clipper}} (\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$point, const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em Checks if a point is within the surface delimited by the clipper. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$ \mbox{\hyperlink{draw__tools_8c_abdfd88f52e60d520a6b9ef6978a47ab1}{intersect\+\_\+rect}} (const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$rect\+\_\+1, const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$rect\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Calculates the intersection between two rectangles. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{draw__tools_8c_a94da454b0a28fa10af6defa598a2e3e8}{combine\+\_\+pixels}} (uint32\+\_\+t pixel\+\_\+s, uint32\+\_\+t pixel\+\_\+d, int ir, int ig, int ib, int ia)
+\begin{DoxyCompactList}\small\item\em the final pixel value by calculation the combination of the value of pixel source and a pixel destination weighted by the alpha of the pixel destination. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw__tools_8c_a6b0a96f4a1c990910aead3d5bd0eee06}{ei\+\_\+fill\+\_\+frame}} (\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} surface, \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$color, \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$clipper)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{draw__tools_8c_a94da454b0a28fa10af6defa598a2e3e8}\label{draw__tools_8c_a94da454b0a28fa10af6defa598a2e3e8}} 
+\index{draw\_tools.c@{draw\_tools.c}!combine\_pixels@{combine\_pixels}}
+\index{combine\_pixels@{combine\_pixels}!draw\_tools.c@{draw\_tools.c}}
+\doxysubsubsection{\texorpdfstring{combine\_pixels()}{combine\_pixels()}}
+{\footnotesize\ttfamily uint32\+\_\+t combine\+\_\+pixels (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{pixel\+\_\+s,  }\item[{uint32\+\_\+t}]{pixel\+\_\+d,  }\item[{int}]{ir,  }\item[{int}]{ig,  }\item[{int}]{ib,  }\item[{int}]{ia }\end{DoxyParamCaption})}
+
+
+
+the final pixel value by calculation the combination of the value of pixel source and a pixel destination weighted by the alpha of the pixel destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixel\+\_\+s} & the pixel source, (to be copied) \\
+\hline
+{\em pixel\+\_\+d} & the pixel destination, (where to write) \\
+\hline
+{\em ir} & the channel idx of red \\
+\hline
+{\em ig} & the channel idx of green \\
+\hline
+{\em ib} & the channel idx of blue \\
+\hline
+{\em ia} & the channel idx of alpha \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combination between the two pixels. 
+\end{DoxyReturn}
+
+
+Definition at line 117 of file draw\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{draw__tools_8c_a6b0a96f4a1c990910aead3d5bd0eee06}\label{draw__tools_8c_a6b0a96f4a1c990910aead3d5bd0eee06}} 
+\index{draw\_tools.c@{draw\_tools.c}!ei\_fill\_frame@{ei\_fill\_frame}}
+\index{ei\_fill\_frame@{ei\_fill\_frame}!draw\_tools.c@{draw\_tools.c}}
+\doxysubsubsection{\texorpdfstring{ei\_fill\_frame()}{ei\_fill\_frame()}}
+{\footnotesize\ttfamily void ei\+\_\+fill\+\_\+frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$}]{color,  }\item[{\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Definition at line 129 of file draw\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{draw__tools_8c_adefd9cd87cda5c66c5ab5de8b799af18}\label{draw__tools_8c_adefd9cd87cda5c66c5ab5de8b799af18}} 
+\index{draw\_tools.c@{draw\_tools.c}!get\_pixel\_color\_unif@{get\_pixel\_color\_unif}}
+\index{get\_pixel\_color\_unif@{get\_pixel\_color\_unif}!draw\_tools.c@{draw\_tools.c}}
+\doxysubsubsection{\texorpdfstring{get\_pixel\_color\_unif()}{get\_pixel\_color\_unif()}}
+{\footnotesize\ttfamily uint32\+\_\+t get\+\_\+pixel\+\_\+color\+\_\+unif (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface,  }\item[{const \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$}]{color }\end{DoxyParamCaption})}
+
+
+
+Returns the value to affect to a pixel in order to color a surface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface to fill \\
+\hline
+{\em color} & The filling color. If NULL, the color to be used is black \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value to put in the memory addresses corresponding to the pixels 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file draw\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{draw__tools_8c_a2fd051e959f98c198ed0daa9f04e2bf7}\label{draw__tools_8c_a2fd051e959f98c198ed0daa9f04e2bf7}} 
+\index{draw\_tools.c@{draw\_tools.c}!get\_pixel\_color\_var@{get\_pixel\_color\_var}}
+\index{get\_pixel\_color\_var@{get\_pixel\_color\_var}!draw\_tools.c@{draw\_tools.c}}
+\doxysubsubsection{\texorpdfstring{get\_pixel\_color\_var()}{get\_pixel\_color\_var()}}
+{\footnotesize\ttfamily void get\+\_\+pixel\+\_\+color\+\_\+var (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{pixel,  }\item[{const \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$}]{color,  }\item[{int}]{id\+\_\+r,  }\item[{int}]{id\+\_\+g,  }\item[{int}]{id\+\_\+b,  }\item[{int}]{id\+\_\+a }\end{DoxyParamCaption})}
+
+
+
+Change the value of the pixel in order to color it with the color passed in parameters taking in consideration the transperancy factor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixel} & The pixel to be re-\/colored \\
+\hline
+{\em color} & If NULL, the black color is used \\
+\hline
+{\em id\+\_\+r} & \\
+\hline
+{\em id\+\_\+g} & \\
+\hline
+{\em id\+\_\+b} & \\
+\hline
+{\em id\+\_\+a} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file draw\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{draw__tools_8c_abdfd88f52e60d520a6b9ef6978a47ab1}\label{draw__tools_8c_abdfd88f52e60d520a6b9ef6978a47ab1}} 
+\index{draw\_tools.c@{draw\_tools.c}!intersect\_rect@{intersect\_rect}}
+\index{intersect\_rect@{intersect\_rect}!draw\_tools.c@{draw\_tools.c}}
+\doxysubsubsection{\texorpdfstring{intersect\_rect()}{intersect\_rect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}}$\ast$ intersect\+\_\+rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{rect\+\_\+1,  }\item[{const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{rect\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+Calculates the intersection between two rectangles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect\+\_\+1} & \\
+\hline
+{\em rect\+\_\+2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the intersection between rect\+\_\+1 and rect\+\_\+2 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file draw\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{draw__tools_8c_a7403db3e2f8bddfe3250ff0ab5a09abc}\label{draw__tools_8c_a7403db3e2f8bddfe3250ff0ab5a09abc}} 
+\index{draw\_tools.c@{draw\_tools.c}!max\_function@{max\_function}}
+\index{max\_function@{max\_function}!draw\_tools.c@{draw\_tools.c}}
+\doxysubsubsection{\texorpdfstring{max\_function()}{max\_function()}}
+{\footnotesize\ttfamily int max\+\_\+function (\begin{DoxyParamCaption}\item[{int}]{val\+\_\+1,  }\item[{int}]{val\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+Compares two integers and returns the maximum value between them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val\+\_\+1} & An integer \\
+\hline
+{\em val\+\_\+2} & An integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The maximum value between
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em val\+\_\+1} & and\\
+\hline
+{\em val\+\_\+2} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 5 of file draw\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{draw__tools_8c_a7d33ef0235a25a431d7b6bc60137abf0}\label{draw__tools_8c_a7d33ef0235a25a431d7b6bc60137abf0}} 
+\index{draw\_tools.c@{draw\_tools.c}!min\_function@{min\_function}}
+\index{min\_function@{min\_function}!draw\_tools.c@{draw\_tools.c}}
+\doxysubsubsection{\texorpdfstring{min\_function()}{min\_function()}}
+{\footnotesize\ttfamily int min\+\_\+function (\begin{DoxyParamCaption}\item[{int}]{val\+\_\+1,  }\item[{int}]{val\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+Compares two integers and returns the minimum value between them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val\+\_\+1} & An integer \\
+\hline
+{\em val\+\_\+2} & An integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The minimum value between
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em val\+\_\+1} & and\\
+\hline
+{\em val\+\_\+2} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file draw\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{draw__tools_8c_a7936c9c8f2c27fb24e4af6006ce499ee}\label{draw__tools_8c_a7936c9c8f2c27fb24e4af6006ce499ee}} 
+\index{draw\_tools.c@{draw\_tools.c}!point\_in\_clipper@{point\_in\_clipper}}
+\index{point\_in\_clipper@{point\_in\_clipper}!draw\_tools.c@{draw\_tools.c}}
+\doxysubsubsection{\texorpdfstring{point\_in\_clipper()}{point\_in\_clipper()}}
+{\footnotesize\ttfamily bool point\+\_\+in\+\_\+clipper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$}]{point,  }\item[{const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Checks if a point is within the surface delimited by the clipper. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to check \\
+\hline
+{\em clipper} & The clipper, should not be NULL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is within the surface delimited by the clipper False if else 
+\end{DoxyReturn}
+
+
+Definition at line 77 of file draw\+\_\+tools.\+c.
+
+\mbox{\Hypertarget{draw__tools_8c_a7cfff1ec513e1b5602772121fab48f47}\label{draw__tools_8c_a7cfff1ec513e1b5602772121fab48f47}} 
+\index{draw\_tools.c@{draw\_tools.c}!point\_to\_pixel@{point\_to\_pixel}}
+\index{point\_to\_pixel@{point\_to\_pixel}!draw\_tools.c@{draw\_tools.c}}
+\doxysubsubsection{\texorpdfstring{point\_to\_pixel()}{point\_to\_pixel()}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ point\+\_\+to\+\_\+pixel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} $\ast$}]{point,  }\item[{\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}}]{surface }\end{DoxyParamCaption})}
+
+
+
+Converts a point of coordinates (x,y) into a memory address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to convert \\
+\hline
+{\em surface} & The reference surface \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The memory address corresponding to the pixel representing the point on the surface. 
+\end{DoxyReturn}
+
+
+Definition at line 19 of file draw\+\_\+tools.\+c.
+

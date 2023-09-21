@@ -1,0 +1,245 @@
+\hypertarget{ei__utils_8h}{}\doxysection{ei\+\_\+utils.\+h File Reference}
+\label{ei__utils_8h}\index{ei\_utils.h@{ei\_utils.h}}
+
+
+General purpose utility functions\+: creation of points and sizes, and arithmetic on them.  
+
+
+{\ttfamily \#include \char`\"{}ei\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+widgetclass.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_a3efbe5d4e8424e1543374b1965f996ae}{ei\+\_\+size\+\_\+zero}} ()
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} with width = 0 and height = 0;. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_a4b1d120e983284a82145e464ad74725c}{ei\+\_\+size}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} initialized with the width and height passed as parameters. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_a0340ad040bce7744b00c5b2f73e41fcb}{ei\+\_\+point\+\_\+zero}} ()
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} with x = 0 and y = 0;. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_a689110a7501607722040920b1ed48427}{ei\+\_\+point}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} initialized with the x and y passed as parameters. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_a1f53854088399bdcb1a61c68d0dacb43}{ei\+\_\+point\+\_\+neg}} (\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} point)
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} which coordinates are opposite from the coordinate of the point passed as a parameter. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_ad02f1050ce11a0d6d064ffc5cb55a58c}{ei\+\_\+point\+\_\+add}} (\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} p1, \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} p2)
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} which coordinates are the sum of the coordinates of the two points passed as parameters. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_a46a8f591217526bb50e4b0e24692aad4}{ei\+\_\+point\+\_\+sub}} (\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} p1, \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} p2)
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} which coordinates are the coordinates of the first point parameter minus the coordinates of the second point parameter. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_a99dbcf809541302341cbcb0fccf24e79}{ei\+\_\+point\+\_\+as\+\_\+size}} (\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} p)
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} which components are the same as the point passed as parameter. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_af4b3479ad0dd792735e4c4645afc57bd}{ei\+\_\+size\+\_\+add}} (\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} s1, \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} s2)
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} which components are the sum of the components of the two sizes passed as parameters. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_a2300c0c2c2f9493c1f331a44692d2f03}{ei\+\_\+size\+\_\+sub}} (\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} s1, \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} s2)
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} which components are the components of the first size parameter minus the components of the second size parameter. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_aa24f72536d4843b74abe653f668b1f49}{ei\+\_\+size\+\_\+scale}} (\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} s, float scale)
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} which is the size passed as the first parameter scaled by the second parameter. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_abec48eca9d5565fd4d7faeb0935cc7df}{ei\+\_\+size\+\_\+as\+\_\+point}} (\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} s)
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} which components are the same as the size passed as parameter. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_a8bef8234db026386d82fb016cf7d67dc}{ei\+\_\+rect\+\_\+zero}} ()
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} located in (0, 0) and of size (0, 0). \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} \mbox{\hyperlink{ei__utils_8h_ad0ce7d71c3cc717f1b3cd5f8c767870e}{ei\+\_\+rect}} (\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} top\+\_\+left, \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} size)
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} which position and size are passed as parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+General purpose utility functions\+: creation of points and sizes, and arithmetic on them. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ei__utils_8h_a689110a7501607722040920b1ed48427}\label{ei__utils_8h_a689110a7501607722040920b1ed48427}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_point@{ei\_point}}
+\index{ei\_point@{ei\_point}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_point()}{ei\_point()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} ei\+\_\+point (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} initialized with the x and y passed as parameters. 
+
+
+
+Definition at line 49 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_ad02f1050ce11a0d6d064ffc5cb55a58c}\label{ei__utils_8h_ad02f1050ce11a0d6d064ffc5cb55a58c}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_point\_add@{ei\_point\_add}}
+\index{ei\_point\_add@{ei\_point\_add}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_point\_add()}{ei\_point\_add()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} ei\+\_\+point\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}}}]{p1,  }\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}}}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} which coordinates are the sum of the coordinates of the two points passed as parameters. 
+
+
+
+Definition at line 72 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_a99dbcf809541302341cbcb0fccf24e79}\label{ei__utils_8h_a99dbcf809541302341cbcb0fccf24e79}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_point\_as\_size@{ei\_point\_as\_size}}
+\index{ei\_point\_as\_size@{ei\_point\_as\_size}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_point\_as\_size()}{ei\_point\_as\_size()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} ei\+\_\+point\+\_\+as\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} which components are the same as the point passed as parameter. 
+
+
+
+Definition at line 94 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_a1f53854088399bdcb1a61c68d0dacb43}\label{ei__utils_8h_a1f53854088399bdcb1a61c68d0dacb43}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_point\_neg@{ei\_point\_neg}}
+\index{ei\_point\_neg@{ei\_point\_neg}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_point\_neg()}{ei\_point\_neg()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} ei\+\_\+point\+\_\+neg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}}}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} which coordinates are opposite from the coordinate of the point passed as a parameter. 
+
+
+
+Definition at line 61 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_a46a8f591217526bb50e4b0e24692aad4}\label{ei__utils_8h_a46a8f591217526bb50e4b0e24692aad4}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_point\_sub@{ei\_point\_sub}}
+\index{ei\_point\_sub@{ei\_point\_sub}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_point\_sub()}{ei\_point\_sub()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} ei\+\_\+point\+\_\+sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}}}]{p1,  }\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}}}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} which coordinates are the coordinates of the first point parameter minus the coordinates of the second point parameter. 
+
+
+
+Definition at line 83 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_a0340ad040bce7744b00c5b2f73e41fcb}\label{ei__utils_8h_a0340ad040bce7744b00c5b2f73e41fcb}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_point\_zero@{ei\_point\_zero}}
+\index{ei\_point\_zero@{ei\_point\_zero}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_point\_zero()}{ei\_point\_zero()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} ei\+\_\+point\+\_\+zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} with x = 0 and y = 0;. 
+
+
+
+Definition at line 40 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_ad0ce7d71c3cc717f1b3cd5f8c767870e}\label{ei__utils_8h_ad0ce7d71c3cc717f1b3cd5f8c767870e}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_rect@{ei\_rect}}
+\index{ei\_rect@{ei\_rect}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_rect()}{ei\_rect()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} ei\+\_\+rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}}}]{top\+\_\+left,  }\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} which position and size are passed as parameters. 
+
+
+
+Definition at line 153 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_a8bef8234db026386d82fb016cf7d67dc}\label{ei__utils_8h_a8bef8234db026386d82fb016cf7d67dc}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_rect\_zero@{ei\_rect\_zero}}
+\index{ei\_rect\_zero@{ei\_rect\_zero}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_rect\_zero()}{ei\_rect\_zero()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} ei\+\_\+rect\+\_\+zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} located in (0, 0) and of size (0, 0). 
+
+
+
+Definition at line 144 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_a4b1d120e983284a82145e464ad74725c}\label{ei__utils_8h_a4b1d120e983284a82145e464ad74725c}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_size@{ei\_size}}
+\index{ei\_size@{ei\_size}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_size()}{ei\_size()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} ei\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} initialized with the width and height passed as parameters. 
+
+
+
+Definition at line 29 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_af4b3479ad0dd792735e4c4645afc57bd}\label{ei__utils_8h_af4b3479ad0dd792735e4c4645afc57bd}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_size\_add@{ei\_size\_add}}
+\index{ei\_size\_add@{ei\_size\_add}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_size\_add()}{ei\_size\_add()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} ei\+\_\+size\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}}}]{s1,  }\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}}}]{s2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} which components are the sum of the components of the two sizes passed as parameters. 
+
+
+
+Definition at line 103 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_abec48eca9d5565fd4d7faeb0935cc7df}\label{ei__utils_8h_abec48eca9d5565fd4d7faeb0935cc7df}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_size\_as\_point@{ei\_size\_as\_point}}
+\index{ei\_size\_as\_point@{ei\_size\_as\_point}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_size\_as\_point()}{ei\_size\_as\_point()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} ei\+\_\+size\+\_\+as\+\_\+point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}}}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t}} which components are the same as the size passed as parameter. 
+
+
+
+Definition at line 136 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_aa24f72536d4843b74abe653f668b1f49}\label{ei__utils_8h_aa24f72536d4843b74abe653f668b1f49}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_size\_scale@{ei\_size\_scale}}
+\index{ei\_size\_scale@{ei\_size\_scale}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_size\_scale()}{ei\_size\_scale()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} ei\+\_\+size\+\_\+scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}}}]{s,  }\item[{float}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} which is the size passed as the first parameter scaled by the second parameter. 
+
+
+
+Definition at line 125 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_a2300c0c2c2f9493c1f331a44692d2f03}\label{ei__utils_8h_a2300c0c2c2f9493c1f331a44692d2f03}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_size\_sub@{ei\_size\_sub}}
+\index{ei\_size\_sub@{ei\_size\_sub}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_size\_sub()}{ei\_size\_sub()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} ei\+\_\+size\+\_\+sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}}}]{s1,  }\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}}}]{s2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} which components are the components of the first size parameter minus the components of the second size parameter. 
+
+
+
+Definition at line 114 of file ei\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{ei__utils_8h_a3efbe5d4e8424e1543374b1965f996ae}\label{ei__utils_8h_a3efbe5d4e8424e1543374b1965f996ae}} 
+\index{ei\_utils.h@{ei\_utils.h}!ei\_size\_zero@{ei\_size\_zero}}
+\index{ei\_size\_zero@{ei\_size\_zero}!ei\_utils.h@{ei\_utils.h}}
+\doxysubsubsection{\texorpdfstring{ei\_size\_zero()}{ei\_size\_zero()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} ei\+\_\+size\+\_\+zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} with width = 0 and height = 0;. 
+
+
+
+Definition at line 20 of file ei\+\_\+utils.\+h.
+

@@ -1,0 +1,161 @@
+\hypertarget{ei__application_8h}{}\doxysection{ei\+\_\+application.\+h File Reference}
+\label{ei__application_8h}\index{ei\_application.h@{ei\_application.h}}
+
+
+Manages the main steps of a graphical application\+: initialization, main window, main loop, quitting, resource freeing.  
+
+
+{\ttfamily \#include \char`\"{}ei\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+widgetclass.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ei__application_8h_abc6e645a651352bb46481a920a516709}{ei\+\_\+app\+\_\+create}} (\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} main\+\_\+window\+\_\+size, bool fullscreen)
+\begin{DoxyCompactList}\small\item\em Creates an application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__application_8h_aeac990640f4b120663405ad656380546}{ei\+\_\+app\+\_\+free}} (void)
+\begin{DoxyCompactList}\small\item\em Releases all the resources of the application, and releases the hardware (ie. calls \mbox{\hyperlink{hw__interface_8h_abe4354544a70c108fe5d8f17c69a2874}{hw\+\_\+quit}}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__application_8h_aa56224cc923d7e0c52d2e5c62be60e6a}{ei\+\_\+app\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Runs the application\+: enters the main event loop. Exits when \mbox{\hyperlink{ei__application_8c_a79e6f7b1484c67f527a840d89ead336f}{ei\+\_\+app\+\_\+quit\+\_\+request}} is called. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__application_8h_a92110923e2f3b88c9e0c5cf5071cf410}{ei\+\_\+app\+\_\+invalidate\+\_\+rect}} (const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$rect)
+\begin{DoxyCompactList}\small\item\em Adds a rectangle to the list of rectangles that must be updated on screen. The real update on the screen will be done at the right moment in the main loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ei__application_8h_a79e6f7b1484c67f527a840d89ead336f}{ei\+\_\+app\+\_\+quit\+\_\+request}} (void)
+\begin{DoxyCompactList}\small\item\em Tells the application to quit. Is usually called by an event handler (for example when pressing the \char`\"{}\+Escape\char`\"{} key). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{ei__application_8h_a951633a600dd86ac1f68b1c4b47e5085}{ei\+\_\+app\+\_\+root\+\_\+widget}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the \char`\"{}root widget\char`\"{} of the application\+: a \char`\"{}frame\char`\"{} widget that span the entire root window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} \mbox{\hyperlink{ei__application_8h_aa3dba616351b18883ed6e20fd2fcf82e}{ei\+\_\+app\+\_\+root\+\_\+surface}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the surface of the root window. Can be used to create surfaces with similar r, g, b channels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the main steps of a graphical application\+: initialization, main window, main loop, quitting, resource freeing. 
+
+\begin{DoxyAuthor}{Author}
+Created by François Bérard on 30.\+12.\+11. Copyright 2011 Ensimag. All rights reserved. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ei__application_8h_abc6e645a651352bb46481a920a516709}\label{ei__application_8h_abc6e645a651352bb46481a920a516709}} 
+\index{ei\_application.h@{ei\_application.h}!ei\_app\_create@{ei\_app\_create}}
+\index{ei\_app\_create@{ei\_app\_create}!ei\_application.h@{ei\_application.h}}
+\doxysubsubsection{\texorpdfstring{ei\_app\_create()}{ei\_app\_create()}}
+{\footnotesize\ttfamily void ei\+\_\+app\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}}}]{main\+\_\+window\+\_\+size,  }\item[{bool}]{fullscreen }\end{DoxyParamCaption})}
+
+
+
+Creates an application. 
+
+
+\begin{DoxyItemize}
+\item initializes the hardware (calls \mbox{\hyperlink{hw__interface_8h_ae58df14f30461cb37e8607aca5522846}{hw\+\_\+init}}),  
+\item registers all classes of widget,  
+\item creates the root window (either in a system window, or the entire screen),  
+\item creates the root widget to access the root window.  
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em main\+\_\+window\+\_\+size} & If "{}fullscreen is false, the size of the root window of the application. If \char`\"{}fullscreen\char`\"{} is true, the current monitor resolution is used as the size of the root window. \mbox{\hyperlink{hw__interface_8h_a7b92235ad70d5017c843c66affccdcd2}{hw\+\_\+surface\+\_\+get\+\_\+size}} can be used with \mbox{\hyperlink{ei__application_8c_aa3dba616351b18883ed6e20fd2fcf82e}{ei\+\_\+app\+\_\+root\+\_\+surface}} to get the size. \\
+\hline
+{\em full\+Screen} & If true, the root window is the entire screen. Otherwise, it is a system window. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file ei\+\_\+application.\+c.
+
+\mbox{\Hypertarget{ei__application_8h_aeac990640f4b120663405ad656380546}\label{ei__application_8h_aeac990640f4b120663405ad656380546}} 
+\index{ei\_application.h@{ei\_application.h}!ei\_app\_free@{ei\_app\_free}}
+\index{ei\_app\_free@{ei\_app\_free}!ei\_application.h@{ei\_application.h}}
+\doxysubsubsection{\texorpdfstring{ei\_app\_free()}{ei\_app\_free()}}
+{\footnotesize\ttfamily void ei\+\_\+app\+\_\+free (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Releases all the resources of the application, and releases the hardware (ie. calls \mbox{\hyperlink{hw__interface_8h_abe4354544a70c108fe5d8f17c69a2874}{hw\+\_\+quit}}). 
+
+
+
+Definition at line 59 of file ei\+\_\+application.\+c.
+
+\mbox{\Hypertarget{ei__application_8h_a92110923e2f3b88c9e0c5cf5071cf410}\label{ei__application_8h_a92110923e2f3b88c9e0c5cf5071cf410}} 
+\index{ei\_application.h@{ei\_application.h}!ei\_app\_invalidate\_rect@{ei\_app\_invalidate\_rect}}
+\index{ei\_app\_invalidate\_rect@{ei\_app\_invalidate\_rect}!ei\_application.h@{ei\_application.h}}
+\doxysubsubsection{\texorpdfstring{ei\_app\_invalidate\_rect()}{ei\_app\_invalidate\_rect()}}
+{\footnotesize\ttfamily void ei\+\_\+app\+\_\+invalidate\+\_\+rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$}]{rect }\end{DoxyParamCaption})}
+
+
+
+Adds a rectangle to the list of rectangles that must be updated on screen. The real update on the screen will be done at the right moment in the main loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & The rectangle to add, expressed in the root window coordinates. A copy is made, so it is safe to release the rectangle on return. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file ei\+\_\+application.\+c.
+
+\mbox{\Hypertarget{ei__application_8h_a79e6f7b1484c67f527a840d89ead336f}\label{ei__application_8h_a79e6f7b1484c67f527a840d89ead336f}} 
+\index{ei\_application.h@{ei\_application.h}!ei\_app\_quit\_request@{ei\_app\_quit\_request}}
+\index{ei\_app\_quit\_request@{ei\_app\_quit\_request}!ei\_application.h@{ei\_application.h}}
+\doxysubsubsection{\texorpdfstring{ei\_app\_quit\_request()}{ei\_app\_quit\_request()}}
+{\footnotesize\ttfamily void ei\+\_\+app\+\_\+quit\+\_\+request (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Tells the application to quit. Is usually called by an event handler (for example when pressing the \char`\"{}\+Escape\char`\"{} key). 
+
+
+
+Definition at line 191 of file ei\+\_\+application.\+c.
+
+\mbox{\Hypertarget{ei__application_8h_aa3dba616351b18883ed6e20fd2fcf82e}\label{ei__application_8h_aa3dba616351b18883ed6e20fd2fcf82e}} 
+\index{ei\_application.h@{ei\_application.h}!ei\_app\_root\_surface@{ei\_app\_root\_surface}}
+\index{ei\_app\_root\_surface@{ei\_app\_root\_surface}!ei\_application.h@{ei\_application.h}}
+\doxysubsubsection{\texorpdfstring{ei\_app\_root\_surface()}{ei\_app\_root\_surface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}} ei\+\_\+app\+\_\+root\+\_\+surface (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the surface of the root window. Can be used to create surfaces with similar r, g, b channels. 
+
+\begin{DoxyReturn}{Returns}
+The surface of the root window. 
+\end{DoxyReturn}
+
+
+Definition at line 200 of file ei\+\_\+application.\+c.
+
+\mbox{\Hypertarget{ei__application_8h_a951633a600dd86ac1f68b1c4b47e5085}\label{ei__application_8h_a951633a600dd86ac1f68b1c4b47e5085}} 
+\index{ei\_application.h@{ei\_application.h}!ei\_app\_root\_widget@{ei\_app\_root\_widget}}
+\index{ei\_app\_root\_widget@{ei\_app\_root\_widget}!ei\_application.h@{ei\_application.h}}
+\doxysubsubsection{\texorpdfstring{ei\_app\_root\_widget()}{ei\_app\_root\_widget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+app\+\_\+root\+\_\+widget (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the \char`\"{}root widget\char`\"{} of the application\+: a \char`\"{}frame\char`\"{} widget that span the entire root window. 
+
+\begin{DoxyReturn}{Returns}
+The root widget. 
+\end{DoxyReturn}
+
+
+Definition at line 195 of file ei\+\_\+application.\+c.
+
+\mbox{\Hypertarget{ei__application_8h_aa56224cc923d7e0c52d2e5c62be60e6a}\label{ei__application_8h_aa56224cc923d7e0c52d2e5c62be60e6a}} 
+\index{ei\_application.h@{ei\_application.h}!ei\_app\_run@{ei\_app\_run}}
+\index{ei\_app\_run@{ei\_app\_run}!ei\_application.h@{ei\_application.h}}
+\doxysubsubsection{\texorpdfstring{ei\_app\_run()}{ei\_app\_run()}}
+{\footnotesize\ttfamily void ei\+\_\+app\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Runs the application\+: enters the main event loop. Exits when \mbox{\hyperlink{ei__application_8c_a79e6f7b1484c67f527a840d89ead336f}{ei\+\_\+app\+\_\+quit\+\_\+request}} is called. 
+
+
+
+Definition at line 128 of file ei\+\_\+application.\+c.
+

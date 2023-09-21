@@ -1,0 +1,237 @@
+\hypertarget{structei__impl__widget__t}{}\doxysection{ei\+\_\+impl\+\_\+widget\+\_\+t Struct Reference}
+\label{structei__impl__widget__t}\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+
+
+Fields common to all types of widget. Every widget classes specializes this base class by adding its own fields.  
+
+
+
+
+{\ttfamily \#include $<$ei\+\_\+implementation.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structei__widgetclass__t}{ei\+\_\+widgetclass\+\_\+t}} $\ast$ \mbox{\hyperlink{structei__impl__widget__t_aa6ab44d2da83877b1d83e1a6cea7034e}{wclass}}
+\begin{DoxyCompactList}\small\item\em The class of widget of this widget. Avoids the field name \char`\"{}class\char`\"{} which is a keyword in C++. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{structei__impl__widget__t_ae9085b15b51f1a55434df1dbe68c034e}{pick\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Id of this widget in the picking offscreen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}} $\ast$ \mbox{\hyperlink{structei__impl__widget__t_aef42898337e9d49c387e967e757c86ce}{pick\+\_\+color}}
+\begin{DoxyCompactList}\small\item\em pick\+\_\+id encoded as a color. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{structei__impl__widget__t_a9d5ac25df3e41158391c837c1a77d238}{user\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Pointer provided by the programmer for private use. May be NULL. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ei__widget_8h_ab58bdc73d94efb5e0cf0a1893eec910b}{ei\+\_\+widget\+\_\+destructor\+\_\+t}} \mbox{\hyperlink{structei__impl__widget__t_aa24362f2cceb4c2e02a16c34cf045918}{destructor}}
+\begin{DoxyCompactList}\small\item\em Pointer to the programmer\textquotesingle{}s function to call before destroying this widget. May be NULL. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{structei__impl__widget__t_a8499862f1cf40cd99b52f1f38a32e9b0}{parent}}
+\begin{DoxyCompactList}\small\item\em Pointer to the parent of this widget. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{structei__impl__widget__t_aa4a6383448c3e9bee6a8b0bc2ae15dc9}{children\+\_\+head}}
+\begin{DoxyCompactList}\small\item\em Pointer to the first child of this widget. Children are chained with the \char`\"{}next\+\_\+sibling\char`\"{} field. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{structei__impl__widget__t_adcc97671062f66aa993487f6816c81ef}{children\+\_\+tail}}
+\begin{DoxyCompactList}\small\item\em Pointer to the last child of this widget. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} \mbox{\hyperlink{structei__impl__widget__t_a638762e72c295c58b34c50c5b11425ae}{next\+\_\+sibling}}
+\begin{DoxyCompactList}\small\item\em Pointer to the next child of this widget\textquotesingle{}s parent widget. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structei__impl__placer__params__t}{ei\+\_\+impl\+\_\+placer\+\_\+params\+\_\+t}} $\ast$ \mbox{\hyperlink{structei__impl__widget__t_aad1c98bc7b84cb318801e78df23f9cf9}{placer\+\_\+params}}
+\begin{DoxyCompactList}\small\item\em Pointer to the placer parameters for this widget. If NULL, the widget is not currently managed and thus, is not displayed on the screen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} \mbox{\hyperlink{structei__impl__widget__t_a8916d985d3477bba2428fc0ec5c5d8fc}{requested\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Size requested by the widget (big enough for its label, for example), or by the programmer. This can be different than its screen size defined by the placer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} \mbox{\hyperlink{structei__impl__widget__t_a4917a94e71d8fe03d8cf3b2b90953e5f}{screen\+\_\+location}}
+\begin{DoxyCompactList}\small\item\em Position and size of the widget expressed in the root window reference. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} $\ast$ \mbox{\hyperlink{structei__impl__widget__t_a55bc37d2f8f790d2882c71d9bd198127}{content\+\_\+rect}}
+\begin{DoxyCompactList}\small\item\em Where to place children, when this widget is used as a container. By defaults, points to the screen\+\_\+location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fields common to all types of widget. Every widget classes specializes this base class by adding its own fields. 
+
+Definition at line 68 of file ei\+\_\+implementation.\+h.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structei__impl__widget__t_aa4a6383448c3e9bee6a8b0bc2ae15dc9}\label{structei__impl__widget__t_aa4a6383448c3e9bee6a8b0bc2ae15dc9}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!children\_head@{children\_head}}
+\index{children\_head@{children\_head}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{children\_head}{children\_head}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+impl\+\_\+widget\+\_\+t\+::children\+\_\+head}
+
+
+
+Pointer to the first child of this widget. Children are chained with the \char`\"{}next\+\_\+sibling\char`\"{} field. 
+
+
+
+Definition at line 77 of file ei\+\_\+implementation.\+h.
+
+\mbox{\Hypertarget{structei__impl__widget__t_adcc97671062f66aa993487f6816c81ef}\label{structei__impl__widget__t_adcc97671062f66aa993487f6816c81ef}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!children\_tail@{children\_tail}}
+\index{children\_tail@{children\_tail}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{children\_tail}{children\_tail}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+impl\+\_\+widget\+\_\+t\+::children\+\_\+tail}
+
+
+
+Pointer to the last child of this widget. 
+
+
+
+Definition at line 78 of file ei\+\_\+implementation.\+h.
+
+\mbox{\Hypertarget{structei__impl__widget__t_a55bc37d2f8f790d2882c71d9bd198127}\label{structei__impl__widget__t_a55bc37d2f8f790d2882c71d9bd198127}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!content\_rect@{content\_rect}}
+\index{content\_rect@{content\_rect}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{content\_rect}{content\_rect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}}$\ast$ ei\+\_\+impl\+\_\+widget\+\_\+t\+::content\+\_\+rect}
+
+
+
+Where to place children, when this widget is used as a container. By defaults, points to the screen\+\_\+location. 
+
+
+
+Definition at line 85 of file ei\+\_\+implementation.\+h.
+
+\mbox{\Hypertarget{structei__impl__widget__t_aa24362f2cceb4c2e02a16c34cf045918}\label{structei__impl__widget__t_aa24362f2cceb4c2e02a16c34cf045918}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!destructor@{destructor}}
+\index{destructor@{destructor}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{destructor}{destructor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widget_8h_ab58bdc73d94efb5e0cf0a1893eec910b}{ei\+\_\+widget\+\_\+destructor\+\_\+t}} ei\+\_\+impl\+\_\+widget\+\_\+t\+::destructor}
+
+
+
+Pointer to the programmer\textquotesingle{}s function to call before destroying this widget. May be NULL. 
+
+
+
+Definition at line 73 of file ei\+\_\+implementation.\+h.
+
+\mbox{\Hypertarget{structei__impl__widget__t_a638762e72c295c58b34c50c5b11425ae}\label{structei__impl__widget__t_a638762e72c295c58b34c50c5b11425ae}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!next\_sibling@{next\_sibling}}
+\index{next\_sibling@{next\_sibling}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{next\_sibling}{next\_sibling}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+impl\+\_\+widget\+\_\+t\+::next\+\_\+sibling}
+
+
+
+Pointer to the next child of this widget\textquotesingle{}s parent widget. 
+
+
+
+Definition at line 79 of file ei\+\_\+implementation.\+h.
+
+\mbox{\Hypertarget{structei__impl__widget__t_a8499862f1cf40cd99b52f1f38a32e9b0}\label{structei__impl__widget__t_a8499862f1cf40cd99b52f1f38a32e9b0}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!parent@{parent}}
+\index{parent@{parent}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ei__widgetclass_8h_a35b52beecc62073de9c4c23e686686b8}{ei\+\_\+widget\+\_\+t}} ei\+\_\+impl\+\_\+widget\+\_\+t\+::parent}
+
+
+
+Pointer to the parent of this widget. 
+
+
+
+Definition at line 76 of file ei\+\_\+implementation.\+h.
+
+\mbox{\Hypertarget{structei__impl__widget__t_aef42898337e9d49c387e967e757c86ce}\label{structei__impl__widget__t_aef42898337e9d49c387e967e757c86ce}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!pick\_color@{pick\_color}}
+\index{pick\_color@{pick\_color}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{pick\_color}{pick\_color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}$\ast$ ei\+\_\+impl\+\_\+widget\+\_\+t\+::pick\+\_\+color}
+
+
+
+pick\+\_\+id encoded as a color. 
+
+
+
+Definition at line 71 of file ei\+\_\+implementation.\+h.
+
+\mbox{\Hypertarget{structei__impl__widget__t_ae9085b15b51f1a55434df1dbe68c034e}\label{structei__impl__widget__t_ae9085b15b51f1a55434df1dbe68c034e}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!pick\_id@{pick\_id}}
+\index{pick\_id@{pick\_id}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{pick\_id}{pick\_id}}
+{\footnotesize\ttfamily uint32\+\_\+t ei\+\_\+impl\+\_\+widget\+\_\+t\+::pick\+\_\+id}
+
+
+
+Id of this widget in the picking offscreen. 
+
+
+
+Definition at line 70 of file ei\+\_\+implementation.\+h.
+
+\mbox{\Hypertarget{structei__impl__widget__t_aad1c98bc7b84cb318801e78df23f9cf9}\label{structei__impl__widget__t_aad1c98bc7b84cb318801e78df23f9cf9}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!placer\_params@{placer\_params}}
+\index{placer\_params@{placer\_params}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{placer\_params}{placer\_params}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__impl__placer__params__t}{ei\+\_\+impl\+\_\+placer\+\_\+params\+\_\+t}}$\ast$ ei\+\_\+impl\+\_\+widget\+\_\+t\+::placer\+\_\+params}
+
+
+
+Pointer to the placer parameters for this widget. If NULL, the widget is not currently managed and thus, is not displayed on the screen. 
+
+
+
+Definition at line 82 of file ei\+\_\+implementation.\+h.
+
+\mbox{\Hypertarget{structei__impl__widget__t_a8916d985d3477bba2428fc0ec5c5d8fc}\label{structei__impl__widget__t_a8916d985d3477bba2428fc0ec5c5d8fc}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!requested\_size@{requested\_size}}
+\index{requested\_size@{requested\_size}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{requested\_size}{requested\_size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__size__t}{ei\+\_\+size\+\_\+t}} ei\+\_\+impl\+\_\+widget\+\_\+t\+::requested\+\_\+size}
+
+
+
+Size requested by the widget (big enough for its label, for example), or by the programmer. This can be different than its screen size defined by the placer. 
+
+
+
+Definition at line 83 of file ei\+\_\+implementation.\+h.
+
+\mbox{\Hypertarget{structei__impl__widget__t_a4917a94e71d8fe03d8cf3b2b90953e5f}\label{structei__impl__widget__t_a4917a94e71d8fe03d8cf3b2b90953e5f}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!screen\_location@{screen\_location}}
+\index{screen\_location@{screen\_location}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{screen\_location}{screen\_location}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t}} ei\+\_\+impl\+\_\+widget\+\_\+t\+::screen\+\_\+location}
+
+
+
+Position and size of the widget expressed in the root window reference. 
+
+
+
+Definition at line 84 of file ei\+\_\+implementation.\+h.
+
+\mbox{\Hypertarget{structei__impl__widget__t_a9d5ac25df3e41158391c837c1a77d238}\label{structei__impl__widget__t_a9d5ac25df3e41158391c837c1a77d238}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!user\_data@{user\_data}}
+\index{user\_data@{user\_data}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{user\_data}{user\_data}}
+{\footnotesize\ttfamily void$\ast$ ei\+\_\+impl\+\_\+widget\+\_\+t\+::user\+\_\+data}
+
+
+
+Pointer provided by the programmer for private use. May be NULL. 
+
+
+
+Definition at line 72 of file ei\+\_\+implementation.\+h.
+
+\mbox{\Hypertarget{structei__impl__widget__t_aa6ab44d2da83877b1d83e1a6cea7034e}\label{structei__impl__widget__t_aa6ab44d2da83877b1d83e1a6cea7034e}} 
+\index{ei\_impl\_widget\_t@{ei\_impl\_widget\_t}!wclass@{wclass}}
+\index{wclass@{wclass}!ei\_impl\_widget\_t@{ei\_impl\_widget\_t}}
+\doxysubsubsection{\texorpdfstring{wclass}{wclass}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structei__widgetclass__t}{ei\+\_\+widgetclass\+\_\+t}}$\ast$ ei\+\_\+impl\+\_\+widget\+\_\+t\+::wclass}
+
+
+
+The class of widget of this widget. Avoids the field name \char`\"{}class\char`\"{} which is a keyword in C++. 
+
+
+
+Definition at line 69 of file ei\+\_\+implementation.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ei__implementation_8h}{ei\+\_\+implementation.\+h}}\end{DoxyCompactItemize}
